@@ -34,6 +34,18 @@ export default {
       name: 'Caelum',
       url: 'https://www.caelum.com.br/',
       logo: require('../assets/logo-caelum.png')
+    },
+    {
+      priority: 3,
+      name: 'Kinghost',
+      url: 'https://kinghost.com.br/',
+      logo: require('../assets/logo-kinghost.png')
+    },
+    {
+      priority: 4,
+      name: 'iMasters',
+      url: 'http://imasters.com.br/',
+      logo: require('../assets/logo-imasters.png')
     }
   ]
 }
