@@ -75,7 +75,7 @@ export default [
     time: '17h10 - 18h20',
     title: 'Internet das Coisas',
     subtitle: 'Conceitos e Aplicações',
-    description: 'A palestra abordará os conceitos básicos sobre a emergente área da Internet das Coisas (IoT, do inglês *Internet of Things*) e explorará exemplos de aplicações práticas.',
+    description: 'A emergente área da Internet das Coisas (IoT, do inglês *Internet of Things*) aborda a revolução tecnológica para a integração pela Internet de dispositivos eletrônicos, eletrodomésticos, veículos, máquinas e até mesmo construções, em busca de simplificar o cotidiano, proporcionar mais informações e, de certa forma, até modificar a maneira como a sociedade vive. A palestra abordará os conceitos básicos sobre a área e explorará exemplos de aplicações práticas.',
     speaker: lazaroMenezes
   },
   {
