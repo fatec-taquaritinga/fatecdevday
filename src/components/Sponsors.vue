@@ -69,9 +69,9 @@ export default {
 
       <article>
         <div>
+          <a href="http://www.fatectq.edu.br/" target="_blank"><img src="../assets/logo-fatec.svg" alt="Fatec Taquaritinga"></a>
           <a href="http://www.fatectq.edu.br/analise-e-desenvolvimento-de-sistemas" target="_blank"><img src="../assets/logo-ads.svg" alt="Análise e Desenvolvimento de Sistemas"></a>
           <a href="http://www.fatectq.edu.br/sistemas-para-internet" target="_blank"><img src="../assets/logo-si.svg" alt="Sistemas para Internet"></a>
-          <a href="http://www.fatectq.edu.br/" target="_blank"><img src="../assets/logo-fatec.svg" alt="Fatec Taquaritinga"></a>
         </div>
       </article>
 
