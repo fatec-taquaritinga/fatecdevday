@@ -8,19 +8,6 @@ export default {
       team: event.team.sort((a, b) => a.localeCompare(b)),
       sponsors
     }
-  },
-  mounted() {
-    const self = this
-    document.addEventListener('scroll', () => {
-      const hash = window.location.hash.replace('#', '')
-      const element = document.getElementById(self.hash)
-      if (element && element.isScrolledTop() && hash !== self.hash) {
-        window.history.replaceState(null, null, `/#${self.hash}`)
-      }
-    })
-  },
-  destroyed() {
-    document.removeEventListener('scroll')
   }
 }
 </script>
