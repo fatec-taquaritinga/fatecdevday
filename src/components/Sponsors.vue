@@ -3,6 +3,7 @@ import event from '../data/event'
 import sponsors from '../data/sponsors'
 
 export default {
+  name: 'Sponsors',
   data() {
     return {
       team: event.team.sort((a, b) => a.localeCompare(b)),
@@ -17,7 +18,7 @@ export default {
     <div class="container">
       <h2 class="separator">Patrocínio</h2>
       <p>
-        Sem a ajuda destes incríveis parceiros o Fatec Dev Day 2016 não aconteceria.
+        Sem a ajuda destes incríveis parceiros, o Fatec Dev Day 2016 não aconteceria.
       </p>
 
       <article v-if="sponsors.gold && sponsors.gold.length" class="gold">

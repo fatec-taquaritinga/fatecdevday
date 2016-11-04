@@ -1,11 +1,14 @@
 <script>
 import marked from 'marked'
+import event from '../data/event'
 import activities from '../data/activities'
 
 export default {
+  name: 'Schedule',
   data() {
     return {
-      activities
+      activities,
+      when: event.when
     }
   },
   methods: {
@@ -20,8 +23,11 @@ export default {
   <section id="agenda" v-scrolled="'agenda'">
     <div class="container">
       <h2 class="separator">Agenda</h2>
-      <p>
+      <p v-if="when.future || when.present">
         Fique por dentro da programação deste dia e não perca nenhuma atividade.
+      </p>
+      <p v-else>
+        Veja como foram as atividades do Fatec Dev Day 2016.
       </p>
 
       <ol class="schedule">

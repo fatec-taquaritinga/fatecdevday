@@ -1,5 +1,6 @@
 <script>
 import Logo from './Logo'
+import event from '../data/event'
 
 export default {
   name: 'Header',
@@ -10,7 +11,8 @@ export default {
     return {
       menu: false,
       floating: false,
-      currentHash: ''
+      currentHash: '',
+      soldOut: event.soldOut
     }
   },
   methods: {
@@ -52,7 +54,7 @@ export default {
             <li><a :class="{ 'active': currentHash === 'patrocinio' }" href="/#patrocinio" @click.prevent="go('/#patrocinio')">Patrocínio</a></li>
             <li><a :class="{ 'active': currentHash === 'agenda' }" href="/#agenda" @click.prevent="go('/#agenda')">Agenda</a></li>
             <li><a :class="{ 'active': currentHash === 'local' }" href="/#local" @click.prevent="go('/#local')">Local</a></li>
-            <li class="primary"><a href="https://www.eventbrite.com.br/e/fatec-dev-day-2016-tickets-28533957836" target="_blank" class="button">Inscrição</a></li>
+            <li v-if="!soldOut" class="primary"><a href="https://www.eventbrite.com.br/e/fatec-dev-day-2016-tickets-28533957836" target="_blank" class="button">Inscrição</a></li>
           </ul>
         </nav>
       </transition>

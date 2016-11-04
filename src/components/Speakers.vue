@@ -3,6 +3,7 @@ import marked from 'marked'
 import speakers from '../data/speakers'
 
 export default {
+  name: 'Speakers',
   data() {
     return {
       speakers: speakers.sort((a, b) => a.name.localeCompare(b.name))

@@ -10,6 +10,8 @@ export default {
   data() {
     return {
       target: event.date,
+      when: event.when,
+      soldOut: event.soldOut,
       countdown: {
         interval: null,
         days: '-',
@@ -48,10 +50,10 @@ export default {
     }
   },
   created() {
-    this.timeBetweenDates()
+    if (this.when.future) this.timeBetweenDates()
   },
   mounted() {
-    this.countdown.interval = setInterval(this.timeBetweenDates, 1000)
+    if (this.when.future) this.countdown.interval = setInterval(this.timeBetweenDates, 1000)
   }
 }
 </script>
@@ -62,7 +64,7 @@ export default {
       <h1><logo class="inverse">Fatec Dev Day</logo></h1>
       <h2>5 de novembro de 2016</h2>
 
-      <div class="countdown">
+      <div class="countdown" v-if="when.future">
         <div class="unit days">
           <p>{{ countdown.days }}</p>
           <span>dias</span>
@@ -84,9 +86,14 @@ export default {
         </div>
       </div>
 
-      <div class="action-button inverse">
+      <div class="action-button inverse" v-if="!soldOut">
         <a href="https://www.eventbrite.com.br/e/fatec-dev-day-2016-tickets-28533957836" target="_blank" class="button primary transparent">Inscreva-se<span class="hidden-on-small"> agora</span>!</a>
         <p>* Vagas limitadas: apenas 100 lugares disponíveis!</p>
+      </div>
+
+      <div class="action-button inverse" v-if="when.present">
+        <p>É hoje! Está participando conosco?<br>Compartilhe o que estiver rolando com a <i>hashtag</i>: <a href="https://www.facebook.com/hashtag/fatecdevday" target="_blank">#fatecdevday</a></p><br>
+        <a @click.prevent="navigate('/#agenda')" class="button primary transparent">Ver agenda</a>
       </div>
     </div>
   </section>
@@ -127,6 +134,8 @@ export default {
     text-shadow: none
     @media (min-width: $breakpoint-desktop)
       font-size: 1.25em
+  p a
+    color: $color-primary-100
   .countdown
     display: flex
     margin: 1.5em 0 0

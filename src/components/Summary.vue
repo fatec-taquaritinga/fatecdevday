@@ -1,11 +1,13 @@
 <script>
+import event from '../data/event'
 import speakers from '../data/speakers'
 
 export default {
   name: 'Summary',
   data() {
     return {
-      speakers: speakers.length
+      speakers: speakers.length,
+      soldOut: event.soldOut
     }
   }
 }
@@ -50,7 +52,8 @@ export default {
         </picture>
         <div class="info">
           <h3>100 lugares</h3>
-          <span>Corra para se inscrever!</span>
+          <span v-if="soldOut">Vagas esgotadas!</span>
+          <span v-else>Corra para se inscrever!</span>
         </div>
       </div>
     </div>
