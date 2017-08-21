@@ -14,7 +14,8 @@ module.exports = {
       { rel: 'icon', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/manifest.json' },
       { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#708e99' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Baloo+Bhai|Raleway:400,700|Material+Icons' }
+      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Baloo+Bhai|Raleway:400,700|Material+Icons' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed' }
     ]
   },
   loading: { color: '##708e99' },
