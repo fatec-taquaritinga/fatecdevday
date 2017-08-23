@@ -1,6 +1,9 @@
 module.exports = {
   head: {
-    title: 'Fatec Dev Day',
+    title: 'Fatec Dev Day 2017',
+    htmlAttrs: {
+      lang: 'pt-br'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -18,7 +21,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed' }
     ]
   },
-  loading: { color: '##708e99' },
+  loading: { color: '#708e99' },
   build: {
     extend (config, ctx) {
       if (ctx.dev && ctx.isClient) {

@@ -1,5 +1,6 @@
 {
-  "name": "Fatec Dev Day",
+  "name": "Fatec Dev Day 2017",
+  "short_name": "Fatec DevDay",
   "icons": [
     {
       "src": "\/android-chrome-192x192.png",
@@ -13,5 +14,6 @@
     }
   ],
   "theme_color": "#708e99",
+  "background_color": "#708e99",
   "display": "standalone"
 }
