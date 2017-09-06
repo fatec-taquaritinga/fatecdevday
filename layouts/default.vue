@@ -1,5 +1,13 @@
+<script>
+export default {
+  name: 'Layout'
+}
+</script>
+
 <template>
-  <nuxt />
+  <div id="app">
+    <nuxt />
+  </div>
 </template>
 
 <style lang="stylus">
@@ -20,15 +28,9 @@ body
 img, svg
   max-width: 100%
 
-section
-  text-align: center
-  padding-top: $app-header-height
-  &:not(:first-of-type)
-    padding-bottom: $app-header-height
-
 h2, h3, h4
   font-family: $font-secondary
-  font-size: 3em
+  font-size: 2.5em
   margin: 0
 
 h2.separator
@@ -37,18 +39,18 @@ h2.separator
   margin-bottom: 10px
   &::before
     position: absolute
-    bottom: -5px
+    bottom: -3px
     display: block
     content: ''
     width: 80%
     margin-left: 10%
-    height: 10px
+    height: 5px
     background: $color-primary
   &::after
     display: block
     content: ''
     width: 100%
-    height: 5px
+    height: 3px
     background: $color-primary-900
     @media (min-width: $breakpoint-tablet)
       width: 150%
@@ -61,9 +63,16 @@ h4
   color: $text-color-secondary
   font-size: 2em
 
+p
+  margin: .75em 0 0
+  &.important
+    font-weight: 700
+    strong
+      color: $color-primary-900
+
 a
   $tap-color: alpha($color-primary, 25%)
-  transition: color 250ms ease, background 250ms ease, box-shadow 250ms ease, text-shadow 250ms ease
+  transition: color .25s ease-in-out, background .25s ease-in-out, box-shadow .25s ease-in-out, text-shadow .25s ease-in-out
   outline: 0
 
 p, h1, h2, h3, h4
@@ -73,8 +82,7 @@ p, h1, h2, h3, h4
     &:hover, &:focus
       color: $color-primary
 
-button,
-.button
+button, .button
   position: relative
   display: inline-block
   padding: .5em 1em
@@ -84,12 +92,11 @@ button,
   cursor: pointer
   color: #fff
   background: $color-primary
-  border: 2px solid @background
+  border: 1px solid @background
   box-shadow: 0 2px 15px alpha(#000, 10%), 0 8px 50px alpha(#000, 5%)
-  transition: color 250ms ease, background 250ms ease, box-shadow 250ms ease, border 250ms ease
+  transition: color .25s ease-in-out, background .25s ease ease-in-out, box-shadow .25s ease-in-out, border .25s ease-in-out
   text-align: center
   text-decoration: none
-  text-transform: uppercase
   $tap-color: none
   outline: 0
   &.primary
@@ -116,67 +123,63 @@ button,
     line-height: 1
     margin-right: .25em
 
-.scroll-top
-  display: block
-  position: fixed
-  bottom: 0
-  right: 0
-  font-family: $font-primary
-  background: #e6e6e6
-  color: #666
-  cursor: pointer
-  text-decoration: none
-  text-align: center
-  font-size: .75em
-  line-height: 2.25
-  margin: 0 10px .75rem 0
-  border-radius: 50%
-  width: 1.75rem
-  height: 1.75rem
-  padding: 0
-  box-shadow: 0 6px 15px alpha(#000, 12%), 0 12px 35px alpha(#000, 4%)
-  &:hover, &:focus
-    color: #333
-    box-shadow: 0 6px 15px alpha(#000, 30%), 0 12px 50px alpha(#000, 10%)
-  &:active
-    color: #000
-    box-shadow: 0 4px 10px alpha(#000, 16%), 0 8px 30px alpha(#000, 6%)
-
 .circle
   display: block
   font-size: 2em
   width: 1.5em
   height: 1.5em
-  line-height: 1.45
+  line-height: 1.25
   text-align: center
   color: $text-color-secondary
   border: 3px solid $text-color-secondary
   border-radius: 50%
+  @media (min-width: $breakpoint-tablet)
+    line-height: 1.35
   img
     display: block
     border-radius: 50%
     object-fit: cover
 
-.action-button
-  margin-top: 3em
-  .button.primary
-    font-size: 1.5em
-    &:hover, &:focus
-      color: $text-color-primary
-      border-color: $text-color-secondary
-  p
-    font-size: .875em
-    color: $text-color-secondary
-    margin: 1.5em 0 0
-  &.inverse
-    .button.primary:hover, .button.primary:focus
-      color: $text-color-inverse-primary
-      border-color: $text-color-inverse-primary
-    p
-      color: $text-color-inverse-secondary
+.buttons
+  display: flex
+  margin: 0 -.25em
+  .button
+    margin: 0 .25em
+
+#app
+  position: relative
+  background: #4a555c
+  min-height: 100vh
+  overflow: hidden
+
+.page
+  text-align: center
+  position: relative
+  min-height: 100vh
+  display: flex
+  flex-flow: column
+  transform-origin: top center
+  box-shadow: 0 2px 10px rgba(#000, 50%)
+
+.page-enter-active
+  transition: opacity .25s, transform .25s
+
+.page-leave-active
+  transition: opacity .5s ease-in, transform .5s ease-in
+
+.page-enter, .page-leave-to
+  opacity: 0
+  transform: scale(.9)
 
 .container
-  padding: 1.5em
+  position: relative
+  flex: 1
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  padding: 3em 1.5em
   @media(min-width: $breakpoint-tablet)
     padding-left: calc(1.5em + 2vw)
     padding-right: calc(1.5em + 2vw)

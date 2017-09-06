@@ -1,14 +1,19 @@
 <script>
 export default {
   name: 'Logo',
-  functional: true,
   props: {
     href: String,
     schema: String
   },
-  render (createElement, context) {
+  methods: {
+    navigate (event) {
+      event.preventDefault()
+      this.$router.push(this.href)
+    }
+  },
+  render (createElement) {
     const svg = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 518.7 153.1">
-      <title>{ context.children ? context.children : 'Fatec Dev Day 2017' }</title>
+      <title>{ this.$slots.default ? this.$slots.default : 'Fatec Dev Day 2017' }</title>
       <g class="fatec">
         <path d="M53.9 28.2h3.9V15.8h7.9v-3.5h-7.9V3.8h11.1V0h-15z" class="fatec-f"/>
         <path d="M83.1 8.8c-.6-1.4-2.7-3.4-6.1-3.4-4.3 0-7.3 3-7.3 8.8v5.6c0 5.7 2.8 8.8 7.3 8.8 3.4 0 5.5-2 6.1-3.4v3.1h3.5V5.7h-3.5v3.1zm-.2 10.4c0 4-1.6 6.2-4.7 6.2s-4.7-2.1-4.7-6.2v-4.6c0-4 1.6-6.1 4.7-6.1 3 0 4.7 2 4.7 6v4.7z" class="fatec-a"/>
@@ -38,8 +43,8 @@ export default {
       </g>
     </svg>
 
-    const className = context.props.schema ? 'logo ' + context.props.schema : 'logo'
-    return context.props.href ? <a href={context.props.href} class={className}>{svg}</a> : <span class={className}>{svg}</span>
+    const className = this.schema ? 'logo ' + this.schema : 'logo'
+    return this.href ? <a href={this.href} onClick={this.navigate} class={className}>{svg}</a> : <span class={className}>{svg}</span>
   }
 }
 </script>
@@ -58,6 +63,11 @@ export default {
     fill: #43545c
   .braces
     fill: #ad0f0a
+  &[href]:hover
+    .dev
+      fill: lighten(#f00, 25%)
+    .day
+      fill: lighten(#43545c, 10%)
 
 .logo.light
   .fatec, .year

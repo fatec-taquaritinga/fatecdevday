@@ -17,11 +17,13 @@ module.exports = {
       { rel: 'icon', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/manifest.json' },
       { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#708e99' },
-      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Baloo+Bhai|Raleway:400,700|Material+Icons' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }
+    ],
+    script: [
+      { src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAkzlHuZCCu7WwWPh4G_zrzHyEOHX7plWs&extension=.js' }
     ]
   },
-  loading: { color: '#708e99' },
+  loading: { color: '#ad0f0a' },
   build: {
     extend (config, ctx) {
       if (ctx.dev && ctx.isClient) {

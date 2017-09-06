@@ -1,12 +1,10 @@
 <script>
-import Logo from '~/components/Logo'
-import Countdown from '~/components/Countdown'
-
 export default {
-  name: 'Index',
+  name: 'Principal',
   components: {
-    Logo,
-    Countdown
+    Logo: () => import('~/components/Logo'),
+    Countdown: () => import('~/components/Countdown'),
+    EventSummary: () => import('~/components/Summary')
   },
   data () {
     return {
@@ -84,8 +82,15 @@ export default {
 
       <countdown :target="state.date.full" :visible="state.timelapse.willHappen"/>
 
-      <div class="action-button inverse" v-if="!state.places.soldOut">
-        <a :href="state.href" target="_blank" class="button primary transparent">Inscreva-se<span class="hidden-on-small"> agora</span>!</a>
+      <div class="action-button inverse" v-if="state.timelapse.willHappen">
+        <div class="buttons">
+          <nuxt-link to="/sobre" class="button transparent">Saiba mais</nuxt-link>
+
+          <a :href="state.href" target="_blank" class="button primary transparent">
+            Inscreva-se<span class="hidden-on-small"> agora</span>!
+          </a>
+        </div>
+
         <p>* Vagas limitadas: apenas {{ state.places.total }} lugares disponíveis!</p>
       </div>
 
@@ -94,11 +99,53 @@ export default {
         <nuxt-link to="agenda" class="button primary transparent">Ver agenda</nuxt-link>
       </div>
     </div>
+
+    <event-summary />
   </main>
 </template>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import '../stylus/variables'
+
+.container
+  color: $text-color-inverse-primary
+  z-index: 2
+
+h1
+  font-size: 1.25em
+  margin: 0 0 1.5em
+  width: 75%
+  max-width: 22em
+
+h2
+  display: inline-block
+  background: $color-secondary-100
+  color: $text-color-primary
+  font-size: calc(.675em + 1vw)
+  padding: .25em .825em .175em
+  font-family: $font-secondary
+  font-weight: 400
+  letter-spacing: 3px
+  box-shadow: 0 20px 120px alpha(#000, 25%)
+  text-shadow: none
+  @media (min-width: $breakpoint-desktop)
+    font-size: 1.25em
+
+p a
+  color: $color-primary-100
+
+.action-button
+  margin-top: 3em
+  font-size: .875em
+  @media (min-width: $breakpoint-tablet)
+    font-size: 1em
+  .button
+    font-size: 1.25em
+    white-space: nowrap
+  p
+    font-size: .875em
+    color: $text-color-inverse-secondary
+    margin: 1.5em 0 0
 
 .slider, .slider .slide, .slider::after
   content: ''
@@ -148,37 +195,4 @@ export default {
 .slider-enter-active
   transition: transform 10s linear
   z-index: 1
-
-#index
-  position: relative
-  .container
-    position: relative
-    min-height: 100vh
-    color: $text-color-inverse-primary
-    display: flex
-    flex-flow: column
-    justify-content: center
-    align-items: center
-    text-align: center
-    z-index: 3
-  h1
-    font-size: 1.25em
-    margin: 0 0 1.5em
-    width: 75%
-    max-width: 22em
-  h2
-    display: inline-block
-    background: $color-secondary-100
-    color: $text-color-primary
-    font-size: calc(.675em + 1vw)
-    padding: .25em .825em .175em
-    font-family: $font-secondary
-    font-weight: 400
-    letter-spacing: 3px
-    box-shadow: 0 20px 120px alpha(#000, 25%)
-    text-shadow: none
-    @media (min-width: $breakpoint-desktop)
-      font-size: 1.25em
-  p a
-    color: $color-primary-100
 </style>
