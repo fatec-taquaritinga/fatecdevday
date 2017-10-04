@@ -1,4 +1,5 @@
 import Vuex from 'vuex'
+import speakers from './speakers'
 
 const start = new Date('2017-11-11T07:30:00-02:00')
 const now = new Date()
@@ -67,27 +68,7 @@ const store = () => new Vuex.Store({
       {},
       {}
     ],
-    speakers: [
-      {
-        id: 1,
-        avatar: require('~/assets/faces/sergio.jpg'),
-        name: 'Sérgio Oliveira'
-        // bio: 'Membro da comunidade Python brasileira, é programador e empreendedor com anos de experiência em programação Web e gestão de equipes de TI. Já trabalhou para a IBM, para o Programa Interlegis do Senado Federal e no projeto do Novo Portal do Software Público. É co-fundador da Associação Python Brasil e atualmente é CTO da Crave Food Services.'
-      },
-
-      {
-        id: 2,
-        avatar: require('~/assets/faces/guilherme.jpg'),
-        name: 'Guilherme Berghauser'
-      },
-
-      {
-        id: 3,
-        avatar: require('~/assets/faces/cleber.jpg'),
-        name: 'Cleber Campomori'
-        // bio: 'Líder de conteúdo e inovação no TreinaWeb, autor de cursos nas trilhas .NET, Xamarin, Java, Swift, TypeScript, etc. Docente de pós-graduação em Projeto e Desenvolvimento de Aplicações Web pela UNIFATEA. Graduado em Bancos de Dados pela Fatec e pós-graduado no curso onde é professor atualmente. Certificado MCSD pelos exames 70-480, 70-486 e 70-487. Já atuou em projetos de grandes empresas e organizações como Claro, TIM, Vivo, Multiplus, Itaú e Johnson&Johnson e INPE.'
-      }
-    ]
+    speakers
   }
 })
 

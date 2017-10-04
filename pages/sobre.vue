@@ -55,6 +55,23 @@ export default {
           <strong>Live Coding Sessions</strong> (40 lugares), com duas sessões de acompanhamento ao vivo da construção de aplicativos móveis.
         </p>
       </div>
+
+      <div class="action-buttons">
+        <div class="buttons">
+          <nuxt-link to="/convidados" class="button">Quem
+            <span v-if="state.timelapse.willHappen">vai palestrar</span>
+            <span v-if="state.timelapse.isToday">está palestrando</span>
+            <span v-if="state.timelapse.hasPassed">palestrou</span>?</nuxt-link>
+          <nuxt-link to="/local" class="button">Onde
+            <span v-if="state.timelapse.willHappen">será</span>
+            <span v-if="state.timelapse.isToday">está sendo</span>
+            <span v-if="state.timelapse.hasPassed">foi</span>?</nuxt-link>
+
+          <a :href="state.href" target="_blank" class="button primary">
+            Inscreva-se<span class="hidden-on-small"> agora</span>!
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -64,7 +81,7 @@ export default {
 
 .page
   position: relative
-  background: #fff
+  background: $color-background-primary
   .logo
     display: inline-block
     width: 90%

@@ -14,7 +14,7 @@
     "deploy": "surge \".\\dist\""
   },
   "dependencies": {
-    "nuxt": "^1.0.0-rc8"
+    "nuxt": "^1.0.0-rc11"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -28,6 +28,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "surge": "^0.19.0"
+    "surge": "^0.19.0",
+    "vue-markdown": "^2.2.4"
   }
 }

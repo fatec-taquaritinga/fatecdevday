@@ -28,36 +28,35 @@ body
 img, svg
   max-width: 100%
 
-h2, h3, h4
+h2, h3, h4, h5, h6
   font-family: $font-secondary
   font-size: 2.5em
   margin: 0
-
-h2.separator
-  position: relative
-  display: inline-block
-  margin-bottom: 10px
-  &::before
-    position: absolute
-    bottom: -3px
-    display: block
-    content: ''
-    width: 80%
-    margin-left: 10%
-    height: 5px
-    background: $color-primary
-  &::after
-    display: block
-    content: ''
-    width: 100%
-    height: 3px
-    background: $color-primary-900
-    @media (min-width: $breakpoint-tablet)
-      width: 150%
-      margin-left: -25%
+  &.separator
+    position: relative
+    display: inline-block
+    margin-bottom: 10px
+    &::before
+      position: absolute
+      bottom: -3px
+      display: block
+      content: ''
+      width: 80%
+      margin-left: 10%
+      height: 5px
+      background: $color-primary
+    &::after
+      display: block
+      content: ''
+      width: 100%
+      height: 3px
+      background: $color-primary-900
+      @media (min-width: $breakpoint-tablet)
+        width: 150%
+        margin-left: -25%
 
 h3
-  font-size: 2.25em
+  font-size: 1.75em
 
 h4
   color: $text-color-secondary
@@ -75,7 +74,7 @@ a
   transition: color .25s ease-in-out, background .25s ease-in-out, box-shadow .25s ease-in-out, text-shadow .25s ease-in-out
   outline: 0
 
-p, h1, h2, h3, h4
+p, h1, h2, h3, h4, h5, h6
   a
     color: $color-secondary
     line-height: 1.25
@@ -141,10 +140,24 @@ button, .button
     object-fit: cover
 
 .buttons
-  display: flex
+  display: inline-flex
   margin: 0 -.25em
   .button
     margin: 0 .25em
+
+.action-buttons
+  text-align: center
+  margin: 4em 0 2em
+  font-size: .875em
+  @media (min-width: $breakpoint-tablet)
+    font-size: 1em
+  .button
+    font-size: 1.25em
+    white-space: nowrap
+  p
+    font-size: .875em
+    color: $text-color-inverse-secondary
+    margin: 1.5em 0 0
 
 #app
   position: relative

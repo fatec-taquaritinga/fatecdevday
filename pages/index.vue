@@ -82,7 +82,7 @@ export default {
 
       <countdown :target="state.date.full" :visible="state.timelapse.willHappen"/>
 
-      <div class="action-button inverse" v-if="state.timelapse.willHappen">
+      <div class="action-buttons inverse" v-if="state.timelapse.willHappen">
         <div class="buttons">
           <nuxt-link to="/sobre" class="button transparent">Saiba mais</nuxt-link>
 
@@ -94,7 +94,7 @@ export default {
         <p>* Vagas limitadas: apenas {{ state.places.total }} lugares disponíveis!</p>
       </div>
 
-      <div class="action-button inverse" v-if="state.timelapse.isToday">
+      <div class="action-buttons inverse" v-if="state.timelapse.isToday">
         <p>É hoje! Está participando conosco?<br>Compartilhe o que estiver rolando com a <i>hashtag</i>: <a href="https://www.facebook.com/hashtag/fatecdevday" target="_blank">#fatecdevday</a></p><br>
         <nuxt-link to="agenda" class="button primary transparent">Ver agenda</nuxt-link>
       </div>
@@ -134,18 +134,8 @@ h2
 p a
   color: $color-primary-100
 
-.action-button
-  margin-top: 3em
-  font-size: .875em
-  @media (min-width: $breakpoint-tablet)
-    font-size: 1em
-  .button
-    font-size: 1.25em
-    white-space: nowrap
-  p
-    font-size: .875em
-    color: $text-color-inverse-secondary
-    margin: 1.5em 0 0
+.action-buttons
+  margin: 3em 0 0
 
 .slider, .slider .slide, .slider::after
   content: ''

@@ -21,27 +21,6 @@ export default {
       </div>
     </nuxt-link>
 
-    <nuxt-link tag="div" class="summary-item" tabindex="0" to="local">
-      <picture>
-        <i class="material-icons circle">location_on</i>
-      </picture>
-      <div class="info">
-        <h3>Taquaritinga-SP</h3>
-        <span>Fatec Taquaritinga</span>
-      </div>
-    </nuxt-link>
-
-    <nuxt-link tag="div" class="summary-item" tabindex="0" to="palestrantes">
-      <picture>
-        <i class="material-icons circle">mic</i>
-      </picture>
-      <div class="info">
-        <h3>{{ state.talks.length + state.liveCodings.length }} palestrantes</h3>
-        <span>{{ state.talks.length }} <em>Talk Sessions</em></span>
-        <span>{{ state.liveCodings.length }} <em>Live Coding Sessions</em></span>
-      </div>
-    </nuxt-link>
-
     <nuxt-link tag="div" class="summary-item" tabindex="0" to="sobre">
       <picture>
         <i class="material-icons circle">airline_seat_recline_extra</i>
@@ -51,6 +30,27 @@ export default {
         <span v-if="state.places.soldOut">Vagas esgotadas!</span>
         <span v-else>{{ state.places.talks }} nas <em>Talk Sessions</em></span>
         <span>{{ state.places.liveCodings }} nas <em>Live Coding Sessions</em></span>
+      </div>
+    </nuxt-link>
+
+    <nuxt-link tag="div" class="summary-item" tabindex="0" to="convidados">
+      <picture>
+        <i class="material-icons circle">mic</i>
+      </picture>
+      <div class="info">
+        <h3>{{ state.speakers.talks.length + state.speakers.liveCodings.length }} convidados</h3>
+        <span>{{ state.talks.length }} <em>Talk Sessions</em></span>
+        <span>{{ state.liveCodings.length }} <em>Live Coding Sessions</em></span>
+      </div>
+    </nuxt-link>
+
+    <nuxt-link tag="div" class="summary-item" tabindex="0" to="local">
+      <picture>
+        <i class="material-icons circle">location_on</i>
+      </picture>
+      <div class="info">
+        <h3>Taquaritinga-SP</h3>
+        <span>Fatec Taquaritinga</span>
       </div>
     </nuxt-link>
   </aside>
