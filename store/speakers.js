@@ -23,23 +23,25 @@ const talks = [
     }
   },
 
-  {
-    id: 3,
-    avatar: require('~/assets/faces/cleber.jpg'),
-    name: 'Cleber Campomori',
-    bio: 'Líder de conteúdo e inovação no TreinaWeb, autor de diversos cursos nas trilhas .NET, Xamarin, Java, Swift, TypeScript, etc. Docente de pós-graduação em Projeto e Desenvolvimento de Aplicações Web pela UNIFATEA. Graduado em Bancos de Dados pela Fatec e pós-graduado no curso onde é professor atualmente. Também é Microsoft Certified Solutions Developer (MCSD) nos exames 70-480, 70-486 e 70-487. Já atuou em projetos de grandes organizações como Claro, TIM, Vivo, Multiplus, Itaú, Johnson&Johnson e INPE.',
-    job: {
-      title: 'Líder de Conteúdo e Inovação',
-      company: 'TreinaWeb',
-      url: 'https://www.treinaweb.com.br/'
-    }
-  },
+  false,
+
+  // {
+  //   id: 3,
+  //   avatar: require('~/assets/faces/cleber.jpg'),
+  //   name: 'Cleber Campomori',
+  //   bio: 'Líder de conteúdo e inovação no TreinaWeb, autor de diversos cursos nas trilhas .NET, Xamarin, Java, Swift, TypeScript, etc. Docente de pós-graduação em Projeto e Desenvolvimento de Aplicações Web pela UNIFATEA. Graduado em Bancos de Dados pela Fatec e pós-graduado no curso onde é professor atualmente. Também é Microsoft Certified Solutions Developer (MCSD) nos exames 70-480, 70-486 e 70-487. Já atuou em projetos de grandes organizações como Claro, TIM, Vivo, Multiplus, Itaú, Johnson&Johnson e INPE.',
+  //   job: {
+  //     title: 'Líder de Conteúdo e Inovação',
+  //     company: 'TreinaWeb',
+  //     url: 'https://www.treinaweb.com.br/'
+  //   }
+  // },
 
   {
     id: 4,
     avatar: require('~/assets/faces/pokemao.jpg'),
     name: 'Rodrigo Cardoso',
-    bio: 'Mais conhecido como **pokemao**, é Community Manager do iMasters. Possui MBA em Engenharia de Softwares Orientado para Serviços pela Metrocamp, de Campinas/SP. Bacharel em Matemática Aplicada e Computacional pela Universidade Federal Rural do Rio de Janeiro. Programador PHP desde 2002, é evangelista do _meetup_ PHPSP. Além de se dedicar à produção de artigos e vídeos para ensino do PHP, desenvolve sistemas diversos, desde batalhas Pokémon em mIRC a robôs automatizadores de tarefas.',
+    bio: 'Mais conhecido como **Pokemão**, é Community Manager do iMasters. Possui MBA em Engenharia de Softwares Orientado para Serviços pela Metrocamp, de Campinas/SP. Bacharel em Matemática Aplicada e Computacional pela Universidade Federal Rural do Rio de Janeiro. Programador PHP desde 2002, é evangelista do _meetup_ PHPSP. Além de se dedicar à produção de artigos e vídeos para ensino do PHP, desenvolve sistemas diversos, desde batalhas Pokémon em mIRC a robôs automatizadores de tarefas.',
     job: {
       title: 'Community Manager',
       company: 'iMasters',
@@ -112,11 +114,7 @@ const liveCodings = [
   }
 ]
 
-const randomSort = () => Math.random() - 0.5
-
-const speakers = {
-  talks: talks.sort(randomSort),
-  liveCodings: liveCodings.sort(randomSort)
+export default {
+  talks,
+  liveCodings
 }
-
-export default speakers

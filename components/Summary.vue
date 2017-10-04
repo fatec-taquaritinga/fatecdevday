@@ -39,8 +39,8 @@ export default {
       </picture>
       <div class="info">
         <h3>{{ state.speakers.talks.length + state.speakers.liveCodings.length }} convidados</h3>
-        <span>{{ state.talks.length }} <em>Talk Sessions</em></span>
-        <span>{{ state.liveCodings.length }} <em>Live Coding Sessions</em></span>
+        <span>{{ state.activities.talks.length }} <em>Talk Sessions</em></span>
+        <span>{{ state.activities.liveCodings.length }} <em>Live Coding Sessions</em></span>
       </div>
     </nuxt-link>
 
