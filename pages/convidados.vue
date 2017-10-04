@@ -8,6 +8,14 @@ export default {
   computed: {
     state () {
       return this.$store.state
+    },
+
+    talks () {
+      return this.$store.state.speakers.talks.filter(i => i !== false).sort(() => Math.random() - 0.5)
+    },
+
+    liveCodings () {
+      return this.$store.state.speakers.liveCodings.filter(i => i !== false).sort(() => Math.random() - 0.5)
     }
   }
 }
@@ -25,7 +33,7 @@ export default {
       <div class="talk-sessions">
         <h3 class="separator">Talk Sessions</h3>
         <div class="cards">
-          <div class="card" v-for="person of state.speakers.talks" v-if="person" :key="person.id">
+          <div class="card" v-for="person of talks" :key="person.id">
             <picture v-if="person.avatar">
               <img :src="person.avatar" :alt="person.name">
             </picture>
@@ -47,7 +55,7 @@ export default {
       <div class="live-coding-sessions">
         <h3 class="separator">Live Coding Sessions</h3>
         <div class="cards">
-          <div class="card" v-for="person of state.speakers.liveCodings" v-if="person" :key="person.id">
+          <div class="card" v-for="person of liveCodings" :key="person.id">
             <picture v-if="person.avatar">
               <img :src="person.avatar" :alt="person.name">
             </picture>
@@ -68,7 +76,7 @@ export default {
 
       <div class="action-buttons">
         <div class="buttons">
-          <nuxt-link to="/sobre" class="button">Sobre o evento</nuxt-link>
+          <nuxt-link to="/programacao" class="button">Quais os temas?</nuxt-link>
           <nuxt-link to="/local" class="button">Onde
             <span v-if="state.timelapse.willHappen">será</span>
             <span v-if="state.timelapse.isToday">está sendo</span>

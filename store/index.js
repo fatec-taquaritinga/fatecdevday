@@ -1,5 +1,7 @@
 import Vuex from 'vuex'
+
 import speakers from './speakers'
+import activities from './activities'
 
 const start = new Date('2017-11-11T07:30:00-02:00')
 const now = new Date()
@@ -56,18 +58,7 @@ const store = () => new Vuex.Store({
       'Inteligência Artificial',
       'Internet of Things'
     ],
-    talks: [
-      {},
-      {},
-      {},
-      {},
-      {},
-      {}
-    ],
-    liveCodings: [
-      {},
-      {}
-    ],
+    activities,
     speakers
   }
 })

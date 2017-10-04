@@ -14,7 +14,7 @@ export default {
     <nuxt-link to="/" class="menu-item"><i class="material-icons">home</i><span>Principal</span></nuxt-link>
     <nuxt-link to="/sobre" class="menu-item"><i class="material-icons">info</i><span>Sobre</span></nuxt-link>
     <nuxt-link to="/convidados" class="menu-item"><i class="material-icons">mic</i><span>Convidados</span></nuxt-link>
-    <!-- <nuxt-link to="/agenda" class="menu-item"><i class="material-icons">access_time</i><span>Agenda</span></nuxt-link> -->
+    <nuxt-link to="/programacao" class="menu-item"><i class="material-icons">access_time</i><span>Programação</span></nuxt-link>
     <nuxt-link to="/local" class="menu-item"><i class="material-icons">location_on</i><span>Local</span></nuxt-link>
     <a :href="state.href" target="_blank" class="menu-item primary"><i class="material-icons">playlist_add_check</i><span>Participar</span></a>
   </nav>
