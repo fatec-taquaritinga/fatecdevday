@@ -11,11 +11,11 @@ export default {
     },
 
     talks () {
-      return this.$store.state.speakers.talks.filter(i => i !== false).sort(() => Math.random() - 0.5)
+      return this.$store.state.speakers.talks.filter(i => i !== false)
     },
 
     liveCodings () {
-      return this.$store.state.speakers.liveCodings.filter(i => i !== false).sort(() => Math.random() - 0.5)
+      return this.$store.state.speakers.liveCodings.filter(i => i !== false)
     }
   }
 }

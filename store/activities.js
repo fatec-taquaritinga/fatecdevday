@@ -25,7 +25,13 @@ const talks = [
     speaker: speakers.talks.find(speaker => speaker.name === 'Rodrigo Cardoso')
   },
 
-  false,
+  {
+    id: 4,
+    time: null,
+    title: 'Sua Aplicação => (SwarmMode)',
+    description: 'Como "containerizar" sua solução de microserviços com Docker e executá-la de forma replicada em modo cluster com o Docker Swarm. Nesta palestra, os participantes podem ver dos conceitos importantes a serem considerados na construção dos Dockerfile até a construção e utilização dos _docker-compose.yml_ de sua _stack_, por fim executando sua solução em seu computador e na AWS.',
+    speaker: speakers.talks.find(speaker => speaker.name === 'Wanderley Panosso')
+  },
 
   false,
 
@@ -51,11 +57,9 @@ const liveCodings = [
   }
 ]
 
-const randomSort = () => Math.random() - 0.5
+const alphabeticalSort = (a, b) => a.title && a.title.localeCompare(b.title)
 
-const activities = {
-  talks: talks.sort(randomSort),
-  liveCodings: liveCodings.sort(randomSort)
+export default {
+  talks: talks.sort(alphabeticalSort),
+  liveCodings: liveCodings.sort(alphabeticalSort)
 }
-
-export default activities

@@ -53,7 +53,7 @@ const talks = [
     id: 5,
     avatar: require('~/assets/faces/wanderley.jpg'),
     name: 'Wanderley Panosso',
-    bio: 'Mais de 5 anos de experiência em desenvolvimento de _software_, adepto de tecnologias JavaScript como Node, Angular e React, especialista no desenvolvimento de SPA\'s (_Single Page Applications_) e arquiteto de soluções distribuídas utilizando Docker. Acredita que a Internet das Coisas é a propulsora para um mundo mais sustentável e flexível. Atualmente é o líder de engenharia de _software_ na Beblue, _startup_ no mercado de aquisição e fidelização de clientes para o varejo através do modelo de _cashback_ em tempo real.',
+    bio: 'Líder de engenharia de _software_ e infraestrutura na Beblue, _startup_ no mercado de aquisição e fidelização de clientes para o varejo através do modelo de _cashback_ em tempo real. Adepto de tecnologias JavaScript como Node, Angular e React, arquiteto de soluções distribuídas utilizando Docker e Swarm. Acredita que a Internet das Coisas é a propulsora para um mundo mais sustentável e flexível, e que o empreendedorismo é o veículo capaz de acelerar as mudanças necessárias de forma inimaginável.',
     job: {
       title: 'Head of Engineering',
       company: 'Beblue',
@@ -114,7 +114,9 @@ const liveCodings = [
   }
 ]
 
+const alphabeticalSort = (a, b) => a.name && a.name.localeCompare(b.name)
+
 export default {
-  talks,
-  liveCodings
+  talks: talks.sort(alphabeticalSort),
+  liveCodings: liveCodings.sort(alphabeticalSort)
 }
