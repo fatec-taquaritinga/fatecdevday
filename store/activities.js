@@ -33,7 +33,14 @@ const talks = [
     speaker: speakers.talks.find(speaker => speaker.name === 'Wanderley Panosso')
   },
 
-  false,
+  {
+    id: 5,
+    time: null,
+    title: 'Do Java ao Node',
+    subtitle: 'Uma Jornada Inesperada',
+    description: 'Atualmente, inúmeras linguagens de programação estão à disposição, porém nem sempre é fácil a mudança de hábitos dentro de uma organização ou equipe. Nesta palestra, os participantes podem conhecer sobre a adoção de uma nova plataforma (no caso, Node) para reescrever parte de um grande sistema, os problemas enfrentados, as vantagens e desvantagens da migração.',
+    speaker: speakers.talks.find(speaker => speaker.name === 'José Damiani')
+  },
 
   false
 ]

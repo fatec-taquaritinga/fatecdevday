@@ -23,19 +23,17 @@ const talks = [
     }
   },
 
-  false,
-
-  // {
-  //   id: 3,
-  //   avatar: require('~/assets/faces/cleber.jpg'),
-  //   name: 'Cleber Campomori',
-  //   bio: 'Líder de conteúdo e inovação no TreinaWeb, autor de diversos cursos nas trilhas .NET, Xamarin, Java, Swift, TypeScript, etc. Docente de pós-graduação em Projeto e Desenvolvimento de Aplicações Web pela UNIFATEA. Graduado em Bancos de Dados pela Fatec e pós-graduado no curso onde é professor atualmente. Também é Microsoft Certified Solutions Developer (MCSD) nos exames 70-480, 70-486 e 70-487. Já atuou em projetos de grandes organizações como Claro, TIM, Vivo, Multiplus, Itaú, Johnson&Johnson e INPE.',
-  //   job: {
-  //     title: 'Líder de Conteúdo e Inovação',
-  //     company: 'TreinaWeb',
-  //     url: 'https://www.treinaweb.com.br/'
-  //   }
-  // },
+  {
+    id: 3,
+    avatar: require('~/assets/faces/damiani.jpg'),
+    name: 'José Damiani',
+    bio: 'Ex-aluno da Fatec Taquaritinga, acumula mais de 10 anos de experiência em desenvolvimento de aplicações Web e para dispositivos móveis. Já utilizou diversas linguagens e plataformas, como Java, C#, Node, PHP, ASP, Go, Ruby e Phyton. Atuou como analista e desenvolvedor de _software_ em empresas nacionais e internacionais. Também já atuou como docente no ensino superior, na UNIARA. Atualmente, atua como líder técnico na S2IT, em projetos de grandes clientes como UOL, PagSeguro e Walmart.',
+    job: {
+      title: 'Tech Lead',
+      company: 'S2IT',
+      url: 'http://s2it.com.br/'
+    }
+  },
 
   {
     id: 4,
@@ -53,7 +51,7 @@ const talks = [
     id: 5,
     avatar: require('~/assets/faces/wanderley.jpg'),
     name: 'Wanderley Panosso',
-    bio: 'Líder de engenharia de _software_ e infraestrutura na Beblue, _startup_ no mercado de aquisição e fidelização de clientes para o varejo através do modelo de _cashback_ em tempo real. Adepto de tecnologias JavaScript como Node, Angular e React, arquiteto de soluções distribuídas utilizando Docker e Swarm. Acredita que a Internet das Coisas é a propulsora para um mundo mais sustentável e flexível, e que o empreendedorismo é o veículo capaz de acelerar as mudanças necessárias de forma inimaginável.',
+    bio: 'Ex-aluno da Fatec Taquaritinga, lidera engenharia de _software_ e infraestrutura na Beblue, _startup_ no mercado de aquisição e fidelização de clientes para o varejo através do modelo de _cashback_ em tempo real. Adepto de tecnologias JavaScript como Node, Angular e React, arquiteto de soluções distribuídas utilizando Docker e Swarm. Acredita que a Internet das Coisas é a propulsora para um mundo mais sustentável e flexível, e que o empreendedorismo é o veículo capaz de acelerar as mudanças necessárias de forma inimaginável.',
     job: {
       title: 'Head of Engineering',
       company: 'Beblue',

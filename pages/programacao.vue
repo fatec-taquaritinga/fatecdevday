@@ -44,7 +44,7 @@ export default {
 
             <div class="schedule-info">
               <h4 class="time" v-if="talk.time"><i class="material-icons">access_time</i> {{ talk.time }}</h4>
-              <h3 class="title">{{ talk.title }}</h3>
+              <h3 class="title">{{ talk.title }}<small v-if="talk.subtitle" class="subtitle">: {{ talk.subtitle }}</small></h3>
               <markdown class="description" v-if="talk.description" :source="talk.description" />
               <nuxt-link class="speaker" v-if="talk.speaker" to="/convidados"><i class="material-icons">mic</i> {{ typeof talk.speaker === 'string' ? talk.speaker : talk.speaker.name }}</nuxt-link>
             </div>
@@ -67,7 +67,7 @@ export default {
 
             <div class="schedule-info">
               <h4 class="time" v-if="talk.time"><i class="material-icons">access_time</i> {{ talk.time }}</h4>
-              <h3 class="title">{{ talk.title }}</h3>
+              <h3 class="title">{{ talk.title }}<small v-if="talk.subtitle" class="subtitle">: {{ talk.subtitle }}</small></h3>
               <markdown class="description" v-if="talk.description" :source="talk.description" />
               <nuxt-link class="speaker" v-if="talk.speaker" to="/convidados"><i class="material-icons">mic</i> {{ typeof talk.speaker === 'string' ? talk.speaker : talk.speaker.name }}</nuxt-link>
             </div>
