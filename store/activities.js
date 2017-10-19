@@ -42,17 +42,29 @@ const talks = [
     speaker: speakers.talks.find(speaker => speaker.name === 'José Damiani')
   },
 
-  false
+  {
+    id: 6,
+    time: null,
+    title: 'Implementando um Pick Up Line Generator com JavaScript',
+    description: 'Nesta palestra, os participantes podem ver a criação de um aplicativo _mobile_ gerador de "cantadas", usando puramente JavaScript! Desde a construção de uma API RESTful usando Node + Express, até a interface com React Native. Esta palestra tem foco prático, com a implementação dos dois lados (_frontend_ e _backend_) da aplicação móvel nativa usando tecnologias Web.',
+    speakers: [
+      speakers.talks.find(speaker => speaker.name === 'Henrique Zago'),
+      speakers.talks.find(speaker => speaker.name === 'Silvio Pereira')
+    ]
+  }
 ]
 
 const liveCodings = [
   {
     id: 1,
     time: null,
-    icon: 'android',
     title: 'Desenvolvimento de um Aplicativo Android',
     description: 'Durante esta sessão de codificação ao vivo, os participantes podem acompanhar e interagir com os convidados enquanto um aplicativo completo para Android é criado, desde as decisões iniciais para a criação do projeto até o aplicativo pronto para executar.',
-    speaker: 'Hugo Rossi, Rafael Peratello e Ulisses Curti'
+    speakers: [
+      speakers.liveCodings.find(speaker => speaker.name === 'Hugo Rossi'),
+      speakers.liveCodings.find(speaker => speaker.name === 'Rafael Peratello'),
+      speakers.liveCodings.find(speaker => speaker.name === 'Ulisses Curti')
+    ]
   },
 
   {

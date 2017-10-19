@@ -37,9 +37,14 @@ export default {
 
         <ol class="schedule">
           <li v-for="talk of talks" :key="talk.id">
-            <div class="timeline">
-              <i v-if="talk.icon" class="material-icons circle">{{ talk.icon }}</i>
-              <picture v-if="talk.speaker && talk.speaker.avatar" class="circle"><img :src="talk.speaker.avatar" :alt="talk.speaker.name"></picture>
+            <div class="timeline" v-if="talk.icon">
+              <i v-show="talk.icon" class="material-icons circle">{{ talk.icon }}</i>
+            </div>
+            <div class="timeline" v-else-if="talk.speaker && talk.speaker.avatar">
+              <picture class="circle"><img :src="talk.speaker.avatar" :alt="talk.speaker.name"></picture>
+            </div>
+            <div class="timeline stack" v-else-if="talk.speakers">
+              <picture class="circle" v-for="speaker of talk.speakers" :key="speaker.id"><img :src="speaker.avatar" :alt="speaker.name"></picture>
             </div>
 
             <div class="schedule-info">
@@ -47,6 +52,12 @@ export default {
               <h3 class="title">{{ talk.title }}<small v-if="talk.subtitle" class="subtitle">: {{ talk.subtitle }}</small></h3>
               <markdown class="description" v-if="talk.description" :source="talk.description" />
               <nuxt-link class="speaker" v-if="talk.speaker" to="/convidados"><i class="material-icons">mic</i> {{ typeof talk.speaker === 'string' ? talk.speaker : talk.speaker.name }}</nuxt-link>
+              <nuxt-link class="speaker" v-else-if="talk.speakers" to="/convidados"><i class="material-icons">mic</i>
+                <span v-for="(speaker, index) of talk.speakers" :key="speaker.id">
+                  {{ speaker.name }}<span v-if="index < talk.speakers.length - 2">, </span>
+                  <span v-else-if="index === talk.speakers.length - 2"> e </span>
+                </span>
+              </nuxt-link>
             </div>
           </li>
         </ol>
@@ -57,12 +68,14 @@ export default {
 
         <ol class="schedule">
           <li v-for="talk of liveCodings" :key="talk.id">
-            <div class="timeline" v-show="talk.icon">
+            <div class="timeline" v-if="talk.icon">
               <i v-show="talk.icon" class="material-icons circle">{{ talk.icon }}</i>
             </div>
-
-            <div class="timeline" v-show="talk.speaker && talk.speaker.avatar">
+            <div class="timeline" v-else-if="talk.speaker && talk.speaker.avatar">
               <picture class="circle"><img :src="talk.speaker.avatar" :alt="talk.speaker.name"></picture>
+            </div>
+            <div class="timeline stack" v-else-if="talk.speakers">
+              <picture class="circle" v-for="speaker of talk.speakers" :key="speaker.id"><img :src="speaker.avatar" :alt="speaker.name"></picture>
             </div>
 
             <div class="schedule-info">
@@ -70,6 +83,12 @@ export default {
               <h3 class="title">{{ talk.title }}<small v-if="talk.subtitle" class="subtitle">: {{ talk.subtitle }}</small></h3>
               <markdown class="description" v-if="talk.description" :source="talk.description" />
               <nuxt-link class="speaker" v-if="talk.speaker" to="/convidados"><i class="material-icons">mic</i> {{ typeof talk.speaker === 'string' ? talk.speaker : talk.speaker.name }}</nuxt-link>
+              <nuxt-link class="speaker" v-else-if="talk.speakers" to="/convidados"><i class="material-icons">mic</i>
+                <span v-for="(speaker, index) of talk.speakers" :key="speaker.id">
+                  {{ speaker.name }}<span v-if="index < talk.speakers.length - 2">, </span>
+                  <span v-else-if="index === talk.speakers.length - 2"> e </span>
+                </span>
+              </nuxt-link>
             </div>
           </li>
         </ol>
@@ -123,6 +142,13 @@ export default {
         border-color: $color-primary-900
         color: $text-color-inverse-primary
         font-size: 2.5em
+      &.stack .circle
+        margin-bottom: -8px
+        position: relative
+        &:nth-child(2)
+          z-index: 1
+        &:nth-child(3)
+          z-index: 2
     .schedule-info
       text-align: left
       padding-left: 2em
@@ -155,9 +181,13 @@ export default {
           margin: 0 1em 1.25em 0
           .circle
             font-size: 1.5em
+            border-width: 1px
+          &.stack .circle
+            margin-bottom: -.25em
         .schedule-info
           padding-left: 0
           .title
+            margin-top: 0
             font-size: 1.375em
             line-height: 1
             word-wrap: break-word
