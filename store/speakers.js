@@ -63,7 +63,7 @@ const talks = [
     id: 6,
     avatar: require('~/assets/faces/henrique.jpg'),
     name: 'Henrique Zago',
-    bio: 'Engenheiro de _software_ e desenvolvedor _frontend_ diretamente da Russia Brasileira formado em Sistemas de Informação. Desenvolveu aplicações web e mobile para pequenas e grandes empresas, como Itaipu Binacional Hidrelétrica, Marinha do Brasil e Força Aérea Brasileira. Mais de 5 anos de experiência profissional com Javascript, já se aventurou com vários frameworks JS e se encontra num relacionamento duradouro com React e Python.',
+    bio: 'Engenheiro de _software_ e desenvolvedor _frontend_, trazido diretamente da Rússia Brasileira (Paraná), formado em Sistemas de Informação. Já atuou desenvolvendo aplicações _Web_ e para dispositivos móveis, para pequenas e grandes empresas, como Itaipu Binacional Hidrelétrica, Marinha do Brasil e Força Aérea Brasileira. Com mais de 5 anos de experiência profissional no ecossistema JavaScript, já se aventurou com diversos _frameworks_ e atualmente se encontra num relacionamento duradouro com React e Python.',
     job: {
       title: 'Frontend Developer',
       company: 'Crave Food Services',
@@ -75,7 +75,7 @@ const talks = [
     id: 7,
     avatar: require('~/assets/faces/silvio.jpg'),
     name: 'Silvio Pereira',
-    bio: 'Silvio é um entusiasta da tecnologia que gosta de aprender sobre todas as áreas, desde a codificação até “rocket science”. Trabalhou em várias empresas tendo sua última experiência na Senior Sistemas. Tem experiência full-stack utilizando linguagens e frameworks como Java, PL/SQL, Android nativo, Javascript, Groovy, Ionic dentre outros, em projetos para empresas como USP, Vale, e alguns dos maiores players do mercado de logística brasileiro. Atualmente atua como Mobile Developer na Crave Food Services e está focado em contribuir cada vez mais com a comunidade de desenvolvimento de softwares.',
+    bio: 'Entusiasta de tecnologia que gosta de aprender sobre todas as áreas, desde a codificação até _"rocket science"_. Tem experiência _full-stack_ utilizando linguagens e _frameworks_ como Java, PL/SQL, Android nativo, JavaScript, Groovy, Ionic, dentre outros, em projetos para empresas como USP, Vale e alguns dos maiores _players_ do mercado de logística brasileiro. Atualmente _mobile developer_ na Crave Food Services, está focado em contribuir cada vez mais com a comunidade de desenvolvimento de _softwares_.',
     job: {
       title: 'Android Developer',
       company: 'Crave Food Services',
