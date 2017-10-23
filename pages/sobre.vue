@@ -3,7 +3,8 @@ export default {
   name: 'Sobre',
   components: {
     Logo: () => import('~/components/Logo'),
-    MainMenu: () => import('~/components/Menu')
+    MainMenu: () => import('~/components/Menu'),
+    Partners: () => import('~/components/Partners')
   },
   computed: {
     state () {
@@ -55,6 +56,8 @@ export default {
           <strong>Live Coding Sessions</strong> (40 lugares), com duas sessões de acompanhamento ao vivo da construção de aplicativos móveis.
         </p>
       </div>
+
+      <partners :partners="state.partners" :team="state.team"/>
 
       <div class="action-buttons">
         <div class="buttons">

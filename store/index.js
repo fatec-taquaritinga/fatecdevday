@@ -2,6 +2,7 @@ import Vuex from 'vuex'
 
 import speakers from './speakers'
 import activities from './activities'
+import partners from './partners'
 
 const start = new Date('2017-11-11T07:30:00-02:00')
 const now = new Date()
@@ -44,12 +45,13 @@ const store = () => new Vuex.Store({
       soldOut: isToday || now - start > 0 || now - start > -259200000
     },
     team: [
-      'Jederson Zuchi',
       'Erick Petrucelli',
       'Fabio Takeda',
-      'Patricia Lourençano',
       'Felipe Espírito Santo',
-      'Gustavo Del Vechio'
+      'Gustavo Del Vechio',
+      'Jederson Zuchi',
+      'Luciana Ferrarezi Muzatti',
+      'Patricia Lourençano'
     ],
     topics: [
       'Desenvolvimento Web e Mobile',
@@ -59,7 +61,8 @@ const store = () => new Vuex.Store({
       'Internet of Things'
     ],
     activities,
-    speakers
+    speakers,
+    partners
   }
 })
 
