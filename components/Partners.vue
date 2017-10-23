@@ -106,17 +106,21 @@ article
     display: block
   a
     margin: 0 5px
-    padding: 1rem 1.75rem
     border-radius: 2px
+    padding: 1rem
+    @media(min-width: $breakpoint-tablet)
+      padding: 1rem 1.75rem
     &:hover, &:focus
       background: @color
       img
         filter: invert() grayscale(100%) brightness(300%)
   img
     height: 2em
+    object-fit: scale-down
 
-.sponsors
-  display: flex
+@media(min-width: $breakpoint-tablet)
+  .sponsors
+    display: flex
 
 .gold
   color: $color-gold
