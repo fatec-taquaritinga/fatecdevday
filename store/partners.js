@@ -14,6 +14,13 @@ const sponsors = {
       logo: require('~/assets/partners/programmers.png'),
       name: 'Programmer\'s',
       url: 'http://www.programmers.com.br/'
+    },
+
+    {
+      id: 3,
+      logo: require('~/assets/partners/santander.png'),
+      name: 'Santander',
+      url: 'https://www.santander.com.br/'
     }
   ]
 }
