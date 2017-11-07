@@ -27,7 +27,6 @@ export default {
 
     <div class="container">
       <h2 class="separator">Convidados</h2>
-      <p class="important">Estamos acertando alguns detalhes técnicos. Em breve, mais informações serão acrescentadas!</p>
       <p>Palestrantes escolhidos por suas experiências profissionais e seus conhecimentos destacados nos temas respectivos. Lembre-se: este é um evento multi-linguagem, não focando em apenas um ecossistema de programação, mas em diferentes técnicas e tecnologias que estão emergindo ou ganhando maior destaque.</p>
 
       <div class="talk-sessions">

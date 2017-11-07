@@ -27,7 +27,6 @@ export default {
 
     <div class="container">
       <h2 class="separator">Programação</h2>
-      <p class="important">Estamos acertando alguns detalhes técnicos. O horário das atividades ainda será divulgado!</p>
       <p>Fique por dentro da programação deste dia e não perca as atividades de seu interesse.
         Vale lembrar que há 100 lugares nas <i>talk session</i>, com palestras distribuídas ao longo do dia, e 40 lugares nas <i>live coding session</i>, sendo uma sessão pela manhã e outra à tarde.
         Portanto, há vaga garantida para todos os participantes em uma das salas em atividades concomitantes, mas não há vaga reservada para troca de sala durante uma atividade em andamento.</p>
