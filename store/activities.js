@@ -39,7 +39,7 @@ const talks = [
     icon: 'local_dining',
     time: '11:30 - 13:30',
     title: 'Almoço',
-    description: 'O intervalo para almoço é livre, cada participante pode escolher onde fazer sua refeição. Ressalta-se que a Fatec Taquaritinga não dispõe de restaurante próprio, recomendando estabelecimentos da cidade para o almoço.'
+    description: 'O intervalo para almoço é livre, cada participante pode escolher onde fazer sua refeição. Não dispomos de restaurante próprio, mas [recomendados alguns estabelecimentos](/almoco) para o almoço.'
   },
 
   {
@@ -96,7 +96,7 @@ const talks = [
 const liveCodings = [
   {
     id: 1,
-    time: null,
+    time: '08:15 - 11:00',
     title: 'Desenvolvimento de um Aplicativo Android',
     description: 'Durante esta sessão de codificação ao vivo, os participantes podem acompanhar e interagir com os convidados enquanto um aplicativo completo para Android é criado, desde as decisões iniciais para a criação do projeto até o aplicativo pronto para executar.',
     speakers: [
@@ -108,7 +108,7 @@ const liveCodings = [
 
   {
     id: 2,
-    time: null,
+    time: '13:30 - 15:40 | 16:10 - 17:15',
     title: 'Desenvolvimento de um Aplicativo iOS',
     description: 'Durante esta sessão de codificação ao vivo, os participantes podem acompanhar e interagir com o convidado enquanto um aplicativo completo para iOS é criado, desde as decisões iniciais para a criação do projeto até o aplicativo pronto para executar.',
     speaker: speakers.liveCodings.find(speaker => speaker.name === 'Denis Oliveira')

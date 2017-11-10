@@ -1,4 +1,6 @@
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Programacao',
   components: {
@@ -6,6 +8,8 @@ export default {
     MainMenu: () => import('~/components/Menu')
   },
   computed: {
+    ...mapGetters([ 'willHappen', 'isToday', 'hasPassed', 'soldOut' ]),
+
     state () {
       return this.$store.state
     },
@@ -27,9 +31,9 @@ export default {
 
     <div class="container">
       <h2 class="separator">Programação</h2>
-      <p>Fique por dentro da programação deste dia e não perca as atividades de seu interesse.
-        Vale lembrar que há 100 lugares nas <i>talk session</i>, com palestras distribuídas ao longo do dia, e 40 lugares nas <i>live coding session</i>, sendo uma sessão pela manhã e outra à tarde.
-        Portanto, há vaga garantida para todos os participantes em uma das salas em atividades concomitantes, mas não há vaga reservada para troca de sala durante uma atividade em andamento.</p>
+      <p v-if="willHappen || isToday">Fique por dentro da programação deste dia e não perca as atividades de seu interesse.</p>
+      <p><span v-if="willHappen">Haverão</span><span v-else-if="isToday">Temos</span><span v-else-if="hasPassed">Houveram</span> {{ state.places.talks }} lugares nas <i>talk session</i>, com palestras distribuídas ao longo do dia, e {{ state.places.liveCodings }} lugares nas <i>live coding session</i>, cada sessão em um período.
+        <span v-if="!hasPassed">Portanto, há vaga garantida para todos os participantes em uma das salas, mas não há vaga reservada para troca de sala durante uma atividade em andamento.</span></p>
 
       <div class="talk-sessions">
         <h3 class="separator">Talk Sessions</h3>
@@ -96,12 +100,12 @@ export default {
       <div class="action-buttons">
         <div class="buttons">
           <nuxt-link to="/sobre" class="button">Sobre o evento</nuxt-link>
-          <nuxt-link to="/local" class="button">Onde
-            <span v-if="state.timelapse.willHappen">será</span>
-            <span v-if="state.timelapse.isToday">está sendo</span>
-            <span v-if="state.timelapse.hasPassed">foi</span>?</nuxt-link>
 
-          <a :href="state.href" target="_blank" class="button primary">
+          <nuxt-link v-if="willHappen" to="/local" class="button">Onde será?</nuxt-link>
+          <nuxt-link v-if="isToday" to="/almoco" class="button">Onde almoçar?</nuxt-link>
+          <nuxt-link v-if="hasPassed" to="/local" class="button">Onde foi?</nuxt-link>
+
+          <a v-if="!soldOut" :href="state.href" target="_blank" class="button primary">
             Inscreva-se<span class="hidden-on-small"> agora</span>!
           </a>
         </div>

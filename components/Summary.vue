@@ -27,8 +27,7 @@ export default {
       </picture>
       <div class="info">
         <h3>{{ state.places.total }} lugares</h3>
-        <span v-if="state.places.soldOut">Vagas esgotadas!</span>
-        <span v-else>{{ state.places.talks }} nas <em>Talk Sessions</em></span>
+        <span>{{ state.places.talks }} nas <em>Talk Sessions</em></span>
         <span>{{ state.places.liveCodings }} nas <em>Live Coding Sessions</em></span>
       </div>
     </nuxt-link>

@@ -1,7 +1,11 @@
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Menu',
   computed: {
+    ...mapGetters([ 'willHappen' ]),
+
     state () {
       return this.$store.state
     }
@@ -16,7 +20,7 @@ export default {
     <nuxt-link to="/convidados" class="menu-item"><i class="material-icons">mic</i><span>Convidados</span></nuxt-link>
     <nuxt-link to="/programacao" class="menu-item"><i class="material-icons">access_time</i><span>Programação</span></nuxt-link>
     <nuxt-link to="/local" class="menu-item"><i class="material-icons">location_on</i><span>Local</span></nuxt-link>
-    <a :href="state.href" target="_blank" class="menu-item primary"><i class="material-icons">playlist_add_check</i><span>Participar</span></a>
+    <a v-if="willHappen" :href="state.href" target="_blank" class="menu-item primary"><i class="material-icons">playlist_add_check</i><span>Participar</span></a>
   </nav>
 </template>
 

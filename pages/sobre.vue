@@ -1,4 +1,6 @@
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Sobre',
   components: {
@@ -7,18 +9,20 @@ export default {
     Partners: () => import('~/components/Partners')
   },
   computed: {
+    ...mapGetters([ 'willHappen', 'isToday', 'hasPassed', 'soldOut' ]),
+
     state () {
       return this.$store.state
     },
 
     verbs () {
-      const willHappen = this.state.timelapse.willHappen
-      const isToday = this.state.timelapse.isToday
+      const willHappen = this.willHappen
+      const isToday = this.isToday
 
       return [
         willHappen ? 'será' : isToday ? 'é' : 'foi',
         willHappen ? 'sediará' : isToday ? 'está sediando' : 'sediou',
-        willHappen ? 'trará' : isToday ? 'está contando com' : 'trouxe',
+        willHappen ? 'trará' : 'trouxe',
         willHappen ? 'ocorrerão' : isToday ? 'ocorrem' : 'ocorreram',
         willHappen ? 'estão sendo' : isToday ? 'foram' : 'foram',
         willHappen ? 'vierem' : isToday ? 'estão' : 'vieram'
@@ -44,7 +48,7 @@ export default {
         <p class="important">
           Em <strong>{{ state.date.long }}</strong>, a <a href="http://www.fatectq.edu.br/" target="_blank">Faculdade de Tecnologia de Taquaritinga</a>
           {{ verbs[1] }} o segundo encontro para discussão das últimas tendências do desenvolvimento de sistemas e aplicativos, o <strong>{{ state.name.short }}</strong>.
-          Organizado pelos cursos de <a href="http://www.fatectq.edu.br/analise-e-desenvolvimento-de-sistemas" target="_blank">Análise e Desenvolvimento de Sistemas</a> e de <a href="http://www.fatectq.edu.br/sistemas-para-internet" target="_blank">Sistemas para Internet</a>,
+          Ação dos cursos de <a href="http://www.fatectq.edu.br/analise-e-desenvolvimento-de-sistemas" target="_blank">Análise e Desenvolvimento de Sistemas</a> e de <a href="http://www.fatectq.edu.br/sistemas-para-internet" target="_blank">Sistemas para Internet</a>,
           {{ verbs[2] }} profissionais de destaque para falar de novidades em
           <template v-for="(topic, index) of state.topics"><em :key="index">{{ topic }}</em>, </template>
           dentre outros assuntos de grande interesse a profissionais e estudantes da área.
@@ -62,15 +66,13 @@ export default {
       <div class="action-buttons">
         <div class="buttons">
           <nuxt-link to="/convidados" class="button">Quem
-            <span v-if="state.timelapse.willHappen">vai palestrar</span>
-            <span v-if="state.timelapse.isToday">está palestrando</span>
-            <span v-if="state.timelapse.hasPassed">palestrou</span>?</nuxt-link>
-          <nuxt-link to="/local" class="button">Onde
-            <span v-if="state.timelapse.willHappen">será</span>
-            <span v-if="state.timelapse.isToday">está sendo</span>
-            <span v-if="state.timelapse.hasPassed">foi</span>?</nuxt-link>
+            <span v-if="willHappen">vai palestrar</span>
+            <span v-else-if="isToday">está palestrando</span>
+            <span v-else-if="hasPassed">palestrou</span>?</nuxt-link>
 
-          <a :href="state.href" target="_blank" class="button primary">
+          <nuxt-link to="/programacao" class="button">Qual a programação?</nuxt-link>
+
+          <a v-if="!soldOut" :href="state.href" target="_blank" class="button primary">
             Inscreva-se<span class="hidden-on-small"> agora</span>!
           </a>
         </div>

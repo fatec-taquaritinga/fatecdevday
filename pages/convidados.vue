@@ -1,4 +1,6 @@
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Palestrantes',
   components: {
@@ -6,6 +8,8 @@ export default {
     MainMenu: () => import('~/components/Menu')
   },
   computed: {
+    ...mapGetters([ 'soldOut' ]),
+
     state () {
       return this.$store.state
     },
@@ -27,7 +31,10 @@ export default {
 
     <div class="container">
       <h2 class="separator">Convidados</h2>
-      <p>Palestrantes escolhidos por suas experiências profissionais e seus conhecimentos destacados nos temas respectivos. Lembre-se: este é um evento multi-linguagem, não focando em apenas um ecossistema de programação, mas em diferentes técnicas e tecnologias que estão emergindo ou ganhando maior destaque.</p>
+      <p>
+        Palestrantes escolhidos por suas experiências profissionais e seus conhecimentos destacados nos temas respectivos.
+        Este é um evento multi-linguagem, não focando em apenas um ecossistema de programação, mas em diferentes técnicas e tecnologias que estão emergindo ou ganhando maior destaque no mercado.
+      </p>
 
       <div class="talk-sessions">
         <h3 class="separator">Talk Sessions</h3>
@@ -75,13 +82,11 @@ export default {
 
       <div class="action-buttons">
         <div class="buttons">
-          <nuxt-link to="/programacao" class="button">Quais os temas?</nuxt-link>
-          <nuxt-link to="/local" class="button">Onde
-            <span v-if="state.timelapse.willHappen">será</span>
-            <span v-if="state.timelapse.isToday">está sendo</span>
-            <span v-if="state.timelapse.hasPassed">foi</span>?</nuxt-link>
+          <nuxt-link to="/sobre" class="button">Sobre o evento</nuxt-link>
 
-          <a :href="state.href" target="_blank" class="button primary">
+          <nuxt-link to="/programacao" class="button">Qual a programação?</nuxt-link>
+
+          <a v-if="!soldOut" :href="state.href" target="_blank" class="button primary">
             Inscreva-se<span class="hidden-on-small"> agora</span>!
           </a>
         </div>

@@ -1,4 +1,6 @@
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Principal',
   components: {
@@ -44,6 +46,8 @@ export default {
     }
   },
   computed: {
+    ...mapGetters([ 'willHappen', 'isToday' ]),
+
     state () {
       return this.$store.state
     }
@@ -80,9 +84,9 @@ export default {
       <h1><logo schema="light">{{ state.name.long }}</logo></h1>
       <h2>{{ state.date.long }}</h2>
 
-      <countdown :target="state.date.full" :visible="state.timelapse.willHappen"/>
+      <countdown :target="state.date.full" :visible="willHappen"/>
 
-      <div class="action-buttons inverse" v-if="state.timelapse.willHappen">
+      <div class="action-buttons inverse" v-if="willHappen">
         <div class="buttons">
           <nuxt-link to="/sobre" class="button transparent">Saiba mais</nuxt-link>
 
@@ -94,9 +98,9 @@ export default {
         <p>* Vagas limitadas: apenas {{ state.places.total }} lugares disponíveis!</p>
       </div>
 
-      <div class="action-buttons inverse" v-if="state.timelapse.isToday">
-        <p>É hoje! Está participando conosco?<br>Compartilhe o que estiver rolando com a <i>hashtag</i>: <a href="https://www.facebook.com/hashtag/fatecdevday" target="_blank">#fatecdevday</a></p><br>
-        <nuxt-link to="agenda" class="button primary transparent">Ver agenda</nuxt-link>
+      <div class="action-buttons inverse today" v-if="isToday">
+        <p><strong>É hoje!</strong> Está participando conosco?<br>Compartilhe o que estiver rolando com a <i>hashtag</i>: <a href="https://www.facebook.com/hashtag/fatecdevday" target="_blank">#fatecdevday</a></p><br>
+        <nuxt-link to="programacao" class="button primary transparent">Ver programação</nuxt-link>
       </div>
     </div>
 
@@ -136,6 +140,14 @@ p a
 
 .action-buttons
   margin: 3em 0 0
+  &.today
+    color: rgba(#fff, 90%)
+    background: rgba(#000, 50%)
+    padding: 0 1.5rem 1rem
+    border-radius: 2rem
+    box-shadow: 0 0 50px rgba(#000, 50%)
+    strong
+      color: #fff
 
 .slider, .slider .slide, .slider::after
   content: ''

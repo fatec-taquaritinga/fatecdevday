@@ -3,14 +3,7 @@ import Vuex from 'vuex'
 import speakers from './speakers'
 import activities from './activities'
 import partners from './partners'
-
-const start = new Date('2017-11-11T07:30:00-02:00')
-const now = new Date()
-
-const isToday =
-  now.getFullYear() === start.getFullYear() &&
-  now.getMonth() === start.getMonth() &&
-  now.getDate() === start.getDate()
+import lunch from './lunch'
 
 const store = () => new Vuex.Store({
   state: {
@@ -27,22 +20,16 @@ const store = () => new Vuex.Store({
       weekday: 'sábado',
       full: '2017-11-11T07:30:00-02:00',
       short: '11/11/2017',
-      time: '7h30',
+      time: '07:30',
       long: '11 de novembro de 2017',
       longWithoutYear: '11 de novembro'
-    },
-    timelapse: {
-      isToday: isToday,
-      willHappen: now - start < 0 && !isToday,
-      hasPassed: now - start > 0 && !isToday
     },
     places: {
       total: 140,
       studants: 90,
       professionals: 50,
       talks: 100,
-      liveCodings: 40,
-      soldOut: isToday || now - start > 0 || now - start > -259200000
+      liveCodings: 40
     },
     team: [
       'Erick Petrucelli',
@@ -62,7 +49,39 @@ const store = () => new Vuex.Store({
     ],
     activities,
     speakers,
-    partners
+    partners,
+    lunch
+  },
+  getters: {
+    isToday (state, getters) {
+      const now = new Date()
+      const start = new Date(state.date.full)
+
+      return now.getFullYear() === start.getFullYear() &&
+        now.getMonth() === start.getMonth() &&
+        now.getDate() === start.getDate()
+    },
+
+    willHappen (state, getters) {
+      const now = new Date()
+      const start = new Date(state.date.full)
+
+      return now - start < 0 && !getters.isToday
+    },
+
+    hasPassed (state, getters) {
+      const now = new Date()
+      const start = new Date(state.date.full)
+
+      return now - start > 0 && !getters.isToday
+    },
+
+    soldOut (state, getters) {
+      const now = new Date()
+      const start = new Date(state.date.full)
+
+      return getters.isToday || now - start > 0 || now - start > -259200000
+    }
   }
 })
 
