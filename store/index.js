@@ -54,33 +54,41 @@ const store = () => new Vuex.Store({
   },
   getters: {
     isToday (state, getters) {
-      const now = new Date()
-      const start = new Date(state.date.full)
+      // const now = new Date()
+      // const start = new Date(state.date.full)
 
-      return now.getFullYear() === start.getFullYear() &&
-        now.getMonth() === start.getMonth() &&
-        now.getDate() === start.getDate()
+      // return now.getFullYear() === start.getFullYear() &&
+      //   now.getMonth() === start.getMonth() &&
+      //   now.getDate() === start.getDate()
+
+      return false
     },
 
     willHappen (state, getters) {
-      const now = new Date()
-      const start = new Date(state.date.full)
+      // const now = new Date()
+      // const start = new Date(state.date.full)
 
-      return now - start < 0 && !getters.isToday
+      // return now - start < 0 && !getters.isToday
+
+      return false
     },
 
     hasPassed (state, getters) {
-      const now = new Date()
-      const start = new Date(state.date.full)
+      // const now = new Date()
+      // const start = new Date(state.date.full)
 
-      return now - start > 0 && !getters.isToday
+      // return now - start > 0 && !getters.isToday
+
+      return true
     },
 
     soldOut (state, getters) {
-      const now = new Date()
-      const start = new Date(state.date.full)
+      // const now = new Date()
+      // const start = new Date(state.date.full)
 
-      return getters.isToday || now - start > 0 || now - start > -259200000
+      // return getters.isToday || now - start > 0 || now - start > -259200000
+
+      return true
     }
   }
 })
