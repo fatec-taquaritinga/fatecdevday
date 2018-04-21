@@ -15,6 +15,9 @@ module.exports = {
     ]
   },
   loading: { color: '#ad0f0a' },
+  modules: [
+    '@nuxtjs/pwa',
+  ],
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
