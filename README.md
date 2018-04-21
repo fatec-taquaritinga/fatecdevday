@@ -1,22 +1,25 @@
-# fatecdevday
+# Fatec Dev Day
 
 > Website do evento Fatec Dev Day desenvolvido com Nuxt.js
 
-## Build Setup
+## Como Utilizar
 
 ``` bash
-# install dependencies
-$ npm install # Or yarn install
+# instalar dependências
+$ npm install # Ou yarn install
 
-# serve with hot reload at localhost:3000
+# servir com hot reload em localhost:3000
 $ npm run dev
 
-# build for production and launch server
+# construir para produção e iniciar servidor
 $ npm run build
 $ npm start
 
-# generate static project
+# gerar projeto estático
 $ npm run generate
+
+# publicar estático usando Surge.sh
+$ npm run deploy
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+Para explicações detalhadas de como as coisas funcionam, veja a [documentação do Nuxt.js](https://github.com/nuxt/nuxt.js).

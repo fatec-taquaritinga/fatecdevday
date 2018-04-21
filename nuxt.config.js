@@ -1,6 +1,6 @@
 module.exports = {
   head: {
-    title: 'Fatec Dev Day 2017',
+    title: 'Fatec Dev Day 2018',
     htmlAttrs: {
       lang: 'pt-br'
     },
@@ -11,22 +11,13 @@ module.exports = {
       { name: 'theme-color', content: '#708e99' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-      { rel: 'icon', sizes: '32x32', href: '/favicon-32x32.png' },
-      { rel: 'icon', sizes: '16x16', href: '/favicon-16x16.png' },
-      { rel: 'manifest', href: '/manifest.json' },
-      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#708e99' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }
-    ],
-    script: [
-      { src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAkzlHuZCCu7WwWPh4G_zrzHyEOHX7plWs&extension=.js' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   loading: { color: '#ad0f0a' },
   build: {
-    extend (config, ctx) {
-      if (ctx.dev && ctx.isClient) {
+    extend (config, { isDev, isClient }) {
+      if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

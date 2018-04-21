@@ -1,0 +1,17 @@
+{
+  "window.zoomLevel": 0,
+  "editor.fontSize": 16,
+  "editor.lineHeight": 18,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.find.autoFindInSelection": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "workbench.colorTheme": "Default Dark+"
+}

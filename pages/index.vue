@@ -1,200 +1,64 @@
+<template>
+  <section class="container">
+    <div>
+      <app-logo/>
+      <h1 class="title">
+        Fatec Dev Day 2018
+      </h1>
+      <h2 class="subtitle">
+        Website do evento Fatec Dev Day desenvolvido com Nuxt.js
+      </h2>
+      <div class="links">
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
+          class="button--green">Nuxt.js Documentation</a>
+        <a
+          href="https://github.com/fatec-taquaritinga/fatecdevday"
+          target="_blank"
+          class="button--grey">GitHub</a>
+      </div>
+    </div>
+  </section>
+</template>
+
 <script>
-import { mapGetters } from 'vuex'
+import AppLogo from '~/components/AppLogo.vue'
 
 export default {
-  name: 'Principal',
   components: {
-    Logo: () => import('~/components/Logo'),
-    Countdown: () => import('~/components/Countdown'),
-    EventSummary: () => import('~/components/Summary')
-  },
-  data () {
-    return {
-      slider: {
-        current: -1,
-        images: [
-          {
-            animation: 'zoom-center',
-            src: require('../assets/featured/campus.jpg')
-          },
-          {
-            animation: 'zoom-left',
-            src: require('../assets/featured/last-edition-01.jpg')
-          },
-          {
-            animation: 'zoom-right',
-            src: require('../assets/featured/last-edition-02.jpg')
-          },
-          {
-            animation: 'zoom-right',
-            src: require('../assets/featured/last-edition-03.jpg')
-          },
-          {
-            animation: 'zoom-left',
-            src: require('../assets/featured/last-edition-04.jpg')
-          },
-          {
-            animation: 'zoom-left',
-            src: require('../assets/featured/last-edition-05.jpg')
-          },
-          {
-            animation: 'zoom-right',
-            src: require('../assets/featured/last-edition-06.jpg')
-          }
-        ]
-      }
-    }
-  },
-  computed: {
-    ...mapGetters([ 'willHappen', 'isToday' ]),
-
-    state () {
-      return this.$store.state
-    }
-  },
-  mounted () {
-    const img = new Image()
-
-    img.onload = () => {
-      setTimeout(() => {
-        this.slider.current = 0
-
-        setInterval(() => {
-          if (this.slider.current === this.slider.images.length - 1) this.slider.current = 0
-          else this.slider.current++
-        }, 10000)
-      }, 2000)
-    }
-
-    img.src = this.slider.images[0].src
+    AppLogo
   }
 }
 </script>
 
-<template>
-  <main id="index" class="page">
-    <div class="slider">
-      <transition name="slider" mode="in-out">
-        <div v-for="(image, index) of slider.images" :key="index" class="slide" :class="[ image.animation ]"
-          :style="{ 'background-image': `url('${image.src}')` }" v-if="slider.current === index"></div>
-      </transition>
-    </div>
+<style>
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    <div class="container">
-      <h1><logo schema="light">{{ state.name.long }}</logo></h1>
-      <h2>{{ state.date.long }}</h2>
+.title {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
 
-      <countdown :target="state.date.full" :visible="willHappen"/>
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
 
-      <div class="action-buttons inverse" v-if="willHappen">
-        <div class="buttons">
-          <nuxt-link to="/sobre" class="button transparent">Saiba mais</nuxt-link>
-
-          <a :href="state.href" target="_blank" class="button primary transparent">
-            Inscreva-se<span class="hidden-on-small"> agora</span>!
-          </a>
-        </div>
-
-        <p>* Vagas limitadas: apenas {{ state.places.total }} lugares disponíveis!</p>
-      </div>
-
-      <div class="action-buttons inverse today" v-if="isToday">
-        <p><strong>É hoje!</strong> Está participando conosco?<br>Compartilhe o que estiver rolando com a <i>hashtag</i>: <a href="https://www.facebook.com/hashtag/fatecdevday" target="_blank">#fatecdevday</a></p><br>
-        <nuxt-link to="programacao" class="button primary transparent">Ver programação</nuxt-link>
-      </div>
-    </div>
-
-    <event-summary />
-  </main>
-</template>
-
-<style lang="stylus" scoped>
-@import '../stylus/variables'
-
-.container
-  color: $text-color-inverse-primary
-  z-index: 2
-
-h1
-  font-size: 1.25em
-  margin: 0 0 1.5em
-  width: 75%
-  max-width: 22em
-
-h2
-  display: inline-block
-  background: $color-secondary-100
-  color: $text-color-primary
-  font-size: calc(.675em + 1vw)
-  padding: .25em .825em .175em
-  font-family: $font-secondary
-  font-weight: 400
-  letter-spacing: 3px
-  box-shadow: 0 20px 120px alpha(#000, 25%)
-  text-shadow: none
-  @media (min-width: $breakpoint-desktop)
-    font-size: 1.25em
-
-p a
-  color: $color-primary-100
-
-.action-buttons
-  margin: 3em 0 0
-  &.today
-    color: rgba(#fff, 90%)
-    background: rgba(#000, 50%)
-    padding: 0 1.5rem 1rem
-    border-radius: 2rem
-    box-shadow: 0 0 50px rgba(#000, 50%)
-    strong
-      color: #fff
-
-.slider, .slider .slide, .slider::after
-  content: ''
-  position: absolute
-  top: 0; right: 0; bottom: 0; left: 0
-
-.slider
-  overflow: hidden
-  background: $color-secondary-700 url('../assets/featured/campus.jpg') fixed center center
-  background-size: cover
-  &::after
-    background: alpha(#000, 80%) url('../assets/overlay.png') repeat
-    opacity: .75
-    z-index: 2
-  .slide
-    background-position: center center
-    background-attachment: fixed
-    background-size: cover
-
-.slide.zoom-center
-  transform: scale(1.15)
-
-.slide.zoom-center.slider-enter
-  transform: scale(1)
-
-.slide.zoom-center.slider-enter-to
-  transform: scale(1.15)
-
-.slide.zoom-left
-  transform: scale(1) translate(0, 0)
-
-.slide.zoom-left.slider-enter
-  transform: scale(1.5) translate(10vw, 10vh)
-
-.slide.zoom-left.slider-enter-to
-  transform: scale(1) translate(0, 0)
-
-.slide.zoom-right
-  transform: scale(1) translate(0, 0)
-
-.slide.zoom-right.slider-enter
-  transform: scale(1.5) translate(-10vw, -10vh)
-
-.slide.zoom-right.slider-enter-to
-  transform: scale(1) translate(0, 0)
-
-.slider-enter-active
-  transition: transform 10s linear
-  z-index: 1
+.links {
+  padding-top: 15px;
+}
 </style>
