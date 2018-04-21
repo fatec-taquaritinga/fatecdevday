@@ -1,0 +1,45 @@
+@import '../stylus/shadows'
+
+$breakpoint-tablet = 640px
+$breakpoint-tablet-hd = 780px
+$breakpoint-desktop = 960px
+$breakpoint-desktop-hd = 1200px
+$breakpoint-desktop-fullhd = 1600px
+
+$font-primary = 'Raleway', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+$font-secondary = 'Raleway', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+
+$color-primary = #ce0309
+$color-primary-50 = lighten($color-primary, 55%)
+$color-primary-100 = lighten($color-primary, 40%)
+$color-primary-300 = lighten($color-primary, 20%)
+$color-primary-700 = darken($color-primary, 11%)
+$color-primary-900 = darken($color-primary, 23%)
+
+$color-secondary = #43545c
+$color-secondary-50 = lighten($color-secondary, 72%)
+$color-secondary-100 = lighten($color-secondary, 48%)
+$color-secondary-300 = lighten($color-secondary, 22%)
+$color-secondary-700 = darken($color-secondary, 10%)
+$color-secondary-900 = darken($color-secondary, 20%)
+
+$color-background-primary = #fbfbfb
+$color-background-secondary = #f0f0f0
+
+$background-primary = #ce0309 url('../assets/backgrounds/abstract-red.jpg') center center \/ cover no-repeat
+$background-secondary = #f2f1ec url('../assets/backgrounds/abstract-gray.jpg') center center \/ cover no-repeat
+
+$text-color-primary = alpha($color-secondary-700, 97%)
+$text-color-secondary = alpha($color-secondary-700, 67%)
+$text-color-inverse-primary = alpha(#fff, 97%)
+$text-color-inverse-secondary = alpha(#fff, 54%)
+
+$color-gold = #d29910
+$color-silver = #696f77
+$color-bronze = #cd7f32
+
+$tap-color(color)
+  -webkit-tap-highlight-color: color == 'none' ? transparent: color
+  tap-highlight-color: color == 'none' ? transparent: color
+
+// z-depth-classes()

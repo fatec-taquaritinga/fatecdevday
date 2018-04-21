@@ -11,7 +11,8 @@ module.exports = {
       { name: 'theme-color', content: '#708e99' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons|Raleway:300,500,700,900' }
     ]
   },
   loading: { color: '#ad0f0a' },

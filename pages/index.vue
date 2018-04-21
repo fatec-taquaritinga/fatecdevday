@@ -1,64 +1,156 @@
-<template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        Fatec Dev Day 2018
-      </h1>
-      <h2 class="subtitle">
-        Website do evento Fatec Dev Day desenvolvido com Nuxt.js
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Nuxt.js Documentation</a>
-        <a
-          href="https://github.com/fatec-taquaritinga/fatecdevday"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
-</template>
-
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import { mapGetters } from 'vuex'
 
 export default {
+  name: 'Principal',
   components: {
-    AppLogo
+    Logo: () => import('~/components/Logo'),
+    Countdown: () => import('~/components/Countdown')
+  },
+  computed: {
+    ...mapGetters([ 'willHappen', 'isToday' ]),
+
+    state () {
+      return this.$store.state
+    }
   }
 }
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<template>
+  <main id="index" class="page">
+    <header id="featured" class="container featured limit-width">
+      <h1><logo schema="light" :year="false">{{ state.name.long }}</logo></h1>
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+      <h2 class="hidden-on-large">{{ state.date.short }}</h2>
+      <h2 class="hidden-on-small">{{ state.date.long }}</h2>
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+      <p>Um dia dedicado ao desenvolvimento <br /> web, aplicativos e sistemas em geral</p>
+    </header>
 
-.links {
-  padding-top: 15px;
-}
+    <countdown :target="state.date.full" :visible="willHappen" />
+
+    <div class="parallax"></div>
+
+    <hr />
+
+    <div class="container two-columns">
+      <div class="gutter">
+        <h3>O que é <br class="hidden-on-large" /> <strong>Fatec Dev Day</strong>?</h3>
+
+        <p>
+          Realizado no segundo semestre de cada ano, o <strong>Fatec Dev Day</strong> é um
+          evento dedicado a discutir o que há de <b>mais recente</b> nas tendências e
+          tecnologias para o desenvolvimento de <b>sistemas</b> e de <b>aplicativos</b>.
+          Trata-se de um dia inteiro de palestras e atrações, em que os estudantes e
+          profissionais de Taquaritinga e região não apenas se atualizam das
+          novidades em TI, mas também podem <b>compartilhar conhecimento</b> e
+          fazer contato com grandes profissionais do setor.
+        </p>
+
+        <p class="hidden-on-small">
+          A <b>edição 2016</b> do <strong>Fatec Dev Day</strong> trouxe palestras
+          relacionadas a Angular 2 e TypeScript, aplicações <i>web</i> modernas com Laravel,
+          arquitetura de microserviços em Java, Bots e Machine Learning, Internet
+          das Coisas (<i>IoT</i>), introdução ao Docker, <i>mobile</i> e <i>progressive web apps</i>. Já
+          a <b>edição 2017</b> abordou temas como deploy de aplicações usando Docker,
+          implementação de <i>pick up line generators</i> com JavaScript, Inteligência
+          Artificial e reconhecimento óptico com PHP, migração do Java para o
+          Node, operações HTTP com Python, uso do ReactJS, além de uma sessão
+          especial de Live Coding, em que os participantes puderam acompanhar,
+          ao vivo, o desenvolvimento de um aplicativo para Android e iOS.
+        </p>
+
+        <p>
+          A <b>edição 2018</b> do <strong>Fatec Dev Day</strong> já está marcada para
+          <strong>10 de novembro</strong> e promete ser o mesmo sucesso das duas
+          edições anteriores. Em breve traremos novidades aqui, fique ligado!
+        </p>
+      </div>
+
+      <aside>
+        <div class="photo photo-1"></div>
+        <div class="photo photo-2"></div>
+        <div class="photo photo-3"></div>
+      </aside>
+    </div>
+
+    <hr />
+
+    <footer class="footer">
+      <div class="container">
+        <a class="logo" href="/" @click.prevent="navigate"><logo class="inverse">Fatec Dev Day</logo></a>
+
+        <p>
+          © {{ state.edition.year }} <a href="http://www.fatectq.edu.br" target="_blank">Fatec Taquaritinga</a>
+          <br>Todos os direitos reservados
+        </p>
+      </div>
+    </footer>
+  </main>
+</template>
+
+<style lang="stylus" scoped>
+@import '../stylus/variables'
+
+.featured
+  background: $background-primary
+  min-height: 80vh
+  display: flex
+  flex-flow: column
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+  &, h1, h2
+    color: $text-color-inverse-primary
+  h1
+    font-size: 1.75em
+    margin: 0
+    width: 90%
+    max-width: 22em
+  h2
+    font-weight: 700
+    margin: .5em 0 0
+    font-size: calc(1em + 1.75vw)
+  p
+    margin: 1.5em 0 0
+    font-size: calc(.5em + 1.75vw)
+
+.countdown
+  z-depth-6dp()
+  padding: 1em 0 1.25em
+  background: $background-secondary
+  position: relative
+  z-index: 2
+
+.parallax
+  background: $color-secondary url('../assets/backgrounds/campus.jpg') 65% 75% \/ cover fixed
+  min-height: 30vh
+
+.footer
+  position: relative
+  background: $background-secondary
+  text-align: center
+  padding: 4em 0 2em
+  .logo
+    display: inline-block
+    width: 12em
+  p
+    font-size: .75em
+    color: $text-color-secondary
+  a
+    color: $text-color-primary
+    text-decoration: none
+    &:hover, &:focus
+      color: $color-primary-700
+
+.photo-1
+  background-image: url('~/assets/backgrounds/edition-2017-1.jpg')
+
+.photo-2
+  background-image: url('~/assets/backgrounds/edition-2017-2.jpg')
+
+.photo-3
+  background-image: url('~/assets/backgrounds/edition-2017-3.jpg')
 </style>
