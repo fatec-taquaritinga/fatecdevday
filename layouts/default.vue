@@ -55,8 +55,44 @@ p
 
 a
   $tap-color: alpha($color-primary, 25%)
-  transition: color .25s ease-in-out, background .25s ease-in-out, box-shadow .25s ease-in-out, text-shadow .25s ease-in-out
+  transition: color .25s ease, background .25s ease, box-shadow .25s ease, text-shadow .25s ease, border-color .25s ease
   outline: 0
+
+button,
+.button
+  position: relative
+  display: inline-block
+  padding: .5em 1.5em
+  font-size: .925em
+  font-weight: 400
+  letter-spacing: 1px
+  cursor: pointer
+  color: $text-color-inverse-primary
+  background: $color-primary
+  border: 2px solid @background
+  box-shadow: 0 2px 15px alpha(#000, 10%), 0 8px 50px alpha(#000, 5%)
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  $tap-color: none
+  &:hover, &:focus
+    background: alpha($color-primary, 0%)
+    border-color: $color-primary
+    color: @border-color
+    box-shadow: 0 4px 15px alpha(#000, 25%), 0 8px 50px alpha(#000, 10%)
+  &.inverse
+    background: alpha($text-color-inverse-primary, 0%)
+    border-color: $text-color-inverse-primary
+    box-shadow: none
+    &:hover, &:focus
+      background: $text-color-inverse-primary
+      border-color: @background
+      color: $color-primary
+      box-shadow: 0 4px 15px alpha(#000, 25%), 0 8px 50px alpha(#000, 10%)
+  &.active, &:active, &.inverse.active, &.inverse:active
+    background: darken(@background, 38%)
+    color: $text-color-inverse-primary
+    box-shadow: 0 2px 15px alpha(#000, 10%), 0 8px 50px alpha(#000, 5%)
 
 p, h1, h2, h3, h4, h5, h6
   a

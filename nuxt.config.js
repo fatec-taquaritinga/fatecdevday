@@ -4,16 +4,15 @@ module.exports = {
     htmlAttrs: {
       lang: 'pt-br'
     },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Fatec Dev Day: um dia dedicado a desenvolvimento Web, aplicativos e sistemas em geral' },
-      { name: 'theme-color', content: '#708e99' }
-    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons|Raleway:300,500,700,900' }
     ]
+  },
+  meta: {
+    lang: 'pt-br',
+    name: 'Fatec Dev Day 2018',
+    description: 'Fatec Dev Day: um dia dedicado a desenvolvimento Web, aplicativos e sistemas em geral'
   },
   loading: { color: '#ad0f0a' },
   modules: [

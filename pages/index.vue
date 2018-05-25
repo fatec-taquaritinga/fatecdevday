@@ -26,6 +26,8 @@ export default {
       <h2 class="hidden-on-small">{{ state.date.long }}</h2>
 
       <p>Um dia dedicado ao desenvolvimento <br /> web, aplicativos e sistemas em geral</p>
+
+      <a class="button inverse" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank">Inscreva-se</a>
     </header>
 
     <countdown :target="state.date.full" :visible="willHappen" />
@@ -77,6 +79,11 @@ export default {
 
     <hr />
 
+    <div id="enroll" class="container enroll limit-width">
+      <a class="button" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank">Inscreva-se</a>
+      <p>Primeiro lote: <b>35 lugares</b>, ou até <b>29/06</b>.</p>
+    </div>
+
     <footer class="footer">
       <div class="container">
         <a class="logo" href="/" @click.prevent="navigate"><logo class="inverse">Fatec Dev Day</logo></a>
@@ -105,17 +112,19 @@ export default {
   &, h1, h2
     color: $text-color-inverse-primary
   h1
-    font-size: 1.75em
+    font-size: 1.625em
     margin: 0
     width: 90%
-    max-width: 22em
+    max-width: 20em
   h2
     font-weight: 700
     margin: .5em 0 0
-    font-size: calc(1em + 1.75vw)
+    font-size: calc(1em + 1.5vw)
   p
     margin: 1.5em 0 0
-    font-size: calc(.5em + 1.75vw)
+    font-size: calc(.5em + 1.5vw)
+  .button
+    margin-top: 3em
 
 .countdown
   z-depth-6dp()
@@ -128,9 +137,27 @@ export default {
   background: $color-secondary url('../assets/backgrounds/campus.jpg') 65% 75% \/ cover fixed
   min-height: 30vh
 
+.enroll
+  background: $background-secondary
+  min-height: 40vh
+  display: flex
+  flex-flow: column
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+  z-depth-1dp()
+  p
+    margin-top: 1.5em
+    font-size: .875em
+    font-weight: 300
+    b
+      font-weight: 500
+      color: inherit
+
 .footer
   position: relative
-  background: $background-secondary
+  background: $color-secondary-50
   text-align: center
   padding: 4em 0 2em
   .logo
