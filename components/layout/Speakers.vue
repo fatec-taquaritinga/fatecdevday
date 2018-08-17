@@ -1,17 +1,18 @@
 <script>
 export default {
   name: 'Layout-Speakers',
-  computed: {
-    talks () {
-      return this.$store.state.talks.map(obj => {
-        obj.showBio = false
-        return obj
-      })
+  data () {
+    return {
+      talks: this.$store.state.talks.map((obj, i) => Object.assign({ index: i, showBio: false }, obj))
     }
   },
   methods: {
     path (avatar) {
       return '/persons/' + avatar
+    },
+
+    toggleBio (item, visible) {
+      item.showBio = visible
     }
   }
 }
@@ -29,42 +30,40 @@ export default {
 
       <div class="cards">
         <div class="card" v-for="person of talks" :key="person.id" v-if="person.name">
-          <div key="main-info" class="main-info" v-show="!person.showBio">
-            <picture v-if="person.avatar" @click="person.showBio = true">
-              <img :src="path(person.avatar)" :alt="person.name">
-            </picture>
+          <transition name="slide-fade" mode="out-in">
+            <div key="main-info" class="main-info" v-if="!person.showBio">
+              <picture v-if="person.avatar" @click="toggleBio(person, true)">
+                <img :src="path(person.avatar)" :alt="person.name">
+              </picture>
 
-            <h4>{{ person.name }}</h4>
+              <h4>{{ person.name }}</h4>
 
-            <h5 v-if="person.job">
-              <span>{{ person.job.title }}</span><br>
+              <h5 v-if="person.job">
+                <span>{{ person.job.title }}</span><br>
+                <a v-if="person.job.url" :href="person.job.url" target="_blank">{{ person.job.company }}</a>
+                <span v-else>{{ person.job.company }}</span>
+              </h5>
 
-              <a v-if="person.job.url" :href="person.job.url" target="_blank">{{ person.job.company }}</a>
-              <span v-else>{{ person.job.company }}</span>
-            </h5>
-
-            <div class="social" v-if="person.social">
-              <a v-if="person.social.linkedin" :href="`https://www.linkedin.com/in/${ person.social.linkedin }/`" target="_blank">
-                <img src="~/assets/logo-linkedin.svg" alt="Linkedin">
-              </a>
-
-              <a v-if="person.social.github" :href="`https://github.com/${ person.social.github }`" target="_blank">
-                <img src="~/assets/logo-github.svg" alt="Github">
-              </a>
-
-              <a v-if="person.social.twitter" :href="`https://twitter.com/${ person.social.twitter }`" target="_blank">
-                <img src="~/assets/logo-twitter.svg" alt="Twitter">
-              </a>
-
-              <button key="main-info-button" @click="person.showBio = true">Saiba mais</button>
+              <div class="social" v-if="person.social">
+                <a v-if="person.social.linkedin" :href="`https://www.linkedin.com/in/${ person.social.linkedin }/`" target="_blank">
+                  <img src="~/assets/logo-linkedin.svg" alt="Linkedin">
+                </a>
+                <a v-if="person.social.github" :href="`https://github.com/${ person.social.github }`" target="_blank">
+                  <img src="~/assets/logo-github.svg" alt="Github">
+                </a>
+                <a v-if="person.social.twitter" :href="`https://twitter.com/${ person.social.twitter }`" target="_blank">
+                  <img src="~/assets/logo-twitter.svg" alt="Twitter">
+                </a>
+                <button @click="toggleBio(person, true)">Saiba mais</button>
+              </div>
             </div>
-          </div>
 
-          <div key="bio-details" class="bio-details" v-show="person.showBio">
-            <h4>{{ person.name }}</h4>
-            <p v-if="person.bio">{{ person.bio }}</p>
-            <button @click="person.showBio = false">Voltar</button>
-          </div>
+            <div key="bio-details" class="bio-details" v-else>
+              <h4>{{ person.name }}</h4>
+              <p v-if="person.bio">{{ person.bio }}</p>
+              <button @click="toggleBio(person, false)">Voltar</button>
+            </div>
+          </transition>
         </div>
 
         <div class="card comming">
@@ -169,4 +168,18 @@ button
     color: $color-secondary
   @media (min-width: $breakpoint-desktop-hd)
     margin-top: 9em
+
+.slide-fade-enter-active
+  transition: all .5s ease
+
+.slide-fade-leave-active
+  transition: all .3s cubic-bezier(1.0, .5, .8, 1.0)
+
+.slide-fade-enter
+  transform: translateX(10px)
+  opacity: 0
+
+.slide-fade-leave-to
+  transform: translateX(-20px)
+  opacity: 0
 </style>
