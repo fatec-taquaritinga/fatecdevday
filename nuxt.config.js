@@ -33,8 +33,10 @@ module.exports = {
   ],
   manifest: {
     name: 'Fatec Dev Day 2018',
+    short_name: 'Fatec Dev Day',
     lang: 'pt-br',
-    start_url: '/'
+    start_url: '/',
+    description: 'Fatec Dev Day: um dia dedicado a desenvolvimento Web, aplicativos e sistemas em geral'
   },
   build: {
     extend (config, { isDev, isClient }) {
