@@ -5,8 +5,7 @@ module.exports = {
       lang: 'pt-br'
     },
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons|Raleway:300,500,700,900' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   meta: {
