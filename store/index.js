@@ -68,9 +68,9 @@ const store = () => new Vuex.Store({
         avatar: 'vilibaldo.jpg',
         name: 'Vilibaldo Neto',
         bio: `Head of Technology na Beblue, atuando em duas grandes vertentes da empresa, Market Place (MP) e Financial Services (FS).
-          Trabalhou anteriormente com diversos times internacionais em desenvolvimento de _software_ e _hardware_ e, por algum tempo, trabalhou na emergente China para a finalização de um grande projeto.
+          Trabalhou anteriormente com diversos times internacionais em desenvolvimento de software e hardware e, por algum tempo, trabalhou na emergente China para a finalização de um grande projeto.
           Bacharel em Engenharia da Computação pela UNISEB COC. Amante de tecnologia, IoT, automação e robótica, possui conhecimentos técnicos em Android, Golang, Java (EE SE), C#, .NET, Arduíno,
-          MySQL, Microsoft SQL Server, _software design patterns_ e _embedded devices_ (Tablets, LCD Whiteboards, etc).`,
+          MySQL, Microsoft SQL Server, software design patterns e embedded devices (Tablets, LCD Whiteboards, etc).`,
         job: {
           title: 'Head of Engineering',
           company: 'Beblue',
