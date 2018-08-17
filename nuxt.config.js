@@ -30,8 +30,6 @@ module.exports = {
     '@nuxtjs/pwa',
   ],
   build: {
-    analyze: true,
-
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
