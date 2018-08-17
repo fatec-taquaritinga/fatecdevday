@@ -8,12 +8,12 @@ export default {
   },
   data () {
     return {
-      current: '/',
+      current: '#',
       triggered: false,
       items: [
         { path: '/' },
-        { path: '/sobre', title: 'Sobre' },
-        { path: '/palestrantes', title: 'Palestrantes' }
+        { path: '#sobre', title: 'Sobre' },
+        { path: '#palestrantes', title: 'Palestrantes' }
       ]
     }
   },
@@ -26,15 +26,15 @@ export default {
     updateScroll () {
       this.triggered = true
 
-      if (location.pathname === '/') {
+      if (location.hash === '') {
         this.updateMenu('/')
         window.scrollTo(0, 0)
         document.body.focus()
       } else {
-        let target = location.pathname.replace('/', '')
+        let target = location.hash.replace('#', '')
         target = document.getElementById(target)
         if (target && target.offsetTop) {
-          this.current = location.pathname
+          this.current = location.hash
           this.updateMenu(this.current, this.items.find(i => i.path === this.current).title)
           window.scrollTo(0, target.offsetTop)
           target.focus()
@@ -59,8 +59,9 @@ export default {
           const id = container.id
           if (id === 'inicio' && this.current !== '/') {
             this.menuClick({ path: '/' }, true)
-          } else if (id !== 'inicio' && this.current !== '/' + id) {
-            this.menuClick(this.items.find(i => i.path == '/' + id), true)
+          } else if (id !== 'inicio' && this.current !== '#' + id) {
+            this.menuClick(this.items.find(i => i.path == '#' + id), true)
+            container.focus()
           }
         }
       }
@@ -123,12 +124,16 @@ export default {
     text-decoration: none
     padding: 12px 1em 0
     color: $color-primary-900
-    &:hover, &:focus, &.active
+    outline: 1px solid transparent
+    outline-offset: -4px
+    &:hover, &.active
       color: #fff
       background: $color-primary
+    &:focus
+      outline-color: $color-primary
   .logo
     width: 9em
     padding: 8px 1em 0
-    &:hover, &:focus
+    &:hover
       background: none
 </style>
