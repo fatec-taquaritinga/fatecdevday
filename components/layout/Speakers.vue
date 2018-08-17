@@ -30,7 +30,7 @@ export default {
       <div class="cards">
         <div class="card" v-for="person of talks" :key="person.id" v-if="person.name">
           <transition name="slide-fade" mode="out-in">
-            <div key="main-info" class="main-info" v-show="!person.showBio">
+            <div key="main-info" class="main-info" v-if="!person.showBio">
               <picture v-if="person.avatar" @click="person.showBio = true">
                 <img :src="path(person.avatar)" :alt="person.name">
               </picture>
@@ -57,15 +57,14 @@ export default {
                   <img src="~/assets/logo-twitter.svg" alt="Twitter">
                 </a>
 
-                <button @click="person.showBio = true">Saiba mais</button>
+                <button key="main-info-button" @click="person.showBio = true">Saiba mais</button>
               </div>
             </div>
 
-            <div key="bio-details" class="bio-details" v-show="person.showBio">
-              <h4>{{ person.name }}</h4>
-              <p v-if="person.bio">{{ person.bio }}</p>
-
-              <button @click="person.showBio = false">Voltar</button>
+            <div key="bio-details" class="bio-details" v-else>
+              <h4 key="bio-details-title">{{ person.name }}</h4>
+              <p key="bio-details-text" v-if="person.bio">{{ person.bio }}</p>
+              <button key="bio-details-button" @click="person.showBio = false">Voltar</button>
             </div>
           </transition>
         </div>
