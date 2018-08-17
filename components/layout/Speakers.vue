@@ -64,6 +64,8 @@ export default {
               <button @click="toggleBio(person, false)">Voltar</button>
             </div>
           </transition>
+
+          <noscript v-if="person.bio">{{ person.bio }}</noscript>
         </div>
 
         <div class="card comming">
@@ -147,10 +149,12 @@ button
   color: $color-secondary-300
   border-color: $color-secondary-100
   background: transparent
+  z-depth 0
   &:hover, &:focus
     background: @border-color
     outline: none
     color: #fff
+    z-depth 2
 
 .bio-details
   font-size: .925em
