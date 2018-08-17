@@ -40,18 +40,18 @@ export default {
 
               <h5 v-if="person.job">
                 <span>{{ person.job.title }}</span><br>
-                <a v-if="person.job.url" :href="person.job.url" target="_blank">{{ person.job.company }}</a>
+                <a v-if="person.job.url" :href="person.job.url" target="_blank" rel="noopener">{{ person.job.company }}</a>
                 <span v-else>{{ person.job.company }}</span>
               </h5>
 
               <div class="social" v-if="person.social">
-                <a v-if="person.social.linkedin" :href="`https://www.linkedin.com/in/${ person.social.linkedin }/`" target="_blank">
+                <a v-if="person.social.linkedin" :href="`https://www.linkedin.com/in/${ person.social.linkedin }/`" target="_blank" rel="noopener">
                   <img src="~/assets/logo-linkedin.svg" alt="Linkedin">
                 </a>
-                <a v-if="person.social.github" :href="`https://github.com/${ person.social.github }`" target="_blank">
+                <a v-if="person.social.github" :href="`https://github.com/${ person.social.github }`" target="_blank" rel="noopener">
                   <img src="~/assets/logo-github.svg" alt="Github">
                 </a>
-                <a v-if="person.social.twitter" :href="`https://twitter.com/${ person.social.twitter }`" target="_blank">
+                <a v-if="person.social.twitter" :href="`https://twitter.com/${ person.social.twitter }`" target="_blank" rel="noopener">
                   <img src="~/assets/logo-twitter.svg" alt="Twitter">
                 </a>
                 <button @click="toggleBio(person, true)">Saiba mais</button>

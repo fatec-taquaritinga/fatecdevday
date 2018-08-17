@@ -37,7 +37,7 @@ export default {
 
       <p>Um dia dedicado ao desenvolvimento <br /> web, aplicativos e sistemas em geral</p>
 
-      <a class="button inverse" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank">Inscreva-se</a>
+      <a class="button inverse" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a>
     </header>
 
     <countdown :target="state.date.full" :visible="willHappen" />
@@ -55,7 +55,7 @@ export default {
     <hr />
 
     <div id="enroll" class="container enroll limit-width">
-      <a class="button" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank">Inscreva-se</a>
+      <a class="button" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a>
       <p>Segundo lote: até <b>31/08</b>.</p>
     </div>
 
@@ -64,7 +64,7 @@ export default {
         <a class="logo" href="/" @click.prevent="backToTop"><logo class="inverse">Fatec Dev Day</logo></a>
 
         <p>
-          © {{ state.edition.year }} <a href="http://www.fatectq.edu.br" target="_blank">Fatec Taquaritinga</a>
+          © {{ state.edition.year }} <a href="http://www.fatectq.edu.br" target="_blank" rel="noopener">Fatec Taquaritinga</a>
           <br>Todos os direitos reservados
         </p>
       </div>
