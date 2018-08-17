@@ -15,10 +15,23 @@ module.exports = {
     description: 'Fatec Dev Day: um dia dedicado a desenvolvimento Web, aplicativos e sistemas em geral'
   },
   loading: { color: '#ad0f0a' },
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.pop()
+
+      routes.push({
+        name: 'index',
+        path: '*',
+        component: '~/pages/index.vue'
+      })
+    }
+  },
   modules: [
     '@nuxtjs/pwa',
   ],
   build: {
+    analyze: true,
+
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({

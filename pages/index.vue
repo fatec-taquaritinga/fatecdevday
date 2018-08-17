@@ -2,10 +2,13 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Principal',
+  name: 'Index',
   components: {
+    AppMenu: () => import('~/components/Menu'),
     Logo: () => import('~/components/Logo'),
-    Countdown: () => import('~/components/Countdown')
+    Countdown: () => import('~/components/Countdown'),
+    LayoutAbout: () => import('~/components/layout/About'),
+    LayoutSpeakers: () => import('~/components/layout/Speakers')
   },
   computed: {
     ...mapGetters([ 'willHappen', 'isToday' ]),
@@ -13,13 +16,20 @@ export default {
     state () {
       return this.$store.state
     }
+  },
+  methods: {
+    backToTop () {
+      document.querySelector('.menu .logo').click()
+    }
   }
 }
 </script>
 
 <template>
   <main id="index" class="page">
-    <header id="featured" class="container featured limit-width">
+    <app-menu />
+
+    <header id="inicio" class="container featured limit-width in-menu">
       <h1><logo schema="light" :year="false">{{ state.name.long }}</logo></h1>
 
       <h2 class="hidden-on-large">{{ state.date.short }}</h2>
@@ -36,57 +46,22 @@ export default {
 
     <hr />
 
-    <div class="container two-columns">
-      <div class="gutter">
-        <h3>O que é <br class="hidden-on-large" /> <strong>Fatec Dev Day</strong>?</h3>
+    <layout-about />
 
-        <p>
-          Realizado no segundo semestre de cada ano, o <strong>Fatec Dev Day</strong> é um
-          evento dedicado a discutir o que há de <b>mais recente</b> nas tendências e
-          tecnologias para o desenvolvimento de <b>sistemas</b> e de <b>aplicativos</b>.
-          Trata-se de um dia inteiro de palestras e atrações, em que os estudantes e
-          profissionais de Taquaritinga e região não apenas se atualizam das
-          novidades em TI, mas também podem <b>compartilhar conhecimento</b> e
-          fazer contato com grandes profissionais do setor.
-        </p>
+    <hr />
 
-        <p class="hidden-on-small">
-          A <b>edição 2016</b> do <strong>Fatec Dev Day</strong> trouxe palestras
-          relacionadas a Angular 2 e TypeScript, aplicações <i>web</i> modernas com Laravel,
-          arquitetura de microserviços em Java, Bots e Machine Learning, Internet
-          das Coisas (<i>IoT</i>), introdução ao Docker, <i>mobile</i> e <i>progressive web apps</i>. Já
-          a <b>edição 2017</b> abordou temas como deploy de aplicações usando Docker,
-          implementação de <i>pick up line generators</i> com JavaScript, Inteligência
-          Artificial e reconhecimento óptico com PHP, migração do Java para o
-          Node, operações HTTP com Python, uso do ReactJS, além de uma sessão
-          especial de Live Coding, em que os participantes puderam acompanhar,
-          ao vivo, o desenvolvimento de um aplicativo para Android e iOS.
-        </p>
-
-        <p>
-          A <b>edição 2018</b> do <strong>Fatec Dev Day</strong> já está marcada para
-          <strong>10 de novembro</strong> e promete ser o mesmo sucesso das duas
-          edições anteriores. Em breve traremos novidades aqui, fique ligado!
-        </p>
-      </div>
-
-      <aside>
-        <div class="photo photo-1"></div>
-        <div class="photo photo-2"></div>
-        <div class="photo photo-3"></div>
-      </aside>
-    </div>
+    <layout-speakers />
 
     <hr />
 
     <div id="enroll" class="container enroll limit-width">
       <a class="button" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank">Inscreva-se</a>
-      <p>Primeiro lote: <b>35 lugares</b>, ou até <b>29/06</b>.</p>
+      <p>Segundo lote: até <b>31/08</b>.</p>
     </div>
 
     <footer class="footer">
       <div class="container">
-        <a class="logo" href="/" @click.prevent="navigate"><logo class="inverse">Fatec Dev Day</logo></a>
+        <a class="logo" href="/" @click.prevent="backToTop"><logo class="inverse">Fatec Dev Day</logo></a>
 
         <p>
           © {{ state.edition.year }} <a href="http://www.fatectq.edu.br" target="_blank">Fatec Taquaritinga</a>
@@ -102,6 +77,7 @@ export default {
 
 .featured
   background: $background-primary
+  padding-top: 50px
   min-height: 80vh
   display: flex
   flex-flow: column
@@ -127,7 +103,7 @@ export default {
     margin-top: 3em
 
 .countdown
-  z-depth-6dp()
+  z-depth: 6
   padding: 1em 0 1.25em
   background: $background-secondary
   position: relative
@@ -146,7 +122,7 @@ export default {
   flex-flow: column
   justify-content: center
   align-items: center
-  z-depth-1dp()
+  z-depth: 2
   p
     margin-top: 1.5em
     font-size: .875em
@@ -171,13 +147,4 @@ export default {
     text-decoration: none
     &:hover, &:focus
       color: $color-primary-700
-
-.photo-1
-  background-image: url('~/assets/backgrounds/edition-2017-1.jpg')
-
-.photo-2
-  background-image: url('~/assets/backgrounds/edition-2017-2.jpg')
-
-.photo-3
-  background-image: url('~/assets/backgrounds/edition-2017-3.jpg')
 </style>

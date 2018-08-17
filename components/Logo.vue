@@ -9,12 +9,6 @@ export default {
       default: true
     }
   },
-  methods: {
-    navigate (event) {
-      event.preventDefault()
-      this.$router.push(this.href)
-    }
-  },
   render (createElement) {
     const svg = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 518.7 153.1">
       <title>{ this.$slots.default ? this.$slots.default : 'Fatec Dev Day' }</title>
@@ -50,7 +44,7 @@ export default {
     </svg>
 
     const className = this.schema ? 'logo ' + this.schema : 'logo'
-    return this.href ? <a href={this.href} onClick={this.navigate} class={className}>{svg}</a> : <span class={className}>{svg}</span>
+    return this.href ? <a href={this.href} class={className}>{svg}</a> : <span class={className}>{svg}</span>
   }
 }
 </script>

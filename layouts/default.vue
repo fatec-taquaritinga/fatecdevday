@@ -16,14 +16,15 @@ export default {
 *, *::before, *::after
   box-sizing: border-box
 
-html, body
-  margin: 0
-  padding: 0
+html
   height: 100%
+  overflow: auto
 
 body
   font: 500 1em/1.4 $font-primary
   color: $text-color-primary
+  margin: 0; padding: 0
+  height: 100%
 
 img, svg
   max-width: 100%
@@ -101,9 +102,8 @@ p, h1, h2, h3, h4, h5, h6
     &:hover, &:focus
       color: $color-primary
 
-.page
+#app
   text-align: center
-  position: relative
 
 .container
   position: relative
@@ -152,7 +152,7 @@ hr
   padding: 0
   position: relative
   z-index: 2
-  z-depth-4dp()
+  z-depth: 4
   & > div
     flex: 1 1 auto
   & > aside
@@ -165,7 +165,7 @@ hr
       background: $color-secondary-700 center left \/ cover
       position: relative
       z-index: 2
-      z-depth-2dp()
+      z-depth: 2
   @media (min-width: $breakpoint-desktop)
     flex-flow: row
     & > aside
