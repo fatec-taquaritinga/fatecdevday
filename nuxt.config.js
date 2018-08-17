@@ -31,6 +31,11 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
   ],
+  manifest: {
+    name: 'Fatec Dev Day 2018',
+    lang: 'pt-br',
+    start_url: '/'
+  },
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
