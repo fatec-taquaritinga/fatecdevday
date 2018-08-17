@@ -30,7 +30,7 @@ export default {
       <div class="cards">
         <div class="card" v-for="person of talks" :key="person.id" v-if="person.name">
           <transition name="slide-fade" mode="out-in">
-            <div key="main-info" class="main-info" v-if="!person.showBio">
+            <div key="main-info" class="main-info" v-show="!person.showBio">
               <picture v-if="person.avatar" @click="person.showBio = true">
                 <img :src="path(person.avatar)" :alt="person.name">
               </picture>
@@ -61,7 +61,7 @@ export default {
               </div>
             </div>
 
-            <div key="bio-details" class="bio-details" v-else>
+            <div key="bio-details" class="bio-details" v-show="person.showBio">
               <h4>{{ person.name }}</h4>
               <p v-if="person.bio">{{ person.bio }}</p>
 
