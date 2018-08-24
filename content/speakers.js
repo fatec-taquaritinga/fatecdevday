@@ -1,7 +1,7 @@
 const talks = [
   {
     id: 1,
-    avatar: 'cleber.jpg',
+    avatar: require('~/assets/persons/cleber.jpg'),
     name: 'Cleber Campomori',
     bio: `Líder de conteúdo e inovação no TreinaWeb, autor de cursos nas trilhas de .NET, Xamarin, Java, Swift, TypeScript, etc.
       Professor do curso de pós-graduação em Projeto e Desenvolvimento de Aplicações Web pela UNIFATEA.
@@ -22,7 +22,7 @@ const talks = [
 
   {
     id: 2,
-    avatar: 'vilibaldo.jpg',
+    avatar: require('~/assets/persons/vilibaldo.jpg'),
     name: 'Vilibaldo Neto',
     bio: `Head of Technology na Beblue, atuando em duas grandes vertentes da empresa, Market Place (MP) e Financial Services (FS).
       Trabalhou anteriormente com diversos times internacionais em desenvolvimento de software e hardware e, por algum tempo, trabalhou na emergente China para a finalização de um grande projeto.
@@ -40,7 +40,7 @@ const talks = [
 
   {
     id: 3,
-    avatar: 'jota.jpg',
+    avatar: require('~/assets/persons/jota.jpg'),
     name: 'Jota Júnior',
     bio: `No alto de seus 25 anos de idade, é formado em Ciência da Computação pela Universidade Federal de Minas Gerais.
       Foi estudante visitante na Universidade de Columbia, em Nova York, e assistente de pesquisa no Instituto de Tecnologia de Massachusetts, o MIT.

@@ -1,5 +1,5 @@
 <script>
-import { mapGetters } from 'vuex'
+import event from '../content'
 
 export default {
   name: 'Index',
@@ -9,13 +9,12 @@ export default {
     Countdown: () => import('~/components/Countdown'),
     LayoutAbout: () => import('~/components/layout/About'),
     LayoutSponsors: () => import('~/components/layout/Sponsors'),
-    LayoutSpeakers: () => import('~/components/layout/Speakers')
+    LayoutSpeakers: () => import('~/components/layout/Speakers'),
+    LayoutAgenda: () => import('~/components/layout/Agenda')
   },
-  computed: {
-    ...mapGetters([ 'willHappen', 'isToday' ]),
-
-    state () {
-      return this.$store.state
+  data () {
+    return {
+      event
     }
   },
   methods: {
@@ -31,17 +30,17 @@ export default {
     <app-menu />
 
     <header id="inicio" class="container featured limit-width in-menu">
-      <h1><logo schema="light" :year="false">{{ state.name.long }}</logo></h1>
+      <h1><logo schema="light" :year="false">{{ event.name.long }}</logo></h1>
 
-      <h2 class="hidden-on-large">{{ state.date.short }}</h2>
-      <h2 class="hidden-on-small">{{ state.date.long }}</h2>
+      <h2 class="hidden-on-large">{{ event.date.short }}</h2>
+      <h2 class="hidden-on-small">{{ event.date.long }}</h2>
 
       <p>Um dia dedicado ao desenvolvimento <br /> web, aplicativos e sistemas em geral</p>
 
       <a class="button inverse" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a>
     </header>
 
-    <countdown :target="state.date.full" :visible="willHappen" />
+    <countdown :target="event.date.full" />
 
     <div class="parallax"></div>
 
@@ -55,6 +54,8 @@ export default {
 
     <layout-speakers />
 
+    <layout-agenda />
+
     <hr />
 
     <div id="enroll" class="container enroll limit-width">
@@ -67,7 +68,7 @@ export default {
         <a class="logo" href="/" @click.prevent="backToTop"><logo class="inverse">Fatec Dev Day</logo></a>
 
         <p>
-          © {{ state.edition.year }} <a href="http://www.fatectq.edu.br" target="_blank" rel="noopener">Fatec Taquaritinga</a>
+          © {{ event.edition.year }} <a href="http://www.fatectq.edu.br" target="_blank" rel="noopener">Fatec Taquaritinga</a>
           <br>Todos os direitos reservados
         </p>
       </div>

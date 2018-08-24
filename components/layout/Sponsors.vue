@@ -1,14 +1,12 @@
 <script>
-export default {
-  name: 'Sponsors',
-  computed: {
-    sponsors () {
-      return this.$store.state.sponsors
-    },
+import event from '~/content'
 
-    team () {
-      const team = this.$store.state.team.slice()
-      return team.sort((a, b) => a.localeCompare(b))
+export default {
+  name: 'Layout-Sponsors',
+  data () {
+    return {
+      sponsors: event.sponsors,
+      team: event.team.slice().sort((a, b) => a.localeCompare(b))
     }
   }
 }

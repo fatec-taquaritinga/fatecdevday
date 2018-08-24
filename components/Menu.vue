@@ -1,5 +1,6 @@
 <script>
 import { throttle } from 'throttle-debounce'
+import event from '~/content'
 
 export default {
   name: 'Menu',
@@ -13,13 +14,14 @@ export default {
       items: [
         { path: '/' },
         { path: '#sobre', title: 'Sobre' },
-        { path: '#palestrantes', title: 'Palestrantes' }
+        { path: '#palestrantes', title: 'Palestrantes' },
+        { path: '#agenda', title: 'Agenda' }
       ]
     }
   },
   computed: {
     title () {
-      return this.$store.state.name.long
+      return event.name.long
     }
   },
   methods: {
