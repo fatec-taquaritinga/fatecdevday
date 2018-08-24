@@ -43,7 +43,10 @@ h2
   font-size: 2.25em
 
 h3
-  font-size: 2.125em
+  font-size: 2em
+
+h4
+  font-size: 1.75em
 
 p
   margin: .75em 0 0

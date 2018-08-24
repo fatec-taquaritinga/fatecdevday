@@ -8,6 +8,7 @@ export default {
     Logo: () => import('~/components/Logo'),
     Countdown: () => import('~/components/Countdown'),
     LayoutAbout: () => import('~/components/layout/About'),
+    LayoutSponsors: () => import('~/components/layout/Sponsors'),
     LayoutSpeakers: () => import('~/components/layout/Speakers')
   },
   computed: {
@@ -47,6 +48,8 @@ export default {
     <hr />
 
     <layout-about />
+
+    <layout-sponsors />
 
     <hr />
 

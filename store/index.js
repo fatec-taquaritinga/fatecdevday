@@ -1,5 +1,6 @@
 import Vuex from 'vuex'
-import talks from './talks'
+import speakers from './speakers'
+import sponsors from './sponsors'
 
 const store = () => new Vuex.Store({
   state: {
@@ -43,7 +44,8 @@ const store = () => new Vuex.Store({
       'Inteligência Artificial',
       'Internet of Things'
     ],
-    talks
+    speakers,
+    sponsors
   },
   getters: {
     isToday (state, getters) {

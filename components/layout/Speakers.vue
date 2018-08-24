@@ -3,7 +3,7 @@ export default {
   name: 'Layout-Speakers',
   data () {
     return {
-      talks: this.$store.state.talks.map((obj, i) => Object.assign({ index: i, showBio: false }, obj))
+      speakers: this.$store.state.speakers.map((obj, i) => Object.assign({ index: i, showBio: false }, obj))
     }
   },
   methods: {
@@ -29,7 +29,7 @@ export default {
       </p>
 
       <div class="cards">
-        <div class="card" v-for="person of talks" :key="person.id" v-if="person.name">
+        <div class="card" v-for="person of speakers" :key="person.id" v-if="person.name">
           <transition name="slide-fade" mode="out-in">
             <div key="main-info" class="main-info" v-if="!person.showBio">
               <picture v-if="person.avatar" @click="toggleBio(person, true)">
