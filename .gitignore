@@ -12,3 +12,6 @@ dist
 
 # PWA assets
 sw.*
+
+# Marketing PDFs
+*.pdf

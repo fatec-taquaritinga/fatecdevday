@@ -17,7 +17,14 @@ export default {
     }
   ],
 
-  bronze: null,
+  bronze: [
+    {
+      id: 1,
+      name: 'Monitora Soluções Tecnológicas',
+      url: 'https://www.monitoratec.com.br/',
+      logo: require('~/assets/sponsors/logo-monitora.png')
+    }
+  ],
 
   backers: [
     {

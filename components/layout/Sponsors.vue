@@ -18,18 +18,21 @@ export default {
       <div class="block">
         <h3>Patrocínio</h3>
 
-        <article v-if="sponsors.gold && sponsors.gold.length" class="gold">
-          <!-- <h4>Gold</h4> -->
+        <article class="gold">
+          <h4>Ouro</h4>
 
-          <div>
+          <div v-if="sponsors.gold && sponsors.gold.length">
             <a v-for="sponsor in sponsors.gold" :key="sponsor.id" :href="sponsor.url" target="_blank">
               <img :src="sponsor.logo" :title="sponsor.name">
             </a>
           </div>
+          <div v-else>
+            <a class="button" href="mailto:comunicacao@fatectq.edu.br?subject=Patrocinar o Fatec Dev Day 2018" rel="noopener">Seja um Patrocinador!</a>
+          </div>
         </article>
 
         <article v-if="sponsors.silver && sponsors.silver.length" class="silver">
-          <!-- <h4>Silver</h4> -->
+          <h4>Prata</h4>
 
           <div>
             <a v-for="sponsor in sponsors.silver" :key="sponsor.id" :href="sponsor.url" target="_blank">
@@ -39,7 +42,7 @@ export default {
         </article>
 
         <article v-if="sponsors.bronze && sponsors.bronze.length" class="bronze">
-          <!-- <h4>Bronze</h4> -->
+          <h4>Bronze</h4>
 
           <div>
             <a v-for="sponsor in sponsors.bronze" :key="sponsor.id" :href="sponsor.url" target="_blank">
@@ -100,12 +103,13 @@ h3, h4
   font-weight: 500
 
 article
-  margin-top: 1rem
+  margin-top: 2rem
   div
     display: flex
     flex-flow: row wrap
     justify-content: center
     align-items: center
+    margin-top: .75rem
   a, img
     display: block
   a
@@ -120,14 +124,32 @@ article
     height: 2em
 
 .gold
-  font-size: 3.5em
+  font-size: 3em
   color: $color-gold
+  margin-top: 2rem
+  h4
+    color: @color
+  a
+    border: 5px solid transparent
   a:hover, a:focus
     background: @color
+    border-color: darken(@color, 15%)
+  .button
+    font-size: .875rem
+    padding: .5em 1em
+    color: $color-gold
+    border: 2px solid @color
+    border-radius: 2px
+    background: transparent
+    &:hover, &:focus
+      background: @color
+      color: #fff
 
 .silver
   font-size: 2.25em
   color: $color-silver
+  h4
+    color: @color
   a
     border: 5px solid transparent
   a:hover, a:focus
@@ -137,12 +159,17 @@ article
 .bronze
   font-size: 1.375em
   color: $color-bronze
+  h4
+    color: @color
+  a
+    border: 5px solid transparent
   a:hover, a:focus
     background: @color
+    border-color: darken(@color, 15%)
 
 .backers
   margin-top: 5em
-  font-size: .875em
+  font-size: .75em
   font-weight: 400
   a:hover, a:focus
     background: $color-secondary
