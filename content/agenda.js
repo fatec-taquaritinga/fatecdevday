@@ -31,4 +31,15 @@ export default [
       Esta palestra vem elucidar os principais e mais recentes conceitos e ferramentas que guiam esta área.`,
     speaker: speakers.find(speaker => speaker.name === 'Jota Júnior')
   },
+
+  {
+    id: 4,
+    title: 'Flutter: o futuro do desenvolvimento mobile',
+    description: `O Flutter é um SDK de desenvolvimento de aplicativos móveis de código aberto, criado pelo Google.
+      Com o Flutter podemos construir aplicativos móveis nativos com apenas um código, o que significa que,
+      ao invés de ter que aprender Java ou Kotlin para Android e Objective-C ou Switf para iOS,
+      você pode desenvolver apenas utilizando a linguagem Dart. Nesta palestra,
+      você poderá ter uma visão geral do Flutter, o nativo de verdade!`,
+    speaker: speakers.find(speaker => speaker.name === 'Danilo Deus Dará')
+  },
 ]
