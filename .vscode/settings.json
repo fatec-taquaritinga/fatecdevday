@@ -12,6 +12,5 @@
   "javascript.format.insertSpaceAfterConstructor": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "workbench.colorTheme": "Default Dark+"
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true
 }
