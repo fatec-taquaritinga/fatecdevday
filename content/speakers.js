@@ -55,6 +55,47 @@ const talks = [
     social: {
       linkedin: 'jotajunior'
     }
+  },
+
+  {
+    id: 4,
+    avatar: require('~/assets/persons/danilo.jpg'),
+    name: 'Danilo Deus Dará',
+    bio: `Desenvolvedor há mais de 15 anos. Atua como tech lead em um dos times LuizaLabs, o laboratório de
+      inovação do Magazine Luiza. Especialista em desenvolvimento backend em Java e seus frameworks em ambiente crítico,
+      também conhecendo GoLang e Node para backend, além de React + Redux para frontend. Além disso, faz toda a
+      gestão do seu time, garantindo as boas práticas e entregas contínuas em um ambiente gigante com desafios diários.
+      Experiente em desenvolvimento Android nativo com Java e Kotlin, atualmente empolgado com Flutter e Dart.`,
+    job: {
+      title: 'Tech Lead',
+      company: 'LuizaLabs',
+      url: 'https://medium.com/luizalabs'
+    },
+    social: {
+      linkedin: 'danilo-deus-dará'
+    }
+  },
+
+  {
+    id: 5,
+    avatar: require('~/assets/persons/igor.jpg'),
+    name: 'Igor Halfeld',
+    bio: `Atualmente engenheiro de software na NOALVO, maior plataforma brasileira de planejamento e compra de mídia offline,
+      também já atuou como full-stack developer. No entanto, sua criança interior ainda permanece no mundo front-end,
+      entusiasmado com JavaScript e Vue.js, apaixonado por compartilhar conhecimento e contribuir para o software livre.
+      Palestrante, gerente dos meetups Vue.js SP e JS SP, contribuidor ativo na comunidade Vue.js Brasil, host do
+      podcast Pair Programming Project. Organizador da maior experiência Vue.js da america latina, o Vue.js Summit 2018.`,
+    job: {
+      title: 'Senior Software Engineer',
+      company: 'NOALVO',
+      url: 'https://midianoalvo.com.br/'
+    },
+    social: {
+      linkedin: 'igorhalfeld',
+      github: 'igorhalfeld',
+      twitter: 'igorhalfeld'
+
+    }
   }
 ]
 
