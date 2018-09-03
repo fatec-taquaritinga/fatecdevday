@@ -32,6 +32,14 @@ export default {
       name: 'TreinaWeb',
       url: 'https://www.treinaweb.com.br/',
       logo: require('~/assets/sponsors/logo-treinaweb.svg')
+    },
+
+    {
+      id: 2,
+      name: 'Vue.js Brasil',
+      url: 'https://github.com/vuejs-br',
+      logo: require('~/assets/sponsors/logo-vuejsbr.svg'),
+      vertical: true
     }
   ]
 }

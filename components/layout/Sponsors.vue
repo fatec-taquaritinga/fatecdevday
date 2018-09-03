@@ -23,7 +23,7 @@ export default {
 
           <div v-if="sponsors.gold && sponsors.gold.length">
             <a v-for="sponsor in sponsors.gold" :key="sponsor.id" :href="sponsor.url" target="_blank">
-              <img :src="sponsor.logo" :title="sponsor.name">
+              <img :src="sponsor.logo" :title="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
             </a>
           </div>
           <div v-else>
@@ -36,7 +36,7 @@ export default {
 
           <div>
             <a v-for="sponsor in sponsors.silver" :key="sponsor.id" :href="sponsor.url" target="_blank">
-              <img :src="sponsor.logo" :title="sponsor.name">
+              <img :src="sponsor.logo" :title="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
             </a>
           </div>
         </article>
@@ -46,7 +46,7 @@ export default {
 
           <div>
             <a v-for="sponsor in sponsors.bronze" :key="sponsor.id" :href="sponsor.url" target="_blank">
-              <img :src="sponsor.logo" :title="sponsor.name">
+              <img :src="sponsor.logo" :title="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
             </a>
           </div>
         </article>
@@ -58,7 +58,7 @@ export default {
         <article v-if="sponsors.backers && sponsors.backers.length">
           <div>
             <a v-for="backer in sponsors.backers"  :key="backer.id" :href="backer.url" target="_blank">
-              <img :src="backer.logo" :title="backer.name">
+              <img :src="backer.logo" :title="backer.name" :class="{ 'vertical': backer.vertical }">
             </a>
           </div>
         </article>
@@ -122,6 +122,8 @@ article
         filter: grayscale(100%) invert() contrast(0) brightness(500%)
   img
     height: 2em
+    &.vertical
+      height: 4.5em
 
 .gold
   font-size: 3em
