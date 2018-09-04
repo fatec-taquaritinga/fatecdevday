@@ -42,4 +42,15 @@ export default [
       você poderá ter uma visão geral do Flutter, o nativo de verdade!`,
     speaker: speakers.find(speaker => speaker.name === 'Danilo Deus Dará')
   },
+
+  {
+    id: 5,
+    title: 'Como desenvolver um ChatBot de alta qualidade',
+    description: `A área de inteligência artificial aplicada à automação da comunicação,
+      com os chamados ChatBots, está fervilhando e aparecendo com frequencia na mídia de tecnologia.
+      Temos observado o cenário da migração digital e toda a transformação que ela está gerando,
+      especialmente na experiência do usuário. Por isso, esta palestra mostrará como desenvolver um ChatBot com
+      qualidade, utilizando de forma integrada os serviços IBM Cloud e Watson.`,
+    speaker: speakers.find(speaker => speaker.name === 'Sérgio Gama')
+  },
 ]
