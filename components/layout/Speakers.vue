@@ -70,12 +70,12 @@ export default {
           <noscript v-if="person.bio">{{ person.bio }}</noscript>
         </div>
 
-        <div class="card comming">
+        <!-- <div class="card comming">
           <div>
             <h4>Em Breve</h4>
             <p>Mais informações<br>sobre palestrantes</p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -163,17 +163,17 @@ button
   button
     margin-top: 1.25em
 
-.card.comming
-  background: $color-secondary-100
-  display: flex
-  align-items: center
-  justify-content: center
-  color: $color-secondary-300
-  margin-top: 5em
-  h4
-    color: $color-secondary
-  @media (min-width: $breakpoint-desktop-hd)
-    margin-top: 9em
+// .card.comming
+//   background: $color-secondary-100
+//   display: flex
+//   align-items: center
+//   justify-content: center
+//   color: $color-secondary-300
+//   margin-top: 5em
+//   h4
+//     color: $color-secondary
+//   @media (min-width: $breakpoint-desktop-hd)
+//     margin-top: 9em
 
 .slide-fade-enter-active
   transition: all .5s ease

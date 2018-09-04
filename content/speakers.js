@@ -94,7 +94,29 @@ const talks = [
       linkedin: 'igorhalfeld',
       github: 'igorhalfeld',
       twitter: 'igorhalfeld'
+    }
+  },
 
+  {
+    id: 6,
+    avatar: require('~/assets/persons/sergio.jpg'),
+    name: 'Sérgio Gama',
+    bio: `Engenheiro de automação com mais de 25 anos de experiência em TI como desenvolvedor,
+      analista, consultor, arquiteto de soluções, gerente de projetos e de operações.
+      Atuou por 15 anos no setor financeiro, especialista em EDM, BPM, aplicações distribuídas e backoffice bancário.
+      Atuou por 8 anos em seguros e previdência privada, com soluções implantadas no Brasil, China e Índia.
+      Gerenciou projetos ERP em diversos setores, incluindo química, eletrônica, saúde e finanças.
+      Desde 2009 na IBM, atualmente é Developer Advocate Leader, especialista em desenvolvimento de software,
+      inteligência artificial, Big Data e IoT.`,
+    job: {
+      title: 'Developer Advocate Leader',
+      company: 'IBM',
+      url: 'https://www.ibm.com/br-pt/'
+    },
+    social: {
+      linkedin: 'sergiogama',
+      github: 'sergiogama',
+      twitter: 'sergiorggama'
     }
   }
 ]
