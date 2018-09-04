@@ -80,15 +80,15 @@ const talks = [
     id: 5,
     avatar: require('~/assets/persons/igor.jpg'),
     name: 'Igor Halfeld',
-    bio: `Atualmente engenheiro de software na NOALVO, maior plataforma brasileira de planejamento e compra de mídia offline,
-      também já atuou como full-stack developer. No entanto, sua criança interior ainda permanece no mundo front-end,
-      entusiasmado com JavaScript e Vue.js, apaixonado por compartilhar conhecimento e contribuir para o software livre.
-      Palestrante, gerente dos meetups Vue.js SP e JS SP, contribuidor ativo na comunidade Vue.js Brasil, host do
-      podcast Pair Programming Project. Organizador da maior experiência Vue.js da america latina, o Vue.js Summit 2018.`,
+    bio: `Já atuou como engenheiro de software e como full-stack developer.
+      No entanto, sua criança interior ainda permanece no mundo front-end, entusiasmado com JavaScript e Vue.js,
+      apaixonado por compartilhar conhecimento e contribuir para o software livre. Palestrante, gerente dos meetups
+      Vue.js SP e JS SP, contribuidor ativo na comunidade Vue.js Brasil, host do podcast Pair Programming Project.
+      Organizador da maior experiência Vue.js da america latina, o Vue.js Summit 2018.`,
     job: {
-      title: 'Senior Software Engineer',
-      company: 'NOALVO',
-      url: 'https://midianoalvo.com.br/'
+      title: 'Organizador',
+      company: 'Vue.js Summit',
+      url: 'https://vuejssummit.com/'
     },
     social: {
       linkedin: 'igorhalfeld',
