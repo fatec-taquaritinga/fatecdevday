@@ -29,13 +29,20 @@ export default {
   backers: [
     {
       id: 1,
+      name: 'IBM',
+      url: 'https://www.ibm.com/br-pt/',
+      logo: require('~/assets/sponsors/logo-ibm.svg')
+    },
+
+    {
+      id: 2,
       name: 'TreinaWeb',
       url: 'https://www.treinaweb.com.br/',
       logo: require('~/assets/sponsors/logo-treinaweb.svg')
     },
 
     {
-      id: 2,
+      id: 3,
       name: 'Vue.js Brasil',
       url: 'https://github.com/vuejs-br',
       logo: require('~/assets/sponsors/logo-vuejsbr.svg'),

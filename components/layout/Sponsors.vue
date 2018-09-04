@@ -22,8 +22,8 @@ export default {
           <h4>Ouro</h4>
 
           <div v-if="sponsors.gold && sponsors.gold.length">
-            <a v-for="sponsor in sponsors.gold" :key="sponsor.id" :href="sponsor.url" target="_blank">
-              <img :src="sponsor.logo" :title="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
+            <a v-for="sponsor in sponsors.gold" :key="sponsor.id" :href="sponsor.url" :title="sponsor.name" target="_blank" rel="noopener">
+              <img :src="sponsor.logo" :alt="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
             </a>
           </div>
           <div v-else>
@@ -35,8 +35,8 @@ export default {
           <h4>Prata</h4>
 
           <div>
-            <a v-for="sponsor in sponsors.silver" :key="sponsor.id" :href="sponsor.url" target="_blank">
-              <img :src="sponsor.logo" :title="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
+            <a v-for="sponsor in sponsors.silver" :key="sponsor.id" :href="sponsor.url" :title="sponsor.name" target="_blank" rel="noopener">
+              <img :src="sponsor.logo" :alt="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
             </a>
           </div>
         </article>
@@ -45,8 +45,8 @@ export default {
           <h4>Bronze</h4>
 
           <div>
-            <a v-for="sponsor in sponsors.bronze" :key="sponsor.id" :href="sponsor.url" target="_blank">
-              <img :src="sponsor.logo" :title="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
+            <a v-for="sponsor in sponsors.bronze" :key="sponsor.id" :href="sponsor.url" :title="sponsor.name" target="_blank" rel="noopener">
+              <img :src="sponsor.logo" :alt="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
             </a>
           </div>
         </article>
@@ -57,8 +57,8 @@ export default {
 
         <article v-if="sponsors.backers && sponsors.backers.length">
           <div>
-            <a v-for="backer in sponsors.backers"  :key="backer.id" :href="backer.url" target="_blank">
-              <img :src="backer.logo" :title="backer.name" :class="{ 'vertical': backer.vertical }">
+            <a v-for="backer in sponsors.backers"  :key="backer.id" :href="backer.url" :title="backer.name" target="_blank" rel="noopener">
+              <img :src="backer.logo" :alt="backer.name" :class="{ 'vertical': backer.vertical }">
             </a>
           </div>
         </article>
@@ -69,10 +69,10 @@ export default {
 
         <article>
           <div>
-            <a href="http://www.fatectq.edu.br/analise-e-desenvolvimento-de-sistemas" target="_blank">
+            <a href="http://www.fatectq.edu.br/analise-e-desenvolvimento-de-sistemas" target="_blank" rel="noopener">
               <img src="~/assets/logo-ads.svg" alt="Análise e Desenvolvimento de Sistemas">
             </a>
-            <a href="http://www.fatectq.edu.br/sistemas-para-internet" target="_blank">
+            <a href="http://www.fatectq.edu.br/sistemas-para-internet" target="_blank" rel="noopener">
               <img src="~/assets/logo-si.svg" alt="Sistemas para Internet">
             </a>
           </div>
@@ -121,53 +121,57 @@ article
       img
         filter: grayscale(100%) invert() contrast(0) brightness(500%)
   img
-    height: 2em
+    width: auto
+    min-height: 1.8em
+    max-height: 2em
     &.vertical
-      height: 4.5em
+      height: 4em
+      max-height: 4em
 
 .gold
   font-size: 3em
   color: $color-gold
   margin-top: 2rem
   h4
-    color: @color
+    color: $color-gold
   a
     border: 5px solid transparent
   a:hover, a:focus
-    background: @color
-    border-color: darken(@color, 15%)
+    background: $color-gold
+    border-color: darken($color-gold, 15%)
   .button
     font-size: .875rem
     padding: .5em 1em
     color: $color-gold
-    border: 2px solid @color
+    border: 2px solid $color-gold
     border-radius: 2px
     background: transparent
+    margin-bottom: 1.5em
     &:hover, &:focus
-      background: @color
+      background: $color-gold
       color: #fff
 
 .silver
   font-size: 2.25em
   color: $color-silver
   h4
-    color: @color
+    color: $color-silver
   a
     border: 5px solid transparent
   a:hover, a:focus
-    background: @color
-    border-color: darken(@color, 15%)
+    background: $color-silver
+    border-color: darken($color-silver, 15%)
 
 .bronze
   font-size: 1.375em
   color: $color-bronze
   h4
-    color: @color
+    color: $color-bronze
   a
     border: 5px solid transparent
   a:hover, a:focus
-    background: @color
-    border-color: darken(@color, 15%)
+    background: $color-bronze
+    border-color: darken($color-bronze, 15%)
 
 .backers
   margin-top: 5em
@@ -175,6 +179,8 @@ article
   font-weight: 400
   a:hover, a:focus
     background: $color-secondary
+  img
+    max-width: 9em
 
 .organizers
   padding-top: 8em
@@ -186,7 +192,9 @@ article
     a:hover, a:focus
       background: $color-secondary
     img
-      height: 1.5em
+      min-height: auto
+      max-height: auto
+      height: 1.325em
 
 .team
   margin-top: 3em
