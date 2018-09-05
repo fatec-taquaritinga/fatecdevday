@@ -86,7 +86,7 @@ const talks = [
       Vue.js SP e JS SP, contribuidor ativo na comunidade Vue.js Brasil, host do podcast Pair Programming Project.
       Organizador da maior experiência Vue.js da america latina, o Vue.js Summit 2018.`,
     job: {
-      title: 'Organizador',
+      title: 'Consultor && Organizador',
       company: 'Vue.js Summit',
       url: 'https://vuejssummit.com/'
     },
