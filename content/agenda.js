@@ -53,4 +53,15 @@ export default [
       qualidade, utilizando de forma integrada os serviços IBM Cloud e Watson.`,
     speaker: speakers.find(speaker => speaker.name === 'Sérgio Gama')
   },
+
+  {
+    id: 6,
+    title: 'NativeScript-Vue: apps nativas em JavaScript com Vue.js',
+    description: `Vue.js é uma biblioteca JavaScript para a construção de interfaces,
+      que ficou bem famosa pela sua simplicidade e robustez no desenvolvimento Web.
+      Mas muitos não sabem que podemos aproveitar a developer experience oferecida pelo Vue.js
+      também durante o desenvolvimento mobile. Nesta palestra, vamos ver como usar de
+      tal simplicidade na hora de fazer um app mobile nativo!`,
+    speaker: speakers.find(speaker => speaker.name === 'Igor Halfeld')
+  }
 ]
