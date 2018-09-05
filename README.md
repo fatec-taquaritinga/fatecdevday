@@ -17,9 +17,10 @@ $ npm start
 
 # gerar projeto estático
 $ npm run generate
-
-# publicar estático usando Surge.sh
-$ npm run deploy
 ```
 
 Para explicações detalhadas de como as coisas funcionam, veja a [documentação do Nuxt.js](https://github.com/nuxt/nuxt.js).
+
+## Como Publicar
+
+Este projeto é automaticamente publicado quando _commits_ chegam em `master`, via [Netlify](https://www.netlify.com/), em um processo de integração contínua. O processo é disparado somente por atualizações neste _branch_, assim contribuições temporárias podem ser realizadas em outros _branches_ antes da publicação definitiva ocorrer.
