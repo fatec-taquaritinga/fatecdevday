@@ -16,8 +16,7 @@ export default {
     <div class="gutter">
       <h3>Agenda</h3>
       <p>
-        Fique por dentro da programação já confirmada, em breve teremos atualizações.<br />
-        <i>Observação: a ordem das atividades pode sofrer alterações.</i>
+        Fique por dentro da programação confirmada. <i>Observação: a ordem não está definida.</i>
       </p>
 
       <ol class="schedule">
