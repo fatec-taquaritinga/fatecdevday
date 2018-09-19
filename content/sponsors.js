@@ -1,5 +1,13 @@
 export default {
-  gold: null,
+  gold: [
+    {
+      id: 1,
+      name: 'Cast Group',
+      url: 'https://www.castgroup.com.br/pt/',
+      logo: require('~/assets/sponsors/logo-cast.svg'),
+      width: '7em'
+    }
+  ],
 
   silver: [
     {
