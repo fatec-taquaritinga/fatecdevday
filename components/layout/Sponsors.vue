@@ -23,7 +23,7 @@ export default {
 
           <div v-if="sponsors.gold && sponsors.gold.length">
             <a v-for="sponsor in sponsors.gold" :key="sponsor.id" :href="sponsor.url" :title="sponsor.name" target="_blank" rel="noopener">
-              <img :src="sponsor.logo" :alt="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
+              <img :src="sponsor.logo" :alt="sponsor.name" :style="{ width: sponsor.width }">
             </a>
           </div>
           <div v-else>
@@ -36,7 +36,7 @@ export default {
 
           <div>
             <a v-for="sponsor in sponsors.silver" :key="sponsor.id" :href="sponsor.url" :title="sponsor.name" target="_blank" rel="noopener">
-              <img :src="sponsor.logo" :alt="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
+              <img :src="sponsor.logo" :alt="sponsor.name" :style="{ width: sponsor.width }">
             </a>
           </div>
         </article>
@@ -46,7 +46,7 @@ export default {
 
           <div>
             <a v-for="sponsor in sponsors.bronze" :key="sponsor.id" :href="sponsor.url" :title="sponsor.name" target="_blank" rel="noopener">
-              <img :src="sponsor.logo" :alt="sponsor.name" :class="{ 'vertical': sponsor.vertical }">
+              <img :src="sponsor.logo" :alt="sponsor.name" :style="{ width: sponsor.width }">
             </a>
           </div>
         </article>
@@ -58,7 +58,7 @@ export default {
         <article v-if="sponsors.backers && sponsors.backers.length">
           <div>
             <a v-for="backer in sponsors.backers"  :key="backer.id" :href="backer.url" :title="backer.name" target="_blank" rel="noopener">
-              <img :src="backer.logo" :alt="backer.name" :class="{ 'vertical': backer.vertical }">
+              <img :src="backer.logo" :alt="backer.name" :style="{ width: backer.width }">
             </a>
           </div>
         </article>
@@ -121,15 +121,11 @@ article
       img
         filter: grayscale(100%) invert() contrast(0) brightness(500%)
   img
-    width: auto
-    min-height: 1.8em
-    max-height: 2em
-    &.vertical
-      height: 4em
-      max-height: 4em
+    height: auto
+    max-width: 100%
 
 .gold
-  font-size: 3em
+  font-size: 2.25em
   color: $color-gold
   margin-top: 2rem
   h4
