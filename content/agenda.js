@@ -63,5 +63,18 @@ export default [
       também durante o desenvolvimento mobile. Nesta palestra, vamos ver como usar de
       tal simplicidade na hora de fazer um app mobile nativo!`,
     speaker: speakers.find(speaker => speaker.name === 'Igor Halfeld')
+  },
+
+  {
+    id: 7,
+    title: 'Automação de testes de software com Selenium WebDriver',
+    description: `Testar software parece simples, mas nem sempre é realizado como deveria.
+      Há vários exemplos de sistemas que falharam e causaram grandes prejuízos sem os testes adequados.
+      Depender apenas de seres humanos é muito arriscado! Nossa inteligência é fantástica, mas nossa
+      capacidade de repetição nem tanto. Com ferramentas de automação de testes, podemos dirigir nossos
+      esforços para atividades intelectuais e deixar atividades repetitivas e frequentemente monótonas
+      para computadores. Nesta palestra, vamos ter discussões sobre estas abordagens,
+      com a ferramenta Selenium WebDriver como exemplo.`,
+    speaker: speakers.find(speaker => speaker.name === 'Raphael Mantilha')
   }
 ]
