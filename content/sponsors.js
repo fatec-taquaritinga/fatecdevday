@@ -6,6 +6,14 @@ export default {
       url: 'https://www.castgroup.com.br/pt/',
       logo: require('~/assets/sponsors/logo-cast.svg'),
       width: '7em'
+    },
+
+    {
+      id: 2,
+      name: 'S2 IT',
+      url: 'https://s2it.com.br/',
+      logo: require('~/assets/sponsors/logo-s2it.svg'),
+      width: '6.5em'
     }
   ],
 
