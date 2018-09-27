@@ -5,6 +5,7 @@ export default {
   name: 'Layout-Speakers',
   data () {
     return {
+      commingSoon: true,
       speakers: speakers.map((obj, i) => Object.assign({ index: i, showBio: false }, obj))
     }
   },
@@ -70,12 +71,12 @@ export default {
           <noscript v-if="person.bio">{{ person.bio }}</noscript>
         </div>
 
-        <!-- <div class="card comming">
+        <div class="card comming" v-if="commingSoon">
           <div>
             <h4>Em Breve</h4>
             <p>Mais informações<br>sobre palestrantes</p>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
   </section>
@@ -102,8 +103,10 @@ export default {
   background: #fff
   padding: 0 2em 2em
   flex: 1 0 280px
+  max-width: 280px
   @media (min-width: $breakpoint-desktop)
     flex-basis: 294px
+    max-width: 380px
   picture
     display: inline-block
     position: relative
@@ -163,17 +166,17 @@ button
   button
     margin-top: 1.25em
 
-// .card.comming
-//   background: $color-secondary-100
-//   display: flex
-//   align-items: center
-//   justify-content: center
-//   color: $color-secondary-300
-//   margin-top: 5em
-//   h4
-//     color: $color-secondary
-//   @media (min-width: $breakpoint-desktop-hd)
-//     margin-top: 9em
+.card.comming
+  background: $color-secondary-100
+  display: flex
+  align-items: center
+  justify-content: center
+  color: $color-secondary-300
+  margin-top: 5em
+  h4
+    color: $color-secondary
+  @media (min-width: $breakpoint-desktop-hd)
+    margin-top: 9em
 
 .slide-fade-enter-active
   transition: all .5s ease
