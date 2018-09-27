@@ -20,6 +20,14 @@ export default {
   silver: [
     {
       id: 1,
+      name: 'Impulso Network',
+      url: 'http://bit.ly/2MGJhy0',
+      logo: require('~/assets/sponsors/logo-impulso.svg'),
+      width: '5.75em'
+    },
+
+    {
+      id: 2,
       name: 'Programmer\'s',
       url: 'http://www.programmers.com.br/',
       logo: require('~/assets/sponsors/logo-programmers.svg'),
@@ -27,7 +35,7 @@ export default {
     },
 
     {
-      id: 2,
+      id: 3,
       name: 'SiplanControl.M',
       url: 'https://spcm.com.br/',
       logo: require('~/assets/sponsors/logo-spcm.svg'),
