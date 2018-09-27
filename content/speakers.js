@@ -118,6 +118,28 @@ const talks = [
       github: 'sergiogama',
       twitter: 'sergiorggama'
     }
+  },
+
+  {
+    id: 7,
+    avatar: require('~/assets/persons/raphael.jpg'),
+    name: 'Raphael Mantilha',
+    bio: `Especialista em automação de testes funcionais e de performance da Cast Group,
+      trabalha há 16 anos na área. Engenheiro de Computação pela UFSCar, com MBAs em Gestão Empresarial
+      e em Arquitetura de Soluções de Tecnologia. Possui as certificações CTAL do ISTQB e certificações
+      técnicas em ferramentas de testes. Adora implementar testes para "quebrar" sistemas e recursos
+      de infraestrutura de TI, evitando que os clientes arquem com os prejuízos oriundos da falta de
+      qualidade em soluções de tecnologia. Conhece estratégias, ferramentas e tipos de testes
+      funcionais e não funcionais que proporcionam ótimos resultados através da detecção precoce
+      de falhas em sistemas.`,
+    job: {
+      title: 'Senior Test Analyst',
+      company: 'Cast Group',
+      url: 'https://www.castgroup.com.br/pt/'
+    },
+    social: {
+      linkedin: 'raphael-mantilha'
+    }
   }
 ]
 
