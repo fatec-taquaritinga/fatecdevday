@@ -56,7 +56,7 @@ export default [
 
   {
     id: 6,
-    title: 'NativeScript-Vue: apps nativas em JavaScript com Vue.js',
+    title: 'NativeScript-Vue para aplicações nativas em JavaScript com Vue.js',
     description: `Vue.js é uma biblioteca JavaScript para a construção de interfaces,
       que ficou bem famosa pela sua simplicidade e robustez no desenvolvimento Web.
       Mas muitos não sabem que podemos aproveitar a developer experience oferecida pelo Vue.js
