@@ -23,7 +23,7 @@ export default {
       name: 'Impulso Network',
       url: 'http://bit.ly/2MGJhy0',
       logo: require('~/assets/sponsors/logo-impulso.svg'),
-      width: '5.75em'
+      width: '5.5em'
     },
 
     {
@@ -31,15 +31,23 @@ export default {
       name: 'Programmer\'s',
       url: 'http://www.programmers.com.br/',
       logo: require('~/assets/sponsors/logo-programmers.svg'),
-      width: '7.5em'
+      width: '7.25em'
     },
 
     {
       id: 3,
+      name: 'SHX',
+      url: 'http://www.shx.com.br/site/',
+      logo: require('~/assets/sponsors/logo-shx.svg'),
+      width: '4.5em'
+    },
+
+    {
+      id: 4,
       name: 'SiplanControl.M',
       url: 'https://spcm.com.br/',
       logo: require('~/assets/sponsors/logo-spcm.svg'),
-      width: '7.25em'
+      width: '7em'
     }
   ],
 
@@ -58,6 +66,14 @@ export default {
       url: 'https://www.monitoratec.com.br/',
       logo: require('~/assets/sponsors/logo-monitora.svg'),
       width: '6.5em'
+    },
+
+    {
+      id: 3,
+      name: 'Sabores da Fazenda',
+      url: 'https://www.facebook.com/fsallum/',
+      logo: require('~/assets/sponsors/logo-sabores-fazenda.svg'),
+      width: '9em'
     }
   ],
 
