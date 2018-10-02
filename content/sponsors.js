@@ -62,6 +62,14 @@ export default {
 
     {
       id: 2,
+      name: 'Farmácia Naturalis',
+      url: 'https://www.facebook.com/farmacianaturalistaquaritinga',
+      logo: require('~/assets/sponsors/logo-naturalis.svg'),
+      width: '7.5em'
+    },
+
+    {
+      id: 3,
       name: 'Monitora Soluções Tecnológicas',
       url: 'https://www.monitoratec.com.br/',
       logo: require('~/assets/sponsors/logo-monitora.svg'),
@@ -69,11 +77,11 @@ export default {
     },
 
     {
-      id: 3,
+      id: 4,
       name: 'Sabores da Fazenda',
       url: 'https://www.facebook.com/fsallum/',
       logo: require('~/assets/sponsors/logo-sabores-fazenda.svg'),
-      width: '9em'
+      width: '7em'
     }
   ],
 
