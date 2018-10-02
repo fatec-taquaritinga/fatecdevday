@@ -60,7 +60,7 @@ export default {
 
     <div id="enroll" class="container enroll limit-width">
       <a class="button" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a>
-      <p>Segundo lote: até <b>30/09</b>.</p>
+      <p>Terceiro lote: até <b>05/11</b>.</p>
     </div>
 
     <footer class="footer">
