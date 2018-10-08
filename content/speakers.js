@@ -1,4 +1,4 @@
-const talks = [
+const speakers = [
   {
     id: 1,
     avatar: require('~/assets/persons/cleber.jpg'),
@@ -140,7 +140,28 @@ const talks = [
     social: {
       linkedin: 'raphael-mantilha'
     }
+  },
+
+  {
+    id: 7,
+    avatar: require('~/assets/persons/samuel.jpg'),
+    name: 'Samuel Martins',
+    bio: `Começou sua carreira como desenvolvedor, tendo passado por tecnologias como C#, Delphi,
+      Crystal Reports, Oracle e SQL Server. Há cerca de 6 anos, deixou o desenvolvimento de software
+      para fazer gestão de projetos e gestão de pessoas. Em 2014, implantou Scrum junto com sua equipe
+      aos projetos de desenvolvimento de software, obtendo bons resultados relacionados a prazo, custo e qualidade.
+      Com isto, estendeu o Scrum para toda a empresa. Atualmente, atua como Agile Master em um dos projetos
+      internacionais na S2IT. Natural de Ribeirão Preto, se formou em Sistemas de Informação pela UNIESP,
+      possui MBA em Gestão de Projetos Inovadores pela USP e formação como Coach pelo MBC.`,
+    job: {
+      title: 'Agile Master',
+      company: 'S2 IT',
+      url: 'https://s2it.com.br/'
+    },
+    social: {
+      linkedin: 'samuel-martins'
+    }
   }
 ]
 
-export default talks.sort((a, b) => a.name.localeCompare(b.name))
+export default speakers.sort((a, b) => a.name.localeCompare(b.name))
