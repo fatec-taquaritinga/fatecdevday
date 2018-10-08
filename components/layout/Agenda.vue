@@ -5,7 +5,7 @@ export default {
   name: 'Layout-Agenda',
   data () {
     return {
-      agenda
+      agenda: agenda.sort((a, b) => a.title.localeCompare(b.title))
     }
   }
 }
@@ -16,7 +16,8 @@ export default {
     <div class="gutter">
       <h3>Agenda</h3>
       <p>
-        Fique por dentro da programação confirmada do evento.<br><i>Observação: a programação ainda pode sofrer alterações.</i>
+        Fique por dentro da programação confirmada do evento.<br>
+        <i>Observação: a ordem das atividades ainda não está definida.</i>
       </p>
 
       <ol class="schedule">
