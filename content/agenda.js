@@ -73,8 +73,19 @@ export default [
       Depender apenas de seres humanos é muito arriscado! Nossa inteligência é fantástica, mas nossa
       capacidade de repetição nem tanto. Com ferramentas de automação de testes, podemos dirigir nossos
       esforços para atividades intelectuais e deixar atividades repetitivas e frequentemente monótonas
-      para computadores. Nesta palestra, vamos ter discussões sobre estas abordagens,
+      para computadores. Nesta palestra, teremos discussões sobre estas abordagens,
       com a ferramenta Selenium WebDriver como exemplo.`,
     speaker: speakers.find(speaker => speaker.name === 'Raphael Mantilha')
+  },
+
+  {
+    id: 8,
+    title: 'Maximizando resultados e reduzindo disperdícios com UX',
+    description: `User Experience, ou simplesmente UX, tem ajudado muitas empresas a se manterem no mercado.
+      Em um mercado cada vez mais exigente, fazer com que o produto seja conhecido pelo seus potenciais
+      usuários já não é mais suficiente. É por isso que, cada vez mais, as empresas estão investindo em metodologias,
+      ferramentas e técnicas para acompanhar as necessidades e entregarem aos seus usuários o melhor produto possível.
+      Nesta palestra, veremos como obter melhores resultados em UX, de forma rápida e com baixo custo.`,
+    speaker: speakers.find(speaker => speaker.name === 'Samuel Martins')
   }
 ]
