@@ -83,7 +83,10 @@ export default {
     },
 
     menuClick (target, scrooling = false) {
-      if (target.path === '/') history.replaceState({}, this.title, '/')
+      if (target.path === '/') {
+        if (location.pathname === '/') history.replaceState({}, this.title, '/')
+        else this.$router.push('/')
+      }
       else history.replaceState({}, `${ target.title } - ${ this.title }`, target.path)
       if (scrooling) this.updateMenu(target.path, target.title)
       else this.$nextTick(this.updateScroll)
