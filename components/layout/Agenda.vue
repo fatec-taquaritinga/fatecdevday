@@ -1,5 +1,5 @@
 <script>
-import agenda from '~/content/agenda'
+import agenda from '~/content/talks'
 
 export default {
   name: 'Layout-Agenda',
