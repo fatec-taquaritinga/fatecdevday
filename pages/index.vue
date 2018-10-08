@@ -5,6 +5,7 @@ export default {
   name: 'Index',
   components: {
     AppMenu: () => import('~/components/Menu'),
+    AppFooter: () => import('~/components/Footer'),
     Logo: () => import('~/components/Logo'),
     Countdown: () => import('~/components/Countdown'),
     LayoutAbout: () => import('~/components/layout/About'),
@@ -15,11 +16,6 @@ export default {
   data () {
     return {
       event
-    }
-  },
-  methods: {
-    backToTop () {
-      document.querySelector('.menu .logo').click()
     }
   }
 }
@@ -63,16 +59,7 @@ export default {
       <p>Terceiro lote: até <b>05/11</b>.</p>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <a class="logo" href="/" @click.prevent="backToTop"><logo class="inverse">Fatec Dev Day</logo></a>
-
-        <p>
-          © {{ event.edition.year }} <a href="http://www.fatectq.edu.br" target="_blank" rel="noopener">Fatec Taquaritinga</a>
-          <br>Todos os direitos reservados
-        </p>
-      </div>
-    </footer>
+    <app-footer />
   </main>
 </template>
 
@@ -134,21 +121,4 @@ export default {
     b
       font-weight: 500
       color: inherit
-
-.footer
-  position: relative
-  background: $color-secondary-50
-  text-align: center
-  padding: 4em 0 2em
-  .logo
-    display: inline-block
-    width: 12em
-  p
-    font-size: .75em
-    color: $text-color-secondary
-  a
-    color: $text-color-primary
-    text-decoration: none
-    &:hover, &:focus
-      color: $color-primary-700
 </style>
