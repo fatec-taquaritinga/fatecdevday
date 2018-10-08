@@ -5,7 +5,7 @@ export default {
   name: 'Layout-Speakers',
   data () {
     return {
-      commingSoon: true,
+      commingSoon: false,
       speakers: speakers.map((obj, i) => Object.assign({ index: i, showBio: false }, obj))
     }
   },
