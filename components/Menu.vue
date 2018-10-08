@@ -7,16 +7,23 @@ export default {
   components: {
     Logo: () => import('~/components/Logo')
   },
+  props: {
+    items: {
+      type: Array,
+      default () {
+        return [
+          { path: '/' },
+          { path: '#sobre', title: 'Sobre' },
+          { path: '#palestrantes', title: 'Palestrantes' },
+          { path: '#agenda', title: 'Agenda' }
+        ]
+      }
+    }
+  },
   data () {
     return {
       current: '#',
-      triggered: false,
-      items: [
-        { path: '/' },
-        { path: '#sobre', title: 'Sobre' },
-        { path: '#palestrantes', title: 'Palestrantes' },
-        { path: '#agenda', title: 'Agenda' }
-      ]
+      triggered: false
     }
   },
   computed: {
