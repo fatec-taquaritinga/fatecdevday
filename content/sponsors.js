@@ -10,6 +10,14 @@ export default {
 
     {
       id: 2,
+      name: 'Programmer\'s',
+      url: 'http://www.programmers.com.br/',
+      logo: require('~/assets/sponsors/logo-programmers.svg'),
+      width: '9.5em'
+    },
+
+    {
+      id: 3,
       name: 'S2 IT',
       url: 'https://s2it.com.br/',
       logo: require('~/assets/sponsors/logo-s2it.svg'),
@@ -28,14 +36,6 @@ export default {
 
     {
       id: 2,
-      name: 'Programmer\'s',
-      url: 'http://www.programmers.com.br/',
-      logo: require('~/assets/sponsors/logo-programmers.svg'),
-      width: '7.25em'
-    },
-
-    {
-      id: 3,
       name: 'SHX',
       url: 'http://www.shx.com.br/site/',
       logo: require('~/assets/sponsors/logo-shx.svg'),
@@ -43,7 +43,7 @@ export default {
     },
 
     {
-      id: 4,
+      id: 3,
       name: 'SiplanControl.M',
       url: 'https://spcm.com.br/',
       logo: require('~/assets/sponsors/logo-spcm.svg'),
