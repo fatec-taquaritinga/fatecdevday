@@ -80,7 +80,7 @@ export default [
 
   {
     id: 8,
-    title: 'Maximizando resultados e reduzindo disperdícios com UX',
+    title: 'Maximizando resultados e reduzindo desperdícios com UX',
     description: `User Experience, ou simplesmente UX, tem ajudado muitas empresas a se manterem no mercado.
       Em um mercado cada vez mais exigente, fazer com que o produto seja conhecido pelo seus potenciais
       usuários já não é mais suficiente. É por isso que, cada vez mais, as empresas estão investindo em metodologias,
