@@ -45,7 +45,7 @@ export default {
             <h3 v-if="talk.speaker || talk.speakers" class="title">{{ talk.title }}<small v-if="talk.subtitle" class="subtitle">: {{ talk.subtitle }}</small></h3>
             <h4 class="title" v-else>{{ talk.title }}</h4>
             <p class="description" v-if="talk.description">{{ talk.description }}</p>
-            <code v-if="talk.code">{{ talk.code }}</code>
+            <code class="code" v-if="talk.code">{{ talk.code }}</code>
             <a href="#palestrantes" class="speaker" v-if="talk.speaker">
               <img src="~/assets/icons/mic.svg" alt="Ícone de microfone">
               {{ typeof talk.speaker === 'string' ? talk.speaker : talk.speaker.name }}
