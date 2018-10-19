@@ -1,11 +1,11 @@
 <script>
-import agenda from '~/content/talks'
+import agenda from '~/content/agenda'
 
 export default {
   name: 'Layout-Agenda',
   data () {
     return {
-      agenda: agenda.sort((a, b) => a.title.localeCompare(b.title))
+      agenda
     }
   }
 }
@@ -16,8 +16,8 @@ export default {
     <div class="gutter">
       <h3>Agenda</h3>
       <p>
-        Fique por dentro da programação confirmada do evento.<br>
-        <i>Observação: a ordem das atividades ainda não está definida.</i>
+        Fique por dentro da programação do evento.<br>
+        <i>Observação: a ordem pode sofrer alterações.</i>
       </p>
 
       <ol class="schedule">
@@ -174,6 +174,8 @@ export default {
       img
         height: 1em
         margin-right: 5px
+    .code
+      color: #8f8080
   @media (max-width: $breakpoint-tablet - 1px)
     border-left: 1px solid $color-primary-100
     padding-left: 1em
