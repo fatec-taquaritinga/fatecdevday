@@ -7,6 +7,12 @@ export default {
     return {
       agenda
     }
+  },
+  props: {
+    liked: {
+      type: Object,
+      default: null
+    }
   }
 }
 </script>
@@ -21,7 +27,7 @@ export default {
       </p>
 
       <ol class="schedule">
-        <li v-for="talk of agenda" :key="talk.id">
+        <li v-for="talk of agenda" :key="talk.id" :class="{ 'liked': liked && liked._id === talk.id }">
           <div class="timeline" v-if="talk.icon">
             <div class="circle icon"><img :src="talk.icon" :alt="talk.title"></div>
           </div>
@@ -121,6 +127,36 @@ export default {
       padding-bottom: 75px
     &:not(:last-of-type)
       border-bottom: 1px solid rgba(#5c5a55, 10%)
+    &.likable
+      cursor: pointer
+      transition: background 250ms ease
+      .title::after
+        transition: all 250ms ease
+        content: '★'
+        margin-left: 4px
+        color: alpha(#ffe200, 0)
+        -webkit-text-stroke: 1px alpha(#ffe200, 0)
+        text-stroke: 1px alpha(#ffe200, 0)
+      &:hover
+        background: mix(#fefeeb, lighten($color-secondary-50, 90%), 50%)
+        .title::after
+          color: alpha(#ffe200, 30%)
+          -webkit-text-stroke: 1px #ffe200
+          text-stroke: 1px #ffe200
+    &.liked
+      background: #fefeeb
+      .title::after
+        transition: all 250ms ease
+        content: '★'
+        margin-left: 4px
+        color: #ffe200
+        -webkit-text-stroke: 1px #ff9d0b
+        text-stroke: 1px #ff9d0b
+      &.likable:hover
+        .title::after
+          color: alpha(#ffe200, 10%)
+          -webkit-text-stroke: 1px alpha(#ff9d0b, 10%)
+          text-stroke: 1px alpha(#ff9d0b, 10%)
   .timeline
     margin-left: -2em
     &.stack .circle

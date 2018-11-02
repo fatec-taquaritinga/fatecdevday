@@ -17,6 +17,12 @@ export default {
     return {
       event
     }
+  },
+  async asyncData ({ app }) {
+    const lambdaEndpoint = process.env.LAMBDA_ENDPOINT
+    if (!lambdaEndpoint) return { likedTalk: null }
+    const like = await app.$axios.$get(`${ process.env.LAMBDA_ENDPOINT }/my-like`)
+    return { likedTalk: like ? like.talk : null }
   }
 }
 </script>
@@ -50,7 +56,7 @@ export default {
 
     <layout-speakers />
 
-    <layout-agenda />
+    <layout-agenda :liked="likedTalk" />
 
     <hr />
 
