@@ -2,7 +2,7 @@ import speakers from './speakers'
 
 export default [
   {
-    id: 1,
+    id: '5bb3db65fb6fc019622189a5',
     title: 'Aplicações Web multiplataforma com .NET? Conheça o ASP.NET Core!',
     description: `Você sabia que o tempo onde .NET só podia ser executado em ambientes Windows?
       Sabia que hoje é perfeitamente possível rodar uma aplicação ASP.NET no Linux, no Mac e no Windows?
@@ -13,7 +13,7 @@ export default [
   },
 
   {
-    id: 2,
+    id: '5bb3db9efb6fc019622189d2',
     title: 'Aplicação REST utilizando Gin e GORM em Go',
     description: `Go é uma linguagem de programação de código aberto desenvolvida pelo Google,
       projetada para ajudar a construir sistemas simples e reusáveis com mecanismos de concorrência.
@@ -23,7 +23,7 @@ export default [
   },
 
   {
-    id: 3,
+    id: '5bb3dc2efb6fc01962218a55',
     title: 'Machine Learning para recomendação: como a Netflix sabe o que eu gosto?',
     description: `Dentro do universo de Machine Learning, a sub-área de Sistemas de Recomendação permeia a vida das pessoas de forma constante,
       através dos serviços que usamos. Mas como, exatamente, o Spotify ou a Netflix sabem o que eu gostaria de consumir?
@@ -33,7 +33,7 @@ export default [
   },
 
   {
-    id: 4,
+    id: '5bb3dc53fb6fc01962218a82',
     title: 'Flutter: o futuro do desenvolvimento mobile',
     description: `O Flutter é um SDK de desenvolvimento de aplicativos móveis de código aberto, criado pelo Google.
       Com o Flutter podemos construir aplicativos móveis nativos com apenas um código, o que significa que,
@@ -44,7 +44,7 @@ export default [
   },
 
   {
-    id: 5,
+    id: '5bb3dc71fb6fc01962218a87',
     title: 'Como desenvolver um ChatBot de alta qualidade',
     description: `A área de inteligência artificial aplicada à automação da comunicação,
       com os chamados ChatBots, está fervilhando e aparecendo com frequencia na mídia de tecnologia.
@@ -55,7 +55,7 @@ export default [
   },
 
   {
-    id: 6,
+    id: '5bb3dc86fb6fc01962218ac6',
     title: 'NativeScript-Vue para aplicações nativas em JavaScript com Vue.js',
     description: `Vue.js é uma biblioteca JavaScript para a construção de interfaces,
       que ficou bem famosa pela sua simplicidade e robustez no desenvolvimento Web.
@@ -66,7 +66,7 @@ export default [
   },
 
   {
-    id: 7,
+    id: '5bb3dc99fb6fc01962218ad1',
     title: 'Automação de testes de software com Selenium WebDriver',
     description: `Testar software parece simples, mas nem sempre é realizado como deveria.
       Há vários exemplos de sistemas que falharam e causaram grandes prejuízos sem os testes adequados.
@@ -79,7 +79,7 @@ export default [
   },
 
   {
-    id: 8,
+    id: '5bdc7646fb6fc074abb5e288',
     title: 'Maximizando resultados e reduzindo desperdícios com UX',
     description: `User Experience, ou simplesmente UX, tem ajudado muitas empresas a se manterem no mercado.
       Em um mercado cada vez mais exigente, fazer com que o produto seja conhecido pelo seus potenciais
