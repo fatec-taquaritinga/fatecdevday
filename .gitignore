@@ -21,3 +21,9 @@ sw.*
 
 # Backup files
 *.bkp
+
+# Environment variables
+.env
+
+# Compiled AWS lambda functions
+functions
