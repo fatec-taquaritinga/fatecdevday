@@ -29,7 +29,9 @@ module.exports = {
     fallback: true
   },
   modules: [
-    '@nuxtjs/pwa',
+    '@nuxtjs/axios',
+    [ '@nuxtjs/dotenv', { only: ['LAMBDA_ENDPOINT'] } ],
+    '@nuxtjs/pwa'
   ],
   manifest: {
     name: 'Fatec Dev Day 2018',
