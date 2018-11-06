@@ -4,14 +4,24 @@ import mongoose from 'mongoose'
 import Like from './models/Like'
 import Talk from './models/Talk'
 
-exports.handler = async (event) => {
+dotenv.config()
+
+let connection
+exports.handler = async (event, context) => {
+  context.callbackWaitsForEmptyEventLoop = false
+
   try {
     if (!event.queryStringParameters || !event.queryStringParameters.id)
       throw Error('A talk id must be specified.')
 
-    await dotenv.config()
-    await mongoose.connect(process.env.MONGODB_ENDPOINT, { useNewUrlParser: true })
-    console.log(`Connected to database at "${ process.env.MONGODB_ENDPOINT }".`)
+    if (!connection) {
+      connection = await mongoose.connect(process.env.MONGODB_ENDPOINT, {
+        useNewUrlParser: true,
+        bufferCommands: false,
+        bufferMaxEntries: 0
+      })
+      console.log(`Connected to database at "${ process.env.MONGODB_ENDPOINT }".`)
+    }
 
     const ipAddress = ip.address()
     const like = await Like.findOne({ ip: ipAddress })

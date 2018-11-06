@@ -4,11 +4,22 @@ import mongoose from 'mongoose'
 import Like from './models/Like'
 import Talk from './models/Talk'
 
+dotenv.config()
+
+let connection
 exports.handler = async () => {
+  const context = arguments[1]
+  context.callbackWaitsForEmptyEventLoop = false
+
   try {
-    await dotenv.config()
-    await mongoose.connect(process.env.MONGODB_ENDPOINT, { useNewUrlParser: true })
-    console.log(`Connected to database at "${ process.env.MONGODB_ENDPOINT }".`)
+    if (!connection) {
+      connection = await mongoose.connect(process.env.MONGODB_ENDPOINT, {
+        useNewUrlParser: true,
+        bufferCommands: false,
+        bufferMaxEntries: 0
+      })
+      console.log(`Connected to database at "${ process.env.MONGODB_ENDPOINT }".`)
+    }
 
     const ipAddress = ip.address()
     const like = await Like.findOne({ ip: ipAddress }).populate('talk')
