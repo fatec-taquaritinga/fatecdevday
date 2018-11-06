@@ -41,5 +41,13 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "throttle-debounce": "^2.0.1"
+  },
+  "proxy": {
+    "/.netlify/functions": {
+      "target": "http://localhost:9000",
+      "pathRewrite": {
+        "^/\\.netlify/functions": ""
+      }
+    }
   }
 }
