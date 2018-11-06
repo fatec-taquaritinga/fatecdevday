@@ -4,17 +4,13 @@ import mongoose from 'mongoose'
 import Like from './models/Like'
 import Talk from './models/Talk'
 
-dotenv.config()
-
-exports.handler = async function () {
-  const event = arguments[0]
-  const callback = arguments[2]
-
+exports.handler = async (event) => {
   try {
     if (!event.queryStringParameters || !event.queryStringParameters.id)
       throw Error('A talk id must be specified.')
 
-    mongoose.connect(process.env.MONGODB_ENDPOINT, { useNewUrlParser: true })
+    await dotenv.config()
+    await mongoose.connect(process.env.MONGODB_ENDPOINT, { useNewUrlParser: true })
     console.log(`Connected to database at "${ process.env.MONGODB_ENDPOINT }".`)
 
     const ipAddress = ip.address()
@@ -25,8 +21,9 @@ exports.handler = async function () {
 
     await Like.create([ { ip: ipAddress, talk: event.queryStringParameters.id } ])
     await Talk.findByIdAndUpdate(event.queryStringParameters.id, { $inc: { 'likes': 1 } }).exec()
-    return callback(null, { statusCode: 200, body: '' })
+    return { statusCode: 200, body: '' }
   } catch (err) {
-    return callback(err)
+    console.log(err)
+    return { statusCode: 500, body: JSON.stringify(err) }
   }
 }
