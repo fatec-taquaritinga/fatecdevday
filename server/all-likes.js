@@ -15,6 +15,7 @@ exports.handler = async function () {
 
   try {
     mongoose.connect(process.env.MONGODB_ENDPOINT, { useNewUrlParser: true })
+    console.log(`Connected to database at "${ process.env.MONGODB_ENDPOINT }".`)
     const result = await Like.find({})
 
     return callback(null, {

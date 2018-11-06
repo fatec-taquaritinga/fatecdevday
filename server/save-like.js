@@ -15,6 +15,7 @@ exports.handler = async function () {
       throw Error('A talk id must be specified.')
 
     mongoose.connect(process.env.MONGODB_ENDPOINT, { useNewUrlParser: true })
+    console.log(`Connected to database at "${ process.env.MONGODB_ENDPOINT }".`)
 
     const ipAddress = ip.address()
     const like = await Like.findOne({ ip: ipAddress })

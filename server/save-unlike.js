@@ -11,6 +11,7 @@ exports.handler = async function () {
 
   try {
     mongoose.connect(process.env.MONGODB_ENDPOINT, { useNewUrlParser: true })
+    console.log(`Connected to database at "${ process.env.MONGODB_ENDPOINT }".`)
 
     const ipAddress = ip.address()
     const like = await Like.findOne({ ip: ipAddress }).populate('talk')
