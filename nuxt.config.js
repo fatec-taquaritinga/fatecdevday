@@ -14,20 +14,12 @@ module.exports = {
     description: 'Fatec Dev Day: um dia dedicado a desenvolvimento Web, aplicativos e sistemas em geral'
   },
   loading: { color: '#ad0f0a' },
-  router: {
-    extendRoutes (routes, resolve) {
-      routes.pop()
-
-      routes.push({
-        name: 'index',
-        path: '*',
-        component: '~/pages/index.vue'
-      })
-    }
-  },
   generate: {
-    fallback: true
+    fallback: false
   },
+  ignore: [
+    '**/.netlify/**'
+  ],
   modules: [
     '@nuxtjs/axios',
     [ '@nuxtjs/dotenv', { only: ['LAMBDA_ENDPOINT'] } ],
