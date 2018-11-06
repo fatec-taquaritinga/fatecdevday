@@ -19,11 +19,6 @@ module.exports = {
       routes.pop()
 
       routes.push({
-        name: 'netlify',
-        path: '/.netlify'
-      })
-
-      routes.push({
         name: 'index',
         path: '*',
         component: '~/pages/index.vue'
