@@ -22,7 +22,6 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/axios',
-    [ '@nuxtjs/dotenv', { only: ['LAMBDA_ENDPOINT'] } ],
     '@nuxtjs/pwa'
   ],
   manifest: {
