@@ -15,7 +15,7 @@ module.exports = {
   },
   loading: { color: '#ad0f0a' },
   generate: {
-    fallback: false
+    fallback: true
   },
   ignore: [
     '**/.netlify/**'
