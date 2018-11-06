@@ -19,10 +19,12 @@ export default {
     }
   },
   async asyncData ({ app }) {
-    const lambdaEndpoint = process.env.LAMBDA_ENDPOINT
-    if (!lambdaEndpoint) return { likedTalk: null }
-    const like = await app.$axios.$get(`${ process.env.LAMBDA_ENDPOINT }/my-like`)
-    return { likedTalk: like ? like.talk : null }
+    let like = null
+    try {
+      like = await app.$axios.$get(`https://fatecdevday.com.br/.netlify/functions/my-like`)
+    } finally {
+      return { likedTalk: like ? like.talk : null }
+    }
   }
 }
 </script>
