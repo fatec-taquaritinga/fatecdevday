@@ -24,6 +24,10 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
+  axios: {
+    baseURL: 'https://fatecdevday.com.br/.netlify/functions/',
+    https: true
+  },
   manifest: {
     name: 'Fatec Dev Day 2018',
     short_name: 'Fatec Dev Day',

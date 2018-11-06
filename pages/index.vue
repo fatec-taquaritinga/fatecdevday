@@ -21,7 +21,7 @@ export default {
   async asyncData ({ app }) {
     let like = null
     try {
-      like = await app.$axios.$get(`https://fatecdevday.com.br/.netlify/functions/my-like`)
+      like = await app.$axios.$get('my-like')
     } finally {
       return { likedTalk: like ? like.talk : null }
     }
