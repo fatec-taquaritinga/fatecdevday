@@ -15,15 +15,8 @@ export default {
   },
   data () {
     return {
-      event
-    }
-  },
-  async asyncData ({ app }) {
-    let like = null
-    try {
-      like = await app.$axios.$get('my-like')
-    } finally {
-      return { likedTalk: like ? like.talk : null }
+      event,
+      likedTalk: null
     }
   }
 }
@@ -41,7 +34,7 @@ export default {
 
       <p>Um dia dedicado ao desenvolvimento <br /> web, aplicativos e sistemas em geral</p>
 
-      <a class="button inverse" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a>
+      <!-- <a class="button inverse" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a> -->
     </header>
 
     <countdown :target="event.date.full" />
@@ -62,10 +55,10 @@ export default {
 
     <hr />
 
-    <div id="enroll" class="container enroll limit-width">
+    <!-- <div id="enroll" class="container enroll limit-width">
       <a class="button" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a>
       <p>Terceiro lote: até <b>08/11</b>.</p>
-    </div>
+    </div> -->
 
     <app-footer />
   </main>
