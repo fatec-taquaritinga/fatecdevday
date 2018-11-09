@@ -68,6 +68,7 @@ export default {
 @import '../stylus/variables'
 
 .featured
+  z-depth: 6
   background: $background-primary
   padding-top: 50px
   min-height: 80vh

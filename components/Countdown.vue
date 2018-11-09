@@ -26,16 +26,16 @@ export default {
       return Math.trunc(Date.parse(this.target) / 1000)
     },
     seconds () {
-      return (this.date - this.now) % 60
+      return this.date - this.now > 0 ? (this.date - this.now) % 60 : 0
     },
     minutes () {
-      return Math.trunc((this.date - this.now) / 60) % 60
+      return this.date - this.now > 0 ? Math.trunc((this.date - this.now) / 60) % 60 : 0
     },
     hours () {
-      return Math.trunc((this.date - this.now) / 60 / 60) % 24
+      return this.date - this.now > 0 ? Math.trunc((this.date - this.now) / 60 / 60) % 24 : 0
     },
     days () {
-      return Math.trunc((this.date - this.now) / 60 / 60 / 24)
+      return this.date - this.now > 0 ? Math.trunc((this.date - this.now) / 60 / 60 / 24) : 0
     }
   },
   filters: {

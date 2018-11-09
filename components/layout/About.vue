@@ -33,11 +33,10 @@ export default {
       </p>
 
       <p>
-        A <b>edição 2018</b> do <strong>Fatec Dev Day</strong> já está marcada para
+        A <b>edição 2018</b> do <strong>Fatec Dev Day</strong> ocorre neste dia
         <strong>10 de novembro</strong> e promete ser o mesmo sucesso das duas
-        edições anteriores. Os palestrantes já estão confirmados e vão trazer
-        assuntos de peso! Não perca esta chance,
-        <a href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">participe</a>!
+        edições anteriores. Se você está conosco, acompanhe nesta página a programação
+        e não perca nenhuma atividade com os palestrantes sensacionais desta edição!
       </p>
     </div>
 
