@@ -18,6 +18,11 @@ export default {
       event,
       likedTalk: null
     }
+  },
+  methods: {
+    goToAgenda () {
+      document.querySelector('.menu a[href="#agenda"]').click()
+    }
   }
 }
 </script>
@@ -37,7 +42,10 @@ export default {
       <!-- <a class="button inverse" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a> -->
     </header>
 
-    <countdown :target="event.date.full" />
+    <!-- <countdown :target="event.date.full" /> -->
+    <div class="countdown">
+      <a class="button" href="#agenda" @onclick.prevent="goToAgenda">Veja a programação</a>
+    </div>
 
     <div class="parallax"></div>
 
