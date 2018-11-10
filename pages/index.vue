@@ -111,12 +111,12 @@ export default {
 
 .countdown
   z-depth: 6
-  padding: 1em 0 1.25em
+  padding: 0 0 1.25em
   background: $background-secondary
   position: relative
   z-index: 2
   .button
-    margin: 0 .5em
+    margin: 1em .5em 0
 
 .parallax
   background: $color-secondary url('../assets/backgrounds/campus.jpg') 65% 75% \/ cover fixed
