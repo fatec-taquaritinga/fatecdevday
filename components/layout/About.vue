@@ -14,7 +14,7 @@ export default {
         evento dedicado a discutir o que há de <b>mais recente</b> nas tendências e
         tecnologias para o desenvolvimento de <b>sistemas</b> e de <b>aplicativos</b>.
         Trata-se de um dia inteiro de palestras e atrações, em que os estudantes e
-        profissionais de Taquaritinga e região não apenas se atualizam das
+        profissionais de Taquaritinga e região não apenas se atualizam sobre as
         novidades em TI, mas também podem <b>compartilhar conhecimento</b> e
         fazer contato com grandes profissionais do setor.
       </p>
@@ -24,19 +24,21 @@ export default {
         relacionadas a Angular 2 e TypeScript, aplicações <i>web</i> modernas com Laravel,
         arquitetura de microserviços em Java, Bots e Machine Learning, Internet
         das Coisas (<i>IoT</i>), introdução ao Docker, <i>mobile</i> e <i>progressive web apps</i>. Já
-        a <b>edição 2017</b> abordou temas como deploy de aplicações usando Docker,
+        a <b>edição 2017</b> abordou temas como <i>deploy</i> de aplicações usando Docker,
         implementação de <i>pick up line generators</i> com JavaScript, Inteligência
         Artificial e reconhecimento óptico com PHP, migração do Java para o
-        Node, operações HTTP com Python, uso do ReactJS, além de uma sessão
+        Node, operações HTTP com Python, uso do React, além de uma sessão
         especial de Live Coding, em que os participantes puderam acompanhar,
         ao vivo, o desenvolvimento de um aplicativo para Android e iOS.
       </p>
 
       <p>
-        A <b>edição 2018</b> do <strong>Fatec Dev Day</strong> ocorre neste dia
-        <strong>10 de novembro</strong> e promete ser o mesmo sucesso das duas
-        edições anteriores. Se você está conosco, acompanhe nesta página a programação
-        e não perca nenhuma atividade com os palestrantes sensacionais desta edição!
+        A <b>edição 2018</b> do <strong>Fatec Dev Day</strong> ocorreu neste dia
+        <strong>10 de novembro</strong> e, assim como as das duas edições anteriores, foi um sucesso.
+        Se você esteve conosco, relembre os palestrantes e as atividades que tivemos nesta página e
+        contribua oferecendo sua <a href="https://goo.gl/forms/9emTsClhba6zro4E2"
+          target="_blank" rel="noopener">opinião sobre o evento</a>, para nos ajudar
+        a construir um <strong>Fatec Dev Day</strong> cada vez melhor!
       </p>
     </div>
 
