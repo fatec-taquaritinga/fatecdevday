@@ -52,11 +52,11 @@ export default {
 
 <style lang="stylus" scoped>
 .photo-1
-  background-image: url('~/assets/backgrounds/edition-2017-1.jpg')
+  background-image: url('~assets/backgrounds/edition-2017-1.jpg')
 
 .photo-2
-  background-image: url('~/assets/backgrounds/edition-2017-2.jpg')
+  background-image: url('~assets/backgrounds/edition-2017-2.jpg')
 
 .photo-3
-  background-image: url('~/assets/backgrounds/edition-2017-3.jpg')
+  background-image: url('~assets/backgrounds/edition-2017-3.jpg')
 </style>

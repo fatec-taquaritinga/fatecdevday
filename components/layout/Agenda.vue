@@ -38,14 +38,14 @@ export default {
             <picture class="circle" v-for="speaker of talk.speakers" :key="speaker.id"><img :src="speaker.avatar" :alt="speaker.name"></picture>
           </div>
           <div class="timeline" v-else>
-            <picture class="circle"><img src="~/assets/persons/empty-avatar.png" alt="Foto indisponível"></picture>
+            <picture class="circle"><img src="~assets/persons/empty-avatar.png" alt="Foto indisponível"></picture>
           </div>
 
           <div class="schedule-info">
             <div class="label" v-if="talk.duration">{{ talk.duration }}</div>
 
             <h4 class="time" v-if="talk.time">
-              <img src="~/assets/icons/clock.svg" alt="Ícone de relógio">
+              <img src="~assets/icons/clock.svg" alt="Ícone de relógio">
               {{ talk.time }}
             </h4>
             <h3 v-if="talk.speaker || talk.speakers" class="title">{{ talk.title }}<small v-if="talk.subtitle" class="subtitle">: {{ talk.subtitle }}</small></h3>
@@ -53,11 +53,11 @@ export default {
             <p class="description" v-if="talk.description">{{ talk.description }}</p>
             <code class="code" v-if="talk.code">{{ talk.code }}</code>
             <a href="#palestrantes" class="speaker" v-if="talk.speaker">
-              <img src="~/assets/icons/mic.svg" alt="Ícone de microfone">
+              <img src="~assets/icons/mic.svg" alt="Ícone de microfone">
               {{ typeof talk.speaker === 'string' ? talk.speaker : talk.speaker.name }}
             </a>
             <a href="#palestrantes" class="speaker" v-else-if="talk.speakers">
-              <img src="~/assets/icons/mic.svg" alt="Ícone de microfone">
+              <img src="~assets/icons/mic.svg" alt="Ícone de microfone">
               <span v-for="(speaker, index) of talk.speakers" :key="speaker.id">
                 {{ speaker.name }}<span v-if="index < talk.speakers.length - 2">, </span>
                 <span v-else-if="index === talk.speakers.length - 2"> e </span>

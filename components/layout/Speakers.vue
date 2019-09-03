@@ -49,13 +49,13 @@ export default {
 
               <div class="social" v-if="person.social">
                 <a v-if="person.social.linkedin" :href="`https://www.linkedin.com/in/${ person.social.linkedin }/`" target="_blank" rel="noopener">
-                  <img src="~/assets/icons/linkedin.svg" alt="Linkedin">
+                  <img src="~assets/icons/linkedin.svg" alt="Linkedin">
                 </a>
                 <a v-if="person.social.github" :href="`https://github.com/${ person.social.github }`" target="_blank" rel="noopener">
-                  <img src="~/assets/icons/github.svg" alt="Github">
+                  <img src="~assets/icons/github.svg" alt="Github">
                 </a>
                 <a v-if="person.social.twitter" :href="`https://twitter.com/${ person.social.twitter }`" target="_blank" rel="noopener">
-                  <img src="~/assets/icons/twitter.svg" alt="Twitter">
+                  <img src="~assets/icons/twitter.svg" alt="Twitter">
                 </a>
                 <button @click="toggleBio(person, true)">Saiba mais</button>
               </div>
