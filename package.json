@@ -1,6 +1,6 @@
 {
   "name": "fatecdevday",
-  "version": "1.0.0",
+  "version": "4.0.0",
   "description": "Website do evento Fatec Dev Day desenvolvido com Nuxt.js",
   "author": "Erick Eduardo Petrucelli <erick.petrucelli@fatectq.edu.br>",
   "license": "GPL-3.0",
@@ -22,21 +22,21 @@
     "npm": ">=6.0.0"
   },
   "dependencies": {
-    "nuxt": "^1.4.4"
+    "nuxt": "^2.9.2"
   },
   "devDependencies": {
-    "@nuxtjs/pwa": "^2.6.0",
+    "@nuxtjs/pwa": "^3.0.0-beta.16",
     "ajv": "^6.5.4",
-    "babel-eslint": "^8.2.6",
-    "dotenv": "^6.1.0",
-    "eslint": "^4.19.1",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-vue": "^4.7.1",
+    "babel-eslint": "^10.0.3",
+    "dotenv": "^8.1.0",
+    "eslint": "^6.3.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-vue": "^5.2.3",
     "ip": "^1.1.5",
     "mongodb-core": "^3.1.7",
     "mongoose": "^5.3.8",
-    "netlify-lambda": "^0.4.0",
+    "netlify-lambda": "^1.6.3",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "throttle-debounce": "^2.0.1"
