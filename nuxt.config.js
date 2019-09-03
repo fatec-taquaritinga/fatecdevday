@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   head: {
     title: 'Fatec Dev Day 2018',
     htmlAttrs: {
