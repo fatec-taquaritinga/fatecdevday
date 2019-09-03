@@ -9,6 +9,11 @@ export default {
       speakers: speakers.map((obj, i) => Object.assign({ index: i, showBio: false }, obj))
     }
   },
+  computed: {
+    namedSpeakers () {
+      return this.speakers.filter(person => person.name)
+    }
+  },
   methods: {
     path (avatar) {
       return '/persons/' + avatar
@@ -32,7 +37,7 @@ export default {
       </p>
 
       <div class="cards">
-        <div class="card" v-for="person of speakers" :key="person.id" v-if="person.name">
+        <div class="card" v-for="person of namedSpeakers" :key="person.id">
           <transition name="slide-fade" mode="out-in">
             <div key="main-info" class="main-info" v-if="!person.showBio">
               <picture v-if="person.avatar" @click="toggleBio(person, true)">
