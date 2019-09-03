@@ -39,10 +39,11 @@ export default {
 
       <p>Um dia dedicado ao desenvolvimento <br /> web, aplicativos e sistemas em geral</p>
 
-      <!-- <a class="button inverse" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a> -->
+      <a class="button inverse" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a>
     </header>
 
-    <!-- <countdown :target="event.date.full" /> -->
+    <countdown :target="event.date.full" />
+
     <div class="countdown">
       <a class="button" href="#agenda" @onclick.prevent="goToAgenda">Veja a programação</a>
       <a class="button" href="https://goo.gl/forms/9emTsClhba6zro4E2" target="_blank" rel="noopener">Dê sua opinião</a>
@@ -64,15 +65,15 @@ export default {
 
     <hr />
 
-    <!-- <div id="enroll" class="container enroll limit-width">
+    <div id="enroll" class="container enroll limit-width">
       <a class="button" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a>
       <p>Terceiro lote: até <b>08/11</b>.</p>
-    </div> -->
+    </div>
 
-    <div id="enroll" class="container enroll limit-width">
+    <!-- <div id="enroll" class="container enroll limit-width">
       <p><strong>Participou conosco?</strong><br>O que você achou do Fatec Dev Day 2018?</p>
       <a class="button" href="https://goo.gl/forms/9emTsClhba6zro4E2" target="_blank" rel="noopener">Dê sua opinião</a>
-    </div>
+    </div> -->
 
     <app-footer />
   </main>
