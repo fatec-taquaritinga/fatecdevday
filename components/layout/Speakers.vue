@@ -32,19 +32,25 @@ export default {
       <h3>Palestrantes</h3>
 
       <p>
-        Palestrantes escolhidos por suas experiências profissionais e seus conhecimentos destacados nos temas respectivos.
-        Este é um evento multi-linguagem, não focando em apenas um ecossistema de programação, mas em diferentes técnicas e tecnologias que estão emergindo ou ganhando maior destaque no mercado.
+        Palestrantes escolhidos por suas experiências profissionais e seus conhecimentos destacados nos temas respectivos. Este é um evento multi-linguagem, não focando em apenas um ecossistema de programação, mas em diferentes técnicas e tecnologias que estão emergindo ou ganhando maior destaque no mercado.
       </p>
 
       <div class="cards">
         <div class="card" v-for="person of namedSpeakers" :key="person.id">
           <transition name="slide-fade" mode="out-in">
             <div key="main-info" class="main-info" v-if="!person.showBio">
-              <picture v-if="person.avatar" @click="toggleBio(person, true)">
+              <picture v-if="person.avatar && person.bio" @click="toggleBio(person, true)" class="activable">
+                <img :src="person.avatar" :alt="person.name">
+              </picture>
+              <picture v-else-if="person.avatar">
                 <img :src="person.avatar" :alt="person.name">
               </picture>
 
               <h4>{{ person.name }}</h4>
+
+              <h5 v-if="!person.bio">
+                Mais informações sobre os palestrantes serão divulgadas em breve!
+              </h5>
 
               <h5 v-if="person.job">
                 <span>{{ person.job.title }}</span><br>
@@ -62,7 +68,7 @@ export default {
                 <a v-if="person.social.twitter" :href="`https://twitter.com/${ person.social.twitter }`" target="_blank" rel="noopener">
                   <img src="~assets/icons/twitter.svg" alt="Twitter">
                 </a>
-                <button @click="toggleBio(person, true)">Saiba mais</button>
+                <button v-if="person.bio" @click="toggleBio(person, true)">Saiba mais</button>
               </div>
             </div>
 
@@ -120,8 +126,9 @@ export default {
     max-width: 220px
     border: 1em solid $color-secondary-50
     border-radius: 50%
-    cursor: pointer
+    cursor: default
     overflow: hidden
+    transition: all .25s ease
     img
       display: block
       width: 100%
@@ -130,9 +137,12 @@ export default {
       box-shadow: inset 0 0 10px $color-secondary-900
       transform-origin: top
       transition: all .25s ease
-    &:hover img
-      transform: scale(1.05)
-      filter: sepia(.25)
+    &.activable
+      cursor: pointer
+      &:hover
+        filter: sepia(.25)
+        img
+          transform: scale(1.05)
   h4
     font-size: 1.5em
     line-height: .8

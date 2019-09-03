@@ -19,7 +19,7 @@ export default {
         <h3>Patrocínio</h3>
 
         <article class="gold">
-          <h4>Ouro</h4>
+          <h4 v-if="sponsors.gold && sponsors.gold.length">Ouro</h4>
 
           <div v-if="sponsors.gold && sponsors.gold.length">
             <a v-for="sponsor in sponsors.gold" :key="sponsor.id" :href="sponsor.url" :title="sponsor.name" target="_blank" rel="noopener">
@@ -27,7 +27,7 @@ export default {
             </a>
           </div>
           <div v-else>
-            <a class="button" href="mailto:comunicacao@fatectq.edu.br?subject=Patrocinar o Fatec Dev Day 2018" rel="noopener">Seja um Patrocinador!</a>
+            <a class="button" href="mailto:comunicacao@fatectq.edu.br?subject=Patrocinar o Fatec Dev Day 2019" rel="noopener">Seja um Patrocinador!</a>
           </div>
         </article>
 
@@ -52,7 +52,7 @@ export default {
         </article>
       </div>
 
-      <div class="block backers">
+      <div v-if="sponsors.backers && sponsors.backers.length" class="block backers">
         <h4>Apoio</h4>
 
         <article v-if="sponsors.backers && sponsors.backers.length">

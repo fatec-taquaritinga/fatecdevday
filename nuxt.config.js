@@ -1,6 +1,6 @@
 export default {
   head: {
-    title: 'Fatec Dev Day 2018',
+    title: 'Fatec Dev Day 2019',
     htmlAttrs: {
       lang: 'pt-br'
     },
@@ -10,7 +10,7 @@ export default {
   },
   meta: {
     lang: 'pt-br',
-    name: 'Fatec Dev Day 2018',
+    name: 'Fatec Dev Day 2019',
     description: 'Fatec Dev Day: um dia dedicado a desenvolvimento Web, aplicativos e sistemas em geral'
   },
   loading: { color: '#ad0f0a' },
@@ -24,7 +24,7 @@ export default {
     '@nuxtjs/pwa'
   ],
   manifest: {
-    name: 'Fatec Dev Day 2018',
+    name: 'Fatec Dev Day 2019',
     short_name: 'Fatec Dev Day',
     lang: 'pt-br',
     start_url: '/',

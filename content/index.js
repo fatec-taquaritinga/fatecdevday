@@ -5,20 +5,20 @@ import agenda from './agenda'
 export default {
   name: {
     short: 'Fatec Dev Day',
-    long: 'Fatec Dev Day 2018'
+    long: 'Fatec Dev Day 2019'
   },
   edition: {
-    number: 3,
-    year: 2018
+    number: 4,
+    year: 2019
   },
   href: undefined,
   date: {
     weekday: 'sábado',
-    full: '2018-11-10T07:30:00-02:00',
-    short: '10/11/2018',
-    time: '07:30',
-    long: '10 de novembro de 2018',
-    longWithoutYear: '10 de novembro'
+    full: '2019-11-09T08:00:00-03:00',
+    short: '09/11/2019',
+    time: '08:00',
+    long: '9 de novembro de 2019',
+    longWithoutYear: '9 de novembro'
   },
   places: {
     total: 110,
@@ -31,7 +31,6 @@ export default {
     'Erick Petrucelli',
     'Fabio Takeda',
     'Felipe Espírito Santo',
-    'Gustavo Del Vechio',
     'Jederson Zuchi',
     'Luciana Ferrarezi Muzatti',
     'Patricia Primo Lourençano',

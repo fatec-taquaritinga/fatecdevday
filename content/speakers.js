@@ -1,7 +1,7 @@
-const speakers = [
+const speakers2018 = [
   {
     id: 1,
-    avatar: require('~/assets/persons/cleber.jpg'),
+    avatar: require('~/assets/persons/2018/cleber.jpg'),
     name: 'Cleber Campomori',
     bio: `Líder de conteúdo e inovação no TreinaWeb, autor de cursos nas trilhas de .NET, Xamarin, Java, Swift, TypeScript, etc.
       Professor do curso de pós-graduação em Projeto e Desenvolvimento de Aplicações Web pela UNIFATEA.
@@ -22,7 +22,7 @@ const speakers = [
 
   {
     id: 2,
-    avatar: require('~/assets/persons/vilibaldo.jpg'),
+    avatar: require('~/assets/persons/2018/vilibaldo.jpg'),
     name: 'Vilibaldo Neto',
     bio: `Head of Technology na Beblue, atuando em duas grandes vertentes da empresa, Market Place (MP) e Financial Services (FS).
       Trabalhou anteriormente com diversos times internacionais em desenvolvimento de software e hardware e, por algum tempo, trabalhou na emergente China para a finalização de um grande projeto.
@@ -40,7 +40,7 @@ const speakers = [
 
   {
     id: 3,
-    avatar: require('~/assets/persons/jota.jpg'),
+    avatar: require('~/assets/persons/2018/jota.jpg'),
     name: 'Jota Júnior',
     bio: `No alto de seus 25 anos de idade, é formado em Ciência da Computação pela Universidade Federal de Minas Gerais.
       Foi estudante visitante na Universidade de Columbia, em Nova York, e assistente de pesquisa no Instituto de Tecnologia de Massachusetts, o MIT.
@@ -59,7 +59,7 @@ const speakers = [
 
   {
     id: 4,
-    avatar: require('~/assets/persons/danilo.jpg'),
+    avatar: require('~/assets/persons/2018/danilo.jpg'),
     name: 'Danilo Deus Dará',
     bio: `Desenvolvedor há mais de 15 anos. Atua como tech lead em um dos times LuizaLabs, o laboratório de
       inovação do Magazine Luiza. Especialista em desenvolvimento backend em Java e seus frameworks em ambiente crítico,
@@ -78,7 +78,7 @@ const speakers = [
 
   {
     id: 5,
-    avatar: require('~/assets/persons/igor.jpg'),
+    avatar: require('~/assets/persons/2018/igor.jpg'),
     name: 'Igor Halfeld',
     bio: `Já atuou como engenheiro de software e como full-stack developer.
       No entanto, sua criança interior ainda permanece no mundo front-end, entusiasmado com JavaScript e Vue.js,
@@ -99,7 +99,7 @@ const speakers = [
 
   {
     id: 6,
-    avatar: require('~/assets/persons/sergio.jpg'),
+    avatar: require('~/assets/persons/2018/sergio.jpg'),
     name: 'Sérgio Gama',
     bio: `Engenheiro de automação com mais de 25 anos de experiência em TI como desenvolvedor,
       analista, consultor, arquiteto de soluções, gerente de projetos e de operações.
@@ -122,7 +122,7 @@ const speakers = [
 
   {
     id: 7,
-    avatar: require('~/assets/persons/raphael.jpg'),
+    avatar: require('~/assets/persons/2018/raphael.jpg'),
     name: 'Raphael Mantilha',
     bio: `Especialista em automação de testes funcionais e de performance da Cast Group,
       trabalha há 16 anos na área. Engenheiro de Computação pela UFSCar, com MBAs em Gestão Empresarial
@@ -144,7 +144,7 @@ const speakers = [
 
   {
     id: 7,
-    avatar: require('~/assets/persons/samuel.jpg'),
+    avatar: require('~/assets/persons/2018/samuel.jpg'),
     name: 'Samuel Martins',
     bio: `Começou sua carreira como desenvolvedor, tendo passado por tecnologias como C#, Delphi,
       Crystal Reports, Oracle e SQL Server. Há cerca de 6 anos, deixou o desenvolvimento de software
@@ -164,4 +164,44 @@ const speakers = [
   }
 ]
 
-export default speakers.sort((a, b) => a.name.localeCompare(b.name))
+export default [
+  {
+    id: 1,
+    avatar: require('~/assets/persons/leticia.png'),
+    name: 'Letícia Pedroso',
+    bio: 'Analista de Inteligência Artificial para Comunicação na Everis Brasil, Instrutora de Lógica de Programação e de Inteligência Artificial no Sesc São Paulo, coordenadora das comunidades Developers-BR e Nerdzão, entusiasta de Visão Computacional, apaixonada por animais, comunidades e compartilhamento de conhecimento.',
+    job: {
+      title: 'Artificial Intelligence Instructor',
+      company: 'Sesc',
+      url: 'http://www.sesc.com.br/'
+    },
+    social: {
+      linkedin: 'leticiaspedroso',
+      github: 'LeticiaSPedroso'
+    }
+  },
+
+  {
+    id: 2,
+    avatar: require('~/assets/persons/rodolpho.png'),
+    name: 'Rodolpho Couto',
+    bio: 'Atua como Desenvolvedor de Software no iFood, ajudando a construir e manter os microsserviços que sustentam a plataforma de pagamentos. Possui 10 anos de experiência com Engenharia de Software e trabalha com Kotlin há cerca de 2 anos.',
+    job: {
+      title: 'Software Engineer',
+      company: 'iFood',
+      url: 'https://www.ifood.com.br/'
+    },
+    social: {
+      linkedin: 'rodolphocouto',
+      github: 'rodolphocouto'
+    }
+  },
+
+  {
+    id: 3,
+    avatar: require('~/assets/persons/empty-avatar.png'),
+    name: 'Em Breve!'
+  },
+]
+
+// export default speakers.sort((a, b) => a.name.localeCompare(b.name))

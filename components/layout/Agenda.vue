@@ -21,12 +21,15 @@ export default {
   <section id="agenda" class="container in-menu">
     <div class="gutter">
       <h3>Agenda</h3>
-      <p>
+      <p v-if="agenda.length === 0">
+        Em breve divulgaremos informações mais detalhadas sobre as <i>talks</i><br>desta edição e a ordem prevista das atividades. Aguarde!
+      </p>
+      <p v-else>
         Fique por dentro da programação do evento.<br>
         <i>Observação: a ordem pode sofrer alterações.</i>
       </p>
 
-      <ol class="schedule">
+      <ol v-if="agenda.length" class="schedule">
         <li v-for="talk of agenda" :key="talk.id" :class="{ 'liked': liked && liked._id === talk.id }">
           <div class="timeline" v-if="talk.icon">
             <div class="circle icon"><img :src="talk.icon" :alt="talk.title"></div>
