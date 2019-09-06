@@ -31,6 +31,7 @@ export default {
     'Erick Petrucelli',
     'Fabio Takeda',
     'Felipe Espírito Santo',
+    'Gustavo Del Vechio',
     'Jederson Zuchi',
     'Luciana Ferrarezi Muzatti',
     'Patricia Primo Lourençano',
