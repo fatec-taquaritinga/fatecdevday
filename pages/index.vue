@@ -39,7 +39,7 @@ export default {
 
       <p>Um dia dedicado ao desenvolvimento <br /> web, aplicativos e sistemas em geral</p>
 
-      <!-- <a class="button inverse" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a> -->
+      <a v-if="event.href" class="button inverse" :ref="event.href" target="_blank" rel="noopener">Inscreva-se</a>
     </header>
 
     <countdown :target="event.date.full" />
@@ -65,10 +65,10 @@ export default {
 
     <hr />
 
-    <!-- <div id="enroll" class="container enroll limit-width">
-      <a class="button" href="https://www.sympla.com.br/fatec-dev-day-2018__297415" target="_blank" rel="noopener">Inscreva-se</a>
-      <p>Terceiro lote: até <b>08/11</b>.</p>
-    </div> -->
+    <div v-if="event.href" id="enroll" class="container enroll limit-width">
+      <a class="button" :href="event.href" target="_blank" rel="noopener">Inscreva-se</a>
+      <p>Corra! Apenas {{ event.places.talks }} vagas disponíveis.</p>
+    </div>
 
     <!-- <div id="enroll" class="container enroll limit-width">
       <p><strong>Participou conosco?</strong><br>O que você achou do Fatec Dev Day 2019?</p>

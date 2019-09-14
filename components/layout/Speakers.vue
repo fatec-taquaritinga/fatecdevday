@@ -39,11 +39,10 @@ export default {
         <div class="card" v-for="person of namedSpeakers" :key="person.id">
           <transition name="slide-fade" mode="out-in">
             <div key="main-info" class="main-info" v-if="!person.showBio">
-              <picture v-if="person.avatar && person.bio" @click="toggleBio(person, true)" class="activable">
-                <img :src="person.avatar" :alt="person.name">
-              </picture>
-              <picture v-else-if="person.avatar">
-                <img :src="person.avatar" :alt="person.name">
+              <picture v-if="person.avatar" @click="person.bio ? toggleBio(person, true) : false" :class="person.bio ? 'activable' : ''">
+                <img v-if="!Array.isArray(person.avatar)" :src="person.avatar" :alt="person.name">
+                <source v-else v-for="avatar of person.avatar" :key="avatar.type" :srcset="avatar.src"  :type="avatar.type" />
+                <img v-if="Array.isArray(person.avatar)" :src="person.avatar[0].src" :alt="person.name">
               </picture>
 
               <h4>{{ person.name }}</h4>

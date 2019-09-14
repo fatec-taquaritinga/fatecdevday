@@ -1,10 +1,12 @@
 <script>
+import event from '~/content'
 import agenda from '~/content/agenda'
 
 export default {
   name: 'Layout-Agenda',
   data () {
     return {
+      event,
       agenda
     }
   },
@@ -21,8 +23,8 @@ export default {
   <section id="agenda" class="container in-menu">
     <div class="gutter">
       <h3>Agenda</h3>
-      <p v-if="agenda.length === 0">
-        Em breve divulgaremos informações mais detalhadas sobre as <i>talks</i><br>desta edição e a ordem prevista das atividades. Aguarde!
+      <p v-if="agenda.length === 0 || !event.scheduleCompleted">
+        Em breve divulgaremos mais informações sobre as <i>talks</i><br>desta edição e a ordem prevista das atividades. Fique de olho!
       </p>
       <p v-else>
         Fique por dentro da programação do evento.<br>
@@ -35,7 +37,11 @@ export default {
             <div class="circle icon"><img :src="talk.icon" :alt="talk.title"></div>
           </div>
           <div class="timeline" v-else-if="talk.speaker && talk.speaker.avatar">
-            <picture class="circle"><img :src="talk.speaker.avatar" :alt="talk.speaker.name"></picture>
+            <picture class="circle" v-if="talk.speaker.avatar" @click="talk.speaker.bio ? toggleBio(person, true) : false" :class="talk.speaker.bio ? 'activable' : ''">
+              <img v-if="!Array.isArray(talk.speaker.avatar)" :src="talk.speaker.avatar" :alt="talk.speaker.name">
+              <source v-else v-for="avatar of talk.speaker.avatar" :key="avatar.type" :srcset="avatar.src"  :type="avatar.type" />
+              <img v-if="Array.isArray(talk.speaker.avatar)" :src="talk.speaker.avatar[0].src" :alt="talk.speaker.name">
+            </picture>
           </div>
           <div class="timeline stack" v-else-if="talk.speakers">
             <picture class="circle" v-for="speaker of talk.speakers" :key="speaker.id"><img :src="speaker.avatar" :alt="speaker.name"></picture>

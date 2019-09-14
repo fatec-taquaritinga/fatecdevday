@@ -11,7 +11,7 @@ export default {
     number: 4,
     year: 2019
   },
-  href: undefined,
+  href: 'https://fundacaofat.org.br/evento/devday-2019-taquaritinga/',
   date: {
     weekday: 'sábado',
     full: '2019-11-09T08:00:00-03:00',
@@ -38,11 +38,13 @@ export default {
     'Oswaldo Lázaro Mendes'
   ],
   topics: [
-    'Desenvolvimento Web e Mobile',
-    'Single Page Applications',
+    'Desenvolvimento Web',
+    'Desenvolviento Mobile',
+    'Programação Funcional',
     'Inteligência Artificial',
-    'Internet of Things'
+    'Machine Learning'
   ],
+  scheduleCompleted: false,
   speakers,
   sponsors,
   agenda
