@@ -58,6 +58,25 @@ export default [
   {
     id: 4,
     avatar: [
+      { src: require('~/assets/persons/hugo.jpg'), type: 'image/jpeg' },
+      { src: require('~/assets/persons/hugo.webp'), type: 'image/webp' }
+    ],
+    name: 'Hugo Branquinho',
+    bio: 'Analista de Sistemas, pós-graduado em Gestão de Tecnologia pela FGV e com certificações de Engenheiro da Red Hat (RHCE). Com mais de 16 anos de experiência em Linux, atuou como DevOps/SRE e Dev em empresas como: UOL, Bematech, Luiza Labs (Magazine Luiza), Beblue e ContaAzul. Atualmente é SRE Sênior no iFood.',
+    job: {
+      title: 'Sênior SRE',
+      company: 'iFood',
+      url: 'https://www.ifood.com.br/'
+    },
+    social: {
+      linkedin: 'hugobcar',
+      github: 'hugobcar'
+    }
+  },
+
+  {
+    id: 5,
+    avatar: [
       { src: require('~/assets/persons/empty-avatar.png'), type: 'image/png' },
       { src: require('~/assets/persons/empty-avatar.webp'), type: 'image/webp' }
     ],
