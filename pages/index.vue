@@ -39,7 +39,7 @@ export default {
 
       <p>Um dia dedicado ao desenvolvimento <br /> web, aplicativos e sistemas em geral</p>
 
-      <a v-if="event.href" class="button inverse" :ref="event.href" target="_blank" rel="noopener">Inscreva-se</a>
+      <a v-if="event.href" class="button inverse" :href="event.href" target="_blank" rel="noopener">Inscreva-se</a>
     </header>
 
     <countdown :target="event.date.full" />
