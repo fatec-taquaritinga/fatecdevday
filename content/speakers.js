@@ -1,4 +1,4 @@
-export default [
+const speakers = [
   {
     id: 1,
     avatar: [
@@ -77,11 +77,29 @@ export default [
   {
     id: 5,
     avatar: [
-      { src: require('~/assets/persons/empty-avatar.png'), type: 'image/png' },
-      { src: require('~/assets/persons/empty-avatar.webp'), type: 'image/webp' }
+      { src: require('~/assets/persons/cleber.jpg'), type: 'image/jpeg' },
+      { src: require('~/assets/persons/cleber.webp'), type: 'image/webp' }
     ],
-    name: 'Em Breve!'
-  },
+    name: 'Cleber Campomori',
+    bio: 'Engenheiro de software sênior na MovilePay, a divisão de pagamentos eletrônicos B2C do grupo Movile. Também atua como líder de conteúdo e inovação na TreinaWeb, autor de cursos nas trilhas de .NET, Xamarin, Java, Swift, TypeScript, etc. Tecnólogo em Bancos de Dados pela Fatec Guaratinguetá e pós-graduado em Projeto e Desenvolvimento de Aplicações Web pela UNIFATEA. Também é profissional MCSD (Microsoft Certified Solutions Developer) na trilha Web e MS Specialist em HTML5, CSS3 e JavaScript. Já atuou em projetos de grandes empresas e organizações como Claro, TIM, Vivo, Multiplus, Instituto Nacional de Pesquisas Espaciais (INPE) e Johnson & Johnson, além de ter ministrado treinamentos técnicos para instituições como DCTA, INPE e Ministério Público do Espírito Santo.',
+    job: {
+      title: 'Engenheiro de Software',
+      company: 'MovilePay',
+      url: 'https://movile.com/'
+    },
+    social: {
+      linkedin: 'clebercampomori',
+      github: 'clebercampomori',
+      twitter: 'clebercampomori'
+    }
+  }
 ]
 
-// export default speakers.sort((a, b) => a.name.localeCompare(b.name))
+export default [...speakers.sort((a, b) => a.name.localeCompare(b.name)), {
+  id: 0,
+  avatar: [
+    { src: require('~/assets/persons/empty-avatar.png'), type: 'image/png' },
+    { src: require('~/assets/persons/empty-avatar.webp'), type: 'image/webp' }
+  ],
+  name: 'Em Breve!'
+}]

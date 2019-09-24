@@ -27,5 +27,12 @@ export default [
     title: 'Compartilhando experiências sobre DevOps nas empresas',
     description: 'DevOps é um termo derivado da junção das palavras "desenvolvimento" e "operações", designando um conjunto de práticas de engenharia de software para melhor integração das equipes de desenvolvedores com as equipes de operação (infraestrutura e administração de sistemas). Nesta palestra, os participantes poderão acompanhar experiências vivenciadas pelo palestrante ao longo de suas passagens por diversas empresas de renome, atuando com administração de sistemas e DevOps.',
     speaker: speakers.find(speaker => speaker.name === 'Hugo Branquinho')
+  },
+
+  {
+    id: 5,
+    title: 'Nest.js: um framework Node.js poderoso e progressivo',
+    description: 'O Nest.js é um poderoso framework open source baseado no Node.js, Express e TypeScript. Fortemente inspirado no Angular 2+, o Nest.js se propõe a ser uma alternativa para criação de aplicações progressivas e extremamente escaláveis de maneira muito simples, oferecendo inclusive integrações eficientes com outros frameworks e bibliotecas tradicionais no mundo Node.js, como Mongoose, Sequelize, TypeORM, Swagger e Prisma. Nesta palestra, os participantes poderão ver seu poder e facilidade ao acompanhar a criação de um projeto Node.js utilizando o Nest.js.',
+    speaker: speakers.find(speaker => speaker.name === 'Cleber Campomori')
   }
 ]
