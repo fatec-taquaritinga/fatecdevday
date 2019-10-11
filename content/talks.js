@@ -34,5 +34,12 @@ export default [
     title: 'Nest.js: um framework Node.js poderoso e progressivo',
     description: 'O Nest.js é um poderoso framework open source baseado no Node.js, Express e TypeScript. Fortemente inspirado no Angular 2+, o Nest.js se propõe a ser uma alternativa para criação de aplicações progressivas e extremamente escaláveis de maneira muito simples, oferecendo inclusive integrações eficientes com outros frameworks e bibliotecas tradicionais no mundo Node.js, como Mongoose, Sequelize, TypeORM, Swagger e Prisma. Nesta palestra, os participantes poderão ver seu poder e facilidade ao acompanhar a criação de um projeto Node.js utilizando o Nest.js.',
     speaker: speakers.find(speaker => speaker.name === 'Cleber Campomori')
+  },
+
+  {
+    id: 6,
+    title: 'Desenvolvimento de um aplicativo nativo com React Native',
+    description: 'React Native é uma biblioteca JavaScript criada pelo Facebook. É usada para desenvolver aplicativos para os sistemas Android e iOS de forma nativa. Nesta palestra, os participantes poderão ver e avaliar as vantagens do ecossistema JavaScript no desenvolvimento de um aplicativo nativo utilizando React Native.',
+    speaker: speakers.find(speaker => speaker.name === 'Leonardo Bittencourt')
   }
 ]

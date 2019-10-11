@@ -29,6 +29,12 @@ const agenda = [
     id: 5,
     duration: '50min',
     ...talks.find(talk => talk.speaker.name === 'Cleber Campomori')
+  },
+
+  {
+    id: 6,
+    duration: '50min',
+    ...talks.find(talk => talk.speaker.name === 'Leonardo Bittencourt')
   }
 ]
 

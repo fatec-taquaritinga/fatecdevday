@@ -92,14 +92,35 @@ const speakers = [
       github: 'clebercampomori',
       twitter: 'clebercampomori'
     }
+  },
+
+  {
+    id: 6,
+    avatar: [
+      { src: require('~/assets/persons/leonardo.jpg'), type: 'image/jpeg' },
+      { src: require('~/assets/persons/leonardo.webp'), type: 'image/webp' }
+    ],
+    name: 'Leonardo Bittencourt',
+    bio: 'Engenheiro de software com mais de 3 anos de experiência em tecnologias back-end, front-end e mobile. Conhecimento e experiência em soluções digitais para educação. Tecnologias como ReactJS, React Native, VueJS, Flutter, NodeJS, PHP, MySQL e PostgreSQL. Skills como boas práticas, code patterns, code style, QA, test. Cursando último semestre da graduação em Ciência da Computação. Soft skills como profissionalismo, trabalho em equipe, comunicação, compartilhamento de conhecimento e liderança.',
+    job: {
+      title: 'Software Engineer',
+      company: 'Conexia Educação',
+      url: 'https://conexiaeducacao.com.br/'
+    },
+    social: {
+      linkedin: 'leobittencourt',
+      github: 'leobittencourt'
+    }
   }
 ]
 
-export default [...speakers.sort((a, b) => a.name.localeCompare(b.name)), {
-  id: 0,
-  avatar: [
-    { src: require('~/assets/persons/empty-avatar.png'), type: 'image/png' },
-    { src: require('~/assets/persons/empty-avatar.webp'), type: 'image/webp' }
-  ],
-  name: 'Em Breve!'
-}]
+// export default [...speakers.sort((a, b) => a.name.localeCompare(b.name)), {
+//   id: 0,
+//   avatar: [
+//     { src: require('~/assets/persons/empty-avatar.png'), type: 'image/png' },
+//     { src: require('~/assets/persons/empty-avatar.webp'), type: 'image/webp' }
+//   ],
+//   name: 'Em Breve!'
+// }]
+
+export default [...speakers.sort((a, b) => a.name.localeCompare(b.name))]
