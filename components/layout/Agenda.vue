@@ -23,6 +23,7 @@ export default {
   <section id="agenda" class="container in-menu">
     <div class="gutter">
       <h3>Agenda</h3>
+
       <p v-if="agenda.length === 0 || !event.scheduleCompleted">
         Em breve divulgaremos mais informações sobre as <i>talks</i><br>desta edição e a ordem prevista das atividades. Fique de olho!
       </p>

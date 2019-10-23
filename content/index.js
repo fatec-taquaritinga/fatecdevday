@@ -44,7 +44,7 @@ export default {
     'Inteligência Artificial',
     'Machine Learning'
   ],
-  scheduleCompleted: false,
+  scheduleCompleted: true,
   speakers,
   sponsors,
   agenda
