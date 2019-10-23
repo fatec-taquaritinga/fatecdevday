@@ -11,7 +11,7 @@ export default {
     number: 4,
     year: 2019
   },
-  href: 'https://fundacaofat.org.br/evento/devday-2019-taquaritinga/',
+  href: 'https://www.eventbrite.com.br/e/fatec-devday-2019-tickets-78212366293?ref=ebtnebtckt',
   date: {
     weekday: 'sábado',
     full: '2019-11-09T08:00:00-03:00',
