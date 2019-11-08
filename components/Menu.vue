@@ -15,7 +15,8 @@ export default {
           { path: '/' },
           { path: '#sobre', title: 'Sobre' },
           { path: '#palestrantes', title: 'Palestrantes' },
-          { path: '#agenda', title: 'Agenda' }
+          { path: '#agenda', title: 'Agenda' },
+          { path: '#local', title: 'Local' }
         ]
       }
     }

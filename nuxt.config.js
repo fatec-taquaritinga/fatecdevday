@@ -4,7 +4,8 @@ const data = {
   title: 'Fatec Dev Day 2019',
   description: 'Fatec Dev Day: um dia dedicado a se atualizar sobre desenvolvimento Web e Mobile, linguagens de programação e sistemas em geral',
   domain: 'https://fatecdevday.com.br/',
-  thumbnail: 'https://fatecdevday.com.br/thumbnail.jpg'
+  thumbnail: 'https://fatecdevday.com.br/thumbnail.jpg',
+  mapsKey: 'AIzaSyAkzlHuZCCu7WwWPh4G_zrzHyEOHX7plWs'
 }
 
 export default {
@@ -15,6 +16,9 @@ export default {
     },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      { src: `https://maps.googleapis.com/maps/api/js?key=${data.mapsKey}&extension=.js&language=pt&region=BR` }
     ]
   },
   meta: [

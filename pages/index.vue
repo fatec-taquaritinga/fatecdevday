@@ -11,7 +11,8 @@ export default {
     LayoutAbout: () => import('~/components/layout/About'),
     LayoutSponsors: () => import('~/components/layout/Sponsors'),
     LayoutSpeakers: () => import('~/components/layout/Speakers'),
-    LayoutAgenda: () => import('~/components/layout/Agenda')
+    LayoutAgenda: () => import('~/components/layout/Agenda'),
+    LayoutLocation: () => import('~/components/layout/Location')
   },
   data () {
     return {
@@ -22,6 +23,10 @@ export default {
   methods: {
     goToAgenda () {
       document.querySelector('.menu a[href="#agenda"]').click()
+    },
+
+    goToLocal () {
+      document.querySelector('.menu a[href="#local"]').click()
     }
   }
 }
@@ -39,7 +44,10 @@ export default {
 
       <p>Um dia dedicado ao desenvolvimento <br /> web, aplicativos e sistemas em geral</p>
 
-      <a v-if="event.href" class="button inverse" :href="event.href" target="_blank" rel="noopener">Inscreva-se</a>
+      <!-- <a v-if="event.href" class="button inverse" :href="event.href" target="_blank" rel="noopener">Inscreva-se</a> -->
+
+      <a class="button inverse" href="#local" @onclick.prevent="goToLocal">Como chegar?</a>
+      <!-- <a class="button inverse" href="#agenda" @onclick.prevent="goToAgenda">Veja a programação</a> -->
     </header>
 
     <countdown :target="event.date.full" />
@@ -63,12 +71,14 @@ export default {
 
     <layout-agenda :liked="likedTalk" />
 
-    <hr />
+    <!-- <hr /> -->
 
-    <div v-if="event.href" id="enroll" class="container enroll limit-width">
+    <!-- <div v-if="event.href" id="enroll" class="container enroll limit-width">
       <a class="button" :href="event.href" target="_blank" rel="noopener">Inscreva-se</a>
       <p>Corra! Apenas {{ event.places.talks }} vagas disponíveis.</p>
-    </div>
+    </div> -->
+
+    <layout-location />
 
     <!-- <div id="enroll" class="container enroll limit-width">
       <p><strong>Participou conosco?</strong><br>O que você achou do Fatec Dev Day 2019?</p>
