@@ -1,5 +1,7 @@
 export default {
-  gold: [
+  gold: [],
+
+  silver: [
     {
       id: 1,
       name: 'Invillia',
@@ -8,8 +10,6 @@ export default {
       width: '7em'
     }
   ],
-
-  silver: [],
 
   bronze: [],
 
