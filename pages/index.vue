@@ -10,7 +10,7 @@ export default {
     // Countdown: () => import('~/components/Countdown'),
     LayoutAbout: () => import('~/components/layout/About'),
     LayoutSponsors: () => import('~/components/layout/Sponsors'),
-    LayoutLunch: () => import('~/components/layout/Lunch'),
+    // LayoutLunch: () => import('~/components/layout/Lunch'),
     LayoutSpeakers: () => import('~/components/layout/Speakers'),
     LayoutAgenda: () => import('~/components/layout/Agenda'),
     LayoutLocation: () => import('~/components/layout/Location')
@@ -63,9 +63,9 @@ export default {
 
     <layout-sponsors />
 
-    <hr />
+    <!-- <hr />
 
-    <layout-lunch />
+    <layout-lunch /> -->
 
     <hr />
 

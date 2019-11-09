@@ -14,8 +14,9 @@ export default {
         return [
           { path: '/', },
           { path: '#sobre', title: 'Sobre' },
-          { path: '#almoco', title: 'Almoço' },
-          { path: '#agenda', title: 'Agenda' }
+          // { path: '#almoco', title: 'Almoço' },
+          { path: '#agenda', title: 'Agenda' },
+          { path: '#local', title: 'Local' }
         ]
       }
     }
