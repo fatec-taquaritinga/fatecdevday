@@ -26,13 +26,13 @@ export default {
               <img :src="sponsor.logo" :alt="sponsor.name" :style="{ width: sponsor.width }">
             </a>
           </div>
-          <div v-else>
+          <!-- <div v-else>
             <a class="button" href="mailto:comunicacao@fatectq.edu.br?subject=Patrocinar o Fatec Dev Day 2019" rel="noopener">Seja um Patrocinador!</a>
-          </div>
+          </div> -->
         </article>
 
         <article v-if="sponsors.silver && sponsors.silver.length" class="silver">
-          <h4>Prata</h4>
+          <h4 v-if="sponsors.gold && sponsors.gold.length">Prata</h4>
 
           <div>
             <a v-for="sponsor in sponsors.silver" :key="sponsor.id" :href="sponsor.url" :title="sponsor.name" target="_blank" rel="noopener">
@@ -42,7 +42,7 @@ export default {
         </article>
 
         <article v-if="sponsors.bronze && sponsors.bronze.length" class="bronze">
-          <h4>Bronze</h4>
+          <h4 v-if="sponsors.gold && sponsors.gold.length && sponsors.silver && sponsors.silver.length">Bronze</h4>
 
           <div>
             <a v-for="sponsor in sponsors.bronze" :key="sponsor.id" :href="sponsor.url" :title="sponsor.name" target="_blank" rel="noopener">

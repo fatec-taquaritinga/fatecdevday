@@ -1,6 +1,11 @@
 <script>
 export default {
-  name: 'Layout-About'
+  name: 'Layout-About',
+  methods: {
+    goToAgenda () {
+      document.querySelector('.menu a[href="#agenda"]').click()
+    }
+  }
 }
 </script>
 
@@ -18,7 +23,8 @@ export default {
       </p>
 
       <p>
-        A <b>edição 2019</b> do <strong>Fatec Dev Day</strong> acontecerá em <strong>9 de novembro</strong> e, assim como as edições anteriores, trará diversos profissionais renomados em suas áreas, apresentando temas e tecnologias de ponta no mercado de trabalho.
+        <!-- A <b>edição 2019</b> do <strong>Fatec Dev Day</strong> acontecerá em <strong>9 de novembro</strong> e, assim como as edições anteriores, trará diversos profissionais renomados em suas áreas, apresentando temas e tecnologias de ponta no mercado de trabalho. -->
+        A <b>edição 2019</b> do <strong>Fatec Dev Day</strong> está acontecendo hoje, <strong>9 de novembro</strong>! Assim como nas edições anteriores, recebemos diversos profissionais renomados em suas áreas, apresentando temas e tecnologias de ponta no mercado de trabalho. Está por aqui conosco? <a href="#agenda" @onclick.prevent="goToAgenda">Acompanhe a programação</a> e não perca nenhuma atividade de seu interesse.
         <!-- Se você esteve conosco, relembre os palestrantes e as atividades que tivemos nesta página e contribua oferecendo sua <a href="https://goo.gl/forms/9emTsClhba6zro4E2"   target="_blank" rel="noopener">opinião sobre o evento</a>, para nos ajudar a construir um <strong>Fatec Dev Day</strong> cada vez melhor! -->
       </p>
     </div>

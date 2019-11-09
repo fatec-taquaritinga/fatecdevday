@@ -7,7 +7,7 @@ export default {
     AppMenu: () => import('~/components/Menu'),
     AppFooter: () => import('~/components/Footer'),
     Logo: () => import('~/components/Logo'),
-    Countdown: () => import('~/components/Countdown'),
+    // Countdown: () => import('~/components/Countdown'),
     LayoutAbout: () => import('~/components/layout/About'),
     LayoutSponsors: () => import('~/components/layout/Sponsors'),
     LayoutSpeakers: () => import('~/components/layout/Speakers'),
@@ -45,17 +45,14 @@ export default {
       <p>Um dia dedicado ao desenvolvimento <br /> web, aplicativos e sistemas em geral</p>
 
       <!-- <a v-if="event.href" class="button inverse" :href="event.href" target="_blank" rel="noopener">Inscreva-se</a> -->
-
-      <a class="button inverse" href="#local" @onclick.prevent="goToLocal">Como chegar?</a>
-      <!-- <a class="button inverse" href="#agenda" @onclick.prevent="goToAgenda">Veja a programação</a> -->
     </header>
 
-    <countdown :target="event.date.full" />
+    <!-- <countdown :target="event.date.full" /> -->
 
-    <!-- <div class="countdown">
+    <div class="countdown">
       <a class="button" href="#agenda" @onclick.prevent="goToAgenda">Veja a programação</a>
-      <a class="button" href="https://goo.gl/forms/9emTsClhba6zro4E2" target="_blank" rel="noopener">Dê sua opinião</a>
-    </div> -->
+      <!-- <a class="button" href="https://forms.gle/pwMXppAuGhVkeRvn7" target="_blank" rel="noopener">Dê sua opinião</a> -->
+    </div>
 
     <div class="parallax"></div>
 
