@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <section id="palestrantes" class="container in-menu">
+  <section id="palestrantes" class="container">
     <div class="gutter">
       <h3>Palestrantes</h3>
 

@@ -58,7 +58,7 @@ export default {
 </script>
 
 <template>
-  <section id="local" class="in-menu">
+  <section id="local">
     <div class="map-container">
       <div id="map"></div>
     </div>

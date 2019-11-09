@@ -12,11 +12,10 @@ export default {
       type: Array,
       default () {
         return [
-          { path: '/' },
+          { path: '/', },
           { path: '#sobre', title: 'Sobre' },
-          { path: '#palestrantes', title: 'Palestrantes' },
-          { path: '#agenda', title: 'Agenda' },
-          { path: '#local', title: 'Local' }
+          { path: '#almoco', title: 'Almoço' },
+          { path: '#agenda', title: 'Agenda' }
         ]
       }
     }
