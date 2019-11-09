@@ -51,8 +51,8 @@ export default {
     <!-- <countdown :target="event.date.full" /> -->
 
     <div class="countdown">
-      <a class="button" href="#agenda" @onclick.prevent="goToAgenda">Veja a programação</a>
-      <!-- <a class="button" href="https://forms.gle/pwMXppAuGhVkeRvn7" target="_blank" rel="noopener">Dê sua opinião</a> -->
+      <!-- <a class="button" href="#agenda" @onclick.prevent="goToAgenda">Veja a programação</a> -->
+      <a class="button" href="https://forms.gle/pwMXppAuGhVkeRvn7" target="_blank" rel="noopener">Dê sua opinião</a>
     </div>
 
     <div class="parallax"></div>
@@ -73,19 +73,19 @@ export default {
 
     <layout-agenda :liked="likedTalk" />
 
-    <!-- <hr /> -->
+    <hr />
 
     <!-- <div v-if="event.href" id="enroll" class="container enroll limit-width">
       <a class="button" :href="event.href" target="_blank" rel="noopener">Inscreva-se</a>
       <p>Corra! Apenas {{ event.places.talks }} vagas disponíveis.</p>
     </div> -->
 
-    <layout-location />
-
-    <!-- <div id="enroll" class="container enroll limit-width">
+    <div id="enroll" class="container enroll limit-width">
       <p><strong>Participou conosco?</strong><br>O que você achou do Fatec Dev Day 2019?</p>
-      <a class="button" href="https://goo.gl/forms/9emTsClhba6zro4E2" target="_blank" rel="noopener">Dê sua opinião</a>
-    </div> -->
+      <a class="button" href="https://forms.gle/pwMXppAuGhVkeRvn7" target="_blank" rel="noopener">Dê sua opinião</a>
+    </div>
+
+    <layout-location />
 
     <app-footer />
   </main>
